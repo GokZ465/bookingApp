@@ -5,12 +5,11 @@ class MyDocument extends Document {
     static async getInitialProps(ctx) {
         const initialProps = await Document.getInitialProps(ctx)
         const { pathname } = ctx;
-        const lang = pathname.startsWith("/en") ? "en-us" : "no";
+        const lang = pathname.startsWith("/en") ? "no" : "en";
         return { ...initialProps, lang }
     }
 
     render() {
-        
         const { lang } = this.props;
 
         return (
@@ -22,12 +21,11 @@ class MyDocument extends Document {
                     <script async src="https://kit.fontawesome.com/a83d77d417.js" />
                     {/* description and share */}
                     <meta name="author" content="Tina Mary Holdcroft" />
-                    <meta name="keywords" content="" />
-                    <meta property="image" content="https://images.unsplash.com/photo-1433888104365-77d8043c9615?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80" />
-                    <meta property="og:image" content="https://images.unsplash.com/photo-1433888104365-77d8043c9615?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80" />
-                    <meta property="og:title" content="" />
-                    <meta name="description" content="" />
-                    <meta property="og:description" content="" />
+                    <meta name="keywords" content="Hotel Booking Bergen" />
+                    <meta property="image" content="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" />
+                    <meta property="og:image" content="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" />
+                    <meta name="description" content="Find Hotels, Bed and Breakfasts and Guesthouses in Bergen" />
+                    <meta property="og:description" content="Find Hotels, Bed and Breakfasts and Guesthouses in Bergen" />
                     <meta property="url" content="" />
                     <meta property="og:url" content="" />
                     <meta property="og:type" content="website" />

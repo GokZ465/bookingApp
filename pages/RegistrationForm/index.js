@@ -75,7 +75,7 @@ class MasterForm extends React.Component {
     render() {
         return (
             <>
-                <h1>React Wizard Form 🧙‍♂️</h1>
+                <h1>Registration form</h1>
                 <p>Step {this.state.currentStep}</p>
 
                 <form onSubmit={this.handleSubmit}>

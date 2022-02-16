@@ -6,27 +6,27 @@ const Nav = () => {
 
     function switchLanguage() {
         setLanguage(!language);
-        document.documentElement.setAttribute('lang', 'en');
+        document.documentElement.setAttribute('lang', 'no');
         if (language === false) {
-            document.documentElement.setAttribute('lang', 'no');
+            document.documentElement.setAttribute('lang', 'en');
         }
         if (language === true) {
-            document.documentElement.setAttribute('lang', 'en');
+            document.documentElement.setAttribute('lang', 'no');
         }
     };
 
     return (
         <>
-            <Link href={language ? '/english' : '/'}>
+            <Link href={language ? '/norwegian' : '/'}>
                 <button
                     accessKey="l"
-                    title={language ? "English" : "Norsk bokmål"}
+                    title={language ? "Norsk bokmål" : "English"}
                     type="button"
-                    value={language ? "Change to English" : "Bytt til norsk bokmål"}
-                    className={language ? "english" : "norsk"}
+                    value={language ? "Bytt til norsk bokmål" : "Change to English"}
+                    className={language ? "norsk" : "english"}
                     onClick={switchLanguage}
                 >
-                toggle language
+                    {language ? "Bytt til norsk bokmål" : "Change to English"}
                 </button>
             </Link>
         </>

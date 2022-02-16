@@ -26,7 +26,7 @@ $size: 22px;
     transition: margin 1.2s ease-out;
     margin-right: calc(#{$size}* 0.48);
     margin-left: calc(-#{$size}* 0.48);
-    background: $black;
+    background: $dark-blue;
 }
 [dark] .mode-wrapper .light {
     //glow: box-shadow: 0 0 1.5px lighten($yellow, 15%), 0 0 10px lighten($yellow, 15%);
