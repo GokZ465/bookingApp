@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+html,
+body {
+    scroll-behavior: smooth;
+}
+[light] body {
+    background-color: $white;
+    color: $black;
+}
+[dark] body {
+    background-color: $black;
+    color: $white;
+}

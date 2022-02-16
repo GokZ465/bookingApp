@@ -1,0 +1,21 @@
+@mixin flex(
+    //@include flex(column nowrap, flex-start, stretch, auto, flex-start, 0);
+    $flow: column nowrap, //row | row-reverse | column | column-reverse ... nowrap | wrap | wrap-reverse
+    $justify-content: flex-start, //flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+    $align-items: stretch,
+    $align-self: auto,
+    $align-content: flex-start,
+    $gap: 1rem
+) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: $flow;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    align-self: $align-self;
+    align-content: $align-content;
+    gap: $gap;
+}

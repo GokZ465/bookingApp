@@ -1,0 +1,34 @@
+$size: 22px;
+
+.mode-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-right: 1.5rem;
+    width: calc($size * 2);
+    .light {
+        background: $yellow;
+        border-radius: 50%;
+        height: $size;
+        width: $size;
+    }
+    .dark {
+        background: $white;
+        border-radius: 50%;
+        height: $size;
+        width: $size;
+        transform: scale(0.9);
+        margin-right: calc(-#{$size}* 0.48);
+        margin-left: calc(#{$size}* 0.48);
+        transition: margin 1.2s ease-out;
+    }
+}
+[dark] .mode-wrapper .dark {
+    transition: margin 1.2s ease-out;
+    margin-right: calc(#{$size}* 0.48);
+    margin-left: calc(-#{$size}* 0.48);
+    background: $black;
+}
+[dark] .mode-wrapper .light {
+    //glow: box-shadow: 0 0 1.5px lighten($yellow, 15%), 0 0 10px lighten($yellow, 15%);
+    transition: box-shadow 1.3s ease-out;
+}
