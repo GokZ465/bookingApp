@@ -1,5 +1,5 @@
 import '../styles/styles.css'
-import Layout from '../components/layout/layout';
+import Layout from '../components/Layout/layout';
 import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
