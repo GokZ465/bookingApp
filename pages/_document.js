@@ -16,7 +16,6 @@ class MyDocument extends Document {
             <Html lang={lang}>
                 <Head>
                     <meta charSet="UTF-8" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     {/* style */}
                     <script async src="https://kit.fontawesome.com/a83d77d417.js" />
                     {/* description and share */}
