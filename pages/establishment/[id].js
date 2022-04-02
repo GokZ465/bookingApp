@@ -22,11 +22,9 @@ export default function Person() {
   if (!data) return <div>Loading...</div>
 
   return (
-<>
-<h1>{data.name}</h1>
-<img src={data.imgURL} alt={data.name}/>
-</>
-
-
+    <>
+      <h1>{data.name}</h1>
+      <img src={data.imgURL} alt={data.name} />
+    </>
   )
 }

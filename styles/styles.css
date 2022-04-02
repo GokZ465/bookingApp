@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/qpq3fvv.css");
 * {
   padding: 0;
   margin: 0;
@@ -12,24 +13,26 @@ html {
 html,
 body {
   scroll-behavior: smooth;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-[light] body {
-  background-color: #ffffff;
-  color: #242424;
+::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
 }
 
-[dark] body {
-  background-color: #1e313e;
-  color: #ffffff;
+::-webkit-scrollbar-thumb:hover {
+  background: #bdbdbd86;
 }
 
-[light] a {
-  color: #242424;
+::-webkit-scrollbar {
+  width: 10px;
+  background: #ffffff;
 }
 
-[dark] body a {
-  color: #ffffff;
+body,
+input {
+  font-family: montserrat, sans-serif;
 }
 
 .sr-only:not(:focus):not(:active) {
@@ -40,6 +43,173 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.footer {
+  background: #1e313e;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 3rem;
+}
+@media screen and (max-width: 800px) {
+  .footer {
+    padding: 2rem;
+  }
+}
+.footer h6 {
+  text-transform: uppercase;
+  margin-bottom: 0.8em;
+  font-size: 1em;
+  font-weight: 600;
+}
+.footer a, .footer p {
+  color: #ffffff;
+  font-family: roboto, sans-serif;
+  font-weight: 200;
+  line-height: 1.3em;
+}
+.footer p + p {
+  font-size: 0.7em;
+}
+@media screen and (max-width: 800px) {
+  .footer .footer-col-3 {
+    display: none;
+  }
+}
+.footer .footer-col-1, .footer .footer-col-3 {
+  flex: 1;
+  margin: 1rem;
+}
+@media screen and (max-width: 800px) {
+  .footer .footer-col-1, .footer .footer-col-3 {
+    margin: 0;
+  }
+}
+.footer .footer-col-1 p, .footer .footer-col-3 p {
+  margin-bottom: 1.5rem;
+}
+.footer .footer-col-1 i, .footer .footer-col-3 i {
+  background-color: #59666F;
+  padding: 0.5em;
+  border-radius: 50%;
+  margin-right: 0.9rem;
+}
+.footer .footer-col-1 h1, .footer .footer-col-3 h1 {
+  font-family: roboto, sans-serif;
+  font-weight: 200;
+  font-size: 0.85em;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+.footer .fa-twitter:hover {
+  background-color: #ffffff;
+  color: #00ACEE;
+}
+.footer .fa-facebook-messenger:hover {
+  background-color: #ffffff;
+  color: #0084ff;
+}
+.footer .fa-youtube:hover {
+  background-color: #ffffff;
+  color: #ff0000;
+}
+.footer .footer-col-2 {
+  flex: 3;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  margin: 1rem;
+}
+@media screen and (max-width: 800px) {
+  .footer .footer-col-2 {
+    display: none;
+  }
+}
+.footer .footer-col-2 div {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.footer .btn-blue {
+  border: 2px solid #ffffff;
+}
+
+.footer-img {
+  background-image: url("../public/logo--white.svg");
+  background-color: #1e313e;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 3rem;
+  height: 1.5rem;
+  position: relative;
+}
+
+.pop-up {
+  background-color: #ffffff;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: -4px -2px 16px rgba(0, 0, 0, 0.55);
+  border-radius: 2.5px;
+  bottom: 50vh;
+  margin-bottom: -11rem;
+  left: 50vw;
+  margin-left: -17.5rem;
+  height: 22rem;
+  width: 35rem;
+}
+.pop-up input, .pop-up input:active, .pop-up input:focus {
+  border-bottom: solid 1px #242424;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  outline: none;
+  line-height: 2em;
+}
+.pop-up input::placeholder, .pop-up input:active::placeholder, .pop-up input:focus::placeholder {
+  color: #8d8d8d;
+  text-transform: none;
+}
+.pop-up .error {
+  text-align: left;
+  margin-top: 0.7rem;
+}
+.pop-up form {
+  display: block;
+  text-align: center;
+  box-shadow: none;
+}
+.pop-up form .btn-blue {
+  margin-top: 1.5rem;
+}
+.pop-up h2 {
+  font-weight: 900;
+  color: #1e313e;
+  margin-bottom: 1rem;
+}
+.pop-up h3 {
+  font-family: learning-curve, sans-serif;
+  font-size: 1.6em;
+  color: #8d8d8d;
+  margin-bottom: 1rem;
+}
+
+.popup-arrow {
+  display: none;
+}
+
+.accommodations-footer {
+  position: relative;
+  bottom: 0vh;
+  left: 0vh;
 }
 
 .mode-wrapper {

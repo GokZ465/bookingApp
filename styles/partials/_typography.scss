@@ -1,10 +1,9 @@
-[light] {
-    a {
-        color: $black;
-    }
-}
-[dark] body {
-    a {
-        color: $white;
-    }
+@import url("https://use.typekit.net/qpq3fvv.css");
+//font-family: montserrat, sans-serif;
+//font-family: learning-curve, sans-serif;
+//font-family: roboto, sans-serif;
+
+body,
+input {
+    font-family: montserrat, sans-serif;
 }
