@@ -1,8 +1,11 @@
 header {
     img {
+        --height: 10vh:
         position: relative;
         z-index: -99999;
         width: 100vw;
         height: auto;
+        margin-top: --height;
+        clip-path: inset(--height 0);
     }
 }
