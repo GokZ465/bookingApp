@@ -68,7 +68,6 @@ class MasterForm extends React.Component {
                 </button>
             )
         }
-
         return null;
     }
 
@@ -77,9 +76,7 @@ class MasterForm extends React.Component {
             <>
                 <h1>Registration form</h1>
                 <p>Step {this.state.currentStep}</p>
-
                 <form onSubmit={this.handleSubmit}>
-
                     <Step1
                         currentStep={this.state.currentStep}
                         handleChange={this.handleChange}
@@ -95,13 +92,11 @@ class MasterForm extends React.Component {
                         handleChange={this.handleChange}
                         password={this.state.password}
                     />
-
                     {this.previousButton()}
                     {this.nextButton()}
-
                 </form>
             </>
-        );
+        )
     }
 }
 
@@ -122,7 +117,7 @@ function Step1(props) {
                 onChange={props.handleChange}
             />
         </div>
-    );
+    )
 }
 
 function Step2(props) {
@@ -142,7 +137,7 @@ function Step2(props) {
                 onChange={props.handleChange}
             />
         </div>
-    );
+    )
 }
 
 function Step3(props) {
@@ -165,7 +160,7 @@ function Step3(props) {
             </div>
             <button className="btn btn-success btn-block">Sign up</button>
         </>
-    );
+    )
 }
 
 export default MasterForm

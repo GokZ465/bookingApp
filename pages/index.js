@@ -20,6 +20,9 @@ export default function Home() {
             </Head>
             
             <>
+            <header>
+                <img src='hero.svg' alt=''/>
+            </header>
                 <RegistrationForm />
                 <div>
                     {data.map((p, i) => (
