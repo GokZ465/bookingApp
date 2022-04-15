@@ -1,11 +1,14 @@
 header {
+    @include flex(column nowrap, center, center, auto, center, 0);
     img {
-        --height: 10vh:
         position: relative;
         z-index: -99999;
         width: 100vw;
         height: auto;
-        margin-top: --height;
-        clip-path: inset(--height 0);
+    }
+    h1 {
+        font-size: 19vmin;
+        position: relative;
+        top: -45rem;
     }
 }

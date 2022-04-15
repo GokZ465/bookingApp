@@ -21,7 +21,8 @@ export default function Home() {
             
             <>
             <header>
-                <img src='hero.svg' alt=''/>
+                <img src='holidaze-hero.png' alt=''/>
+                <h1>Bed and Breakfasts</h1>
             </header>
                 <RegistrationForm />
                 <div>

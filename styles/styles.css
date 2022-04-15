@@ -1,4 +1,5 @@
 @import url("https://use.typekit.net/qpq3fvv.css");
+@import url("https://use.typekit.net/onc6ttx.css");
 * {
   padding: 0;
   margin: 0;
@@ -30,9 +31,21 @@ body {
   background: #ffffff;
 }
 
+body {
+  background-color: #0B1C25;
+}
+
 body,
 input {
   font-family: montserrat, sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-family: ivymode, sans-serif;
+  font-size: clamp(1.8em, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1em;
 }
 
 .sr-only:not(:focus):not(:active) {
@@ -46,7 +59,7 @@ input {
 }
 
 .footer {
-  background: #1e313e;
+  background: #0B1C25;
   color: #ffffff;
   width: 100%;
   height: 100%;
@@ -64,6 +77,7 @@ input {
   margin-bottom: 0.8em;
   font-size: 1em;
   font-weight: 600;
+  color: #BEAE6F;
 }
 .footer a, .footer p {
   color: #ffffff;
@@ -140,7 +154,7 @@ input {
 
 .footer-img {
   background-image: url("../public/logo--white.svg");
-  background-color: #1e313e;
+  background-color: #0B1C25;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -192,7 +206,7 @@ input {
 }
 .pop-up h2 {
   font-weight: 900;
-  color: #1e313e;
+  color: #0B1C25;
   margin-bottom: 1rem;
 }
 .pop-up h3 {
@@ -239,7 +253,7 @@ input {
   transition: margin 1.2s ease-out;
   margin-right: calc(22px* 0.48);
   margin-left: calc(-22px* 0.48);
-  background: #1e313e;
+  background: #0B1C25;
 }
 
 [dark] .mode-wrapper .light {
@@ -259,17 +273,17 @@ input {
   align-content: center;
   gap: 0;
   position: fixed;
-  top: 1.5rem;
+  top: 3rem;
   left: 0;
   width: 100%;
   max-width: 100vw;
-  height: 2rem;
-  background-color: red;
+  height: 3.5rem;
+  background-color: transparent;
   z-index: 9;
 }
 
 .nav-links {
-  width: 50vw;
+  width: 30rem;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -285,11 +299,14 @@ input {
 .nav-links a {
   color: #ffffff;
   text-decoration: none;
+  letter-spacing: 0.1em;
 }
 
+.logo {
+  margin: 1rem;
+}
 .logo img {
-  height: 30px;
-  width: auto;
+  height: 25px;
 }
 
 .deals {
@@ -307,19 +324,60 @@ input {
   position: fixed;
   top: 0;
   left: 0;
-  height: 1.5rem;
+  height: 3rem;
   width: 100vw;
-  background-color: #ffa500;
+  background-color: #BEAE6F;
+  color: #0B1C25;
+  font-weight: 900;
+  font-size: 1em;
 }
 
+.user-login {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-self: auto;
+  align-content: center;
+  gap: 1em;
+  margin: 1rem;
+}
+.user-login i {
+  font-size: 1.25em;
+}
+.user-login a {
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: auto;
+  align-content: center;
+  gap: 0;
+}
 header img {
-  --height: 10vh:
   position: relative;
   z-index: -99999;
   width: 100vw;
   height: auto;
-  margin-top: --height;
-  clip-path: inset(--height 0);
+}
+header h1 {
+  font-size: 19vmin;
+  position: relative;
+  top: -45rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

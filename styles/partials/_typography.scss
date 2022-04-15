@@ -1,4 +1,5 @@
 @import url("https://use.typekit.net/qpq3fvv.css");
+@import url("https://use.typekit.net/onc6ttx.css");
 //font-family: montserrat, sans-serif;
 //font-family: learning-curve, sans-serif;
 //font-family: roboto, sans-serif;
@@ -6,4 +7,11 @@
 body,
 input {
     font-family: montserrat, sans-serif;
+    color: $white;
+}
+h1 {
+    font-family: ivymode, sans-serif;
+    font-size: clamp(1.8em, 4vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1em;
 }
