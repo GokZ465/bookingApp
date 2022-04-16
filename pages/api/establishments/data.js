@@ -18,7 +18,7 @@ export const establishments = [
     price: 'NOK 330',
     maxGuests: '',
     imgURL: 'https://images.unsplash.com/photo-1444201983204-c43cbd584d93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    heroURL: '/',
+    heroURL: '/ipsum-inn-hero.png',
     description: '',
     address: '',
     long: '',

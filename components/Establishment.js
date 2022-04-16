@@ -4,7 +4,10 @@ export default function Establishment({ establishment }) {
   return (
     <li>
       <Link href="/establishment/[id]" as={`/establishment/${establishment.id}`}>
-        <a>{establishment.name}</a>
+        <a>
+          <h3>{establishment.name}</h3>
+    
+        </a>
       </Link>
     </li>
   )

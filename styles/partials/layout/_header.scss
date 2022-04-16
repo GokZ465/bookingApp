@@ -1,11 +1,14 @@
 header {
     @include flex(column nowrap, center, center, auto, center, 0);
-    .hero-index {
-        position: relative;
-        top: -1rem;
+
+    img {
         z-index: -99999;
+        position: relative;
         width: 100vw;
         height: auto;
+    }
+    .hero-index {
+        top: -1rem;
         opacity: 0.4;
     }
 }

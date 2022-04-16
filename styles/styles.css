@@ -400,12 +400,14 @@ header {
   align-content: center;
   gap: 0;
 }
-header .hero-index {
-  position: relative;
-  top: -1rem;
+header img {
   z-index: -99999;
+  position: relative;
   width: 100vw;
   height: auto;
+}
+header .hero-index {
+  top: -1rem;
   opacity: 0.4;
 }
 

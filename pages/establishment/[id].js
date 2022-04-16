@@ -23,8 +23,10 @@ export default function Person() {
 
   return (
     <>
-      <h1>{data.name}</h1>
-      <img src={data.imgURL} alt={data.name} />
+      <header>
+        <img className='establishments-hero' src={data.heroURL} alt={data.name} />
+        <h1>{data.name}</h1>
+      </header>
     </>
   )
 }
