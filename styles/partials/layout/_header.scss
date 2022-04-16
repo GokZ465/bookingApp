@@ -28,5 +28,12 @@ header {
         &:hover .css-icon.house {
             background-image: url("/icons/house-hover.svg");
         }
+        &:active {
+            background-color: $gold;
+            color: $black;
+            .css-icon {
+                filter: invert(100%) sepia(50);
+            }
+        }
     }
 }

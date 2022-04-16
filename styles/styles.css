@@ -442,6 +442,13 @@ header .hero-index {
 .hero-tiles .tile:hover .css-icon.house {
   background-image: url("/icons/house-hover.svg");
 }
+.hero-tiles .tile:active {
+  background-color: #beae6f;
+  color: #242424;
+}
+.hero-tiles .tile:active .css-icon {
+  filter: invert(100%) sepia(50);
+}
 
 .filter img {
   height: 40px;
