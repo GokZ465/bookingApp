@@ -13,9 +13,9 @@ const Nav = () => {
                 </div>
                 <div className='nav-links-wrapper'>
                     <Link passHref href='#search'>
-                        <div className='nav-links'>
+                        <a className='nav-links'>
                             <i className='css-icon search' />
-                        </div>
+                        </a>
                     </Link>
                     <Link passHref href='/'>
                         <a className='nav-links'>
