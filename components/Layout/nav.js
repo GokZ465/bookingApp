@@ -7,8 +7,10 @@ const Nav = () => {
             <div className='deals'>Book now and get 10% off</div>
             <nav className='nav'>
                 <div className='logo'>
-                    <Link href='/'>
-                        <img src='logo--white.svg' alt='' />
+                    <Link passHref href='/'>
+                        <a>
+                            <img src='logo--white.svg' alt='' />
+                        </a>
                     </Link>
                 </div>
                 <div className='nav-links-wrapper'>
