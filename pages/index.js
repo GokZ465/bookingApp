@@ -49,7 +49,7 @@ export default function Home() {
                         </div>
                     </div>
                 </header>
-                <div className='filter'>
+                <div id='search' className='filter'>
                     <img src='icons/location-dot.svg' alt='' />
                 </div>
                 <RegistrationForm />

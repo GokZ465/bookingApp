@@ -85,6 +85,13 @@ h1 {
   background-image: url("/icons/house-hover.svg");
 }
 
+.css-icon.search {
+  background-image: url("/icons/search.svg");
+  /* &:hover {
+       background-image: url("/icons/search-hover.svg");
+   }*/
+}
+
 .footer {
   background: #0b1c25;
   color: #ffffff;
@@ -339,6 +346,32 @@ h1 {
   height: 25px;
 }
 
+.nav-links-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-self: auto;
+  align-content: center;
+  gap: 0.25rem;
+  margin: 0 0.5rem;
+}
+.nav-links-wrapper a {
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+.nav-links-wrapper a:hover .css-icon.phone {
+  background-image: url("/icons/phone-hover.svg");
+}
+.nav-links-wrapper a:hover .css-icon.user {
+  background-image: url("/icons/user-hover.svg");
+}
+
 .nav-links {
   display: -webkit-box;
   display: -moz-box;
@@ -350,33 +383,8 @@ h1 {
   align-items: center;
   align-self: auto;
   align-content: center;
-  gap: 1rem;
-}
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-}
-.nav-links a:hover .css-icon.phone {
-  background-image: url("/icons/phone-hover.svg");
-}
-.nav-links a:hover .css-icon.user {
-  background-image: url("/icons/user-hover.svg");
-}
-
-.user-login {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  align-self: auto;
-  align-content: center;
-  gap: 1em;
-  margin: 1rem;
+  gap: 0;
+  margin: 0.5rem;
 }
 
 header {

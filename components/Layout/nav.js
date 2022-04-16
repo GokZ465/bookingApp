@@ -11,17 +11,20 @@ const Nav = () => {
                         <img src='logo--white.svg' alt='' />
                     </Link>
                 </div>
-                <div className='nav-links'>
-                    <Link passHref href='/contact'>
-                        <a className='user-login'>
-                            <i className='css-icon phone' />
-                            Contact
+                <div className='nav-links-wrapper'>
+                    <Link passHref href='#search'>
+                        <div className='nav-links'>
+                            <i className='css-icon search' />
+                        </div>
+                    </Link>
+                    <Link passHref href='/'>
+                        <a className='nav-links'>
+                            <i className='css-icon user' />
                         </a>
                     </Link>
                     <Link passHref href='/login'>
-                        <a className='user-login'>
-                            <i className='css-icon user' />
-                            User login
+                        <a className='nav-links'>
+                            <i className='css-icon house' />
                         </a>
                     </Link>
                 </div>
