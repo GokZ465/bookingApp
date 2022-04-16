@@ -2,31 +2,31 @@ header {
     @include flex(column nowrap, center, center, auto, center, 0);
     .hero-index {
         position: relative;
+        top: -1rem;
         z-index: -99999;
         width: 100vw;
         height: auto;
-        opacity: 0.5;
-    }
-    h1 {
-        font-size: 19vmin;
-        position: relative;
-        top: -45rem;
+        opacity: 0.4;
     }
 }
 .hero-tiles {
     position: absolute;
+    top: 50vh;
+    margin-top: -9rem;
     max-width: 1280px;
-    margin: -12rem 0 0 0;
     @include flex(row wrap, center, center, auto, center, 2rem 4rem);
-    img {
+    .css-icon {
         height: 40px;
-        width: auto;
+        width: 40px;
     }
     .tile {
         @include flex(row nowrap, center, center, auto, center, 2rem);
         height: 9rem;
         width: 20rem;
-        border: solid 2px $gold;
+        border: $border;
         font-size: 1.2em;
+        &:hover .css-icon.house {
+            background-image: url("/icons/house-hover.svg");
+        }
     }
 }

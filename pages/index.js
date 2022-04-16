@@ -24,27 +24,27 @@ export default function Home() {
                     <img className='hero-index' src='holidaze-hero.png' alt='' />
                     <div className='hero-tiles'>
                         <div className='tile'>
-                            <img src='icons/house.svg' alt='' />
+                            <i className='css-icon house' />
                             <p>Guesthouses</p>
                         </div>
                         <div className='tile'>
-                            <img src='icons/house.svg' alt='' />
+                            <i className='css-icon house' />
                             <p>Guesthouses</p>
                         </div>
                         <div className='tile'>
-                            <img src='icons/house.svg' alt='' />
+                            <i className='css-icon house' />
                             <p>Guesthouses</p>
                         </div>
                         <div className='tile'>
-                            <img src='icons/house.svg' alt='' />
+                            <i className='css-icon house' />
                             <p>Guesthouses</p>
                         </div>
                         <div className='tile'>
-                            <img src='icons/house.svg' alt='' />
+                            <i className='css-icon house' />
                             <p>Guesthouses</p>
                         </div>
                         <div className='tile'>
-                            <img src='icons/house.svg' alt='' />
+                            <i className='css-icon house' />
                             <p>Guesthouses</p>
                         </div>
                     </div>

@@ -32,7 +32,7 @@ body {
 }
 
 body {
-  background-color: #0B1C25;
+  background-color: #0b1c25;
 }
 
 body,
@@ -58,8 +58,35 @@ h1 {
   width: 1px;
 }
 
+.css-icon {
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+}
+
+.css-icon.phone {
+  background-image: url("/icons/phone.svg");
+}
+.css-icon.phone:hover {
+  background-image: url("/icons/phone-hover.svg");
+}
+
+.css-icon.user {
+  background-image: url("/icons/user.svg");
+}
+.css-icon.user:hover {
+  background-image: url("/icons/user-hover.svg");
+}
+
+.css-icon.house {
+  background-image: url("/icons/house.svg");
+}
+.css-icon.house:hover {
+  background-image: url("/icons/house-hover.svg");
+}
+
 .footer {
-  background: #0B1C25;
+  background: #0b1c25;
   color: #ffffff;
   width: 100%;
   height: 100%;
@@ -77,7 +104,7 @@ h1 {
   margin-bottom: 0.8em;
   font-size: 1em;
   font-weight: 600;
-  color: #BEAE6F;
+  color: #beae6f;
 }
 .footer a, .footer p {
   color: #ffffff;
@@ -154,7 +181,7 @@ h1 {
 
 .footer-img {
   background-image: url("../public/logo--white.svg");
-  background-color: #0B1C25;
+  background-color: #0b1c25;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -206,7 +233,7 @@ h1 {
 }
 .pop-up h2 {
   font-weight: 900;
-  color: #0B1C25;
+  color: #0b1c25;
   margin-bottom: 1rem;
 }
 .pop-up h3 {
@@ -253,11 +280,34 @@ h1 {
   transition: margin 1.2s ease-out;
   margin-right: calc(22px* 0.48);
   margin-left: calc(-22px* 0.48);
-  background: #0B1C25;
+  background: #0b1c25;
 }
 
 [dark] .mode-wrapper .light {
   transition: box-shadow 1.3s ease-out;
+}
+
+.deals {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: auto;
+  align-content: center;
+  gap: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  width: 100vw;
+  background-color: #beae6f;
+  color: #0b1c25;
+  font-weight: 900;
+  font-size: 1em;
 }
 
 .nav {
@@ -282,8 +332,14 @@ h1 {
   z-index: 9;
 }
 
+.logo {
+  margin: 1rem;
+}
+.logo img {
+  height: 25px;
+}
+
 .nav-links {
-  width: 30rem;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -294,42 +350,18 @@ h1 {
   align-items: center;
   align-self: auto;
   align-content: center;
-  gap: 0;
+  gap: 1rem;
 }
 .nav-links a {
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 0.1em;
 }
-
-.logo {
-  margin: 1rem;
+.nav-links a:hover .css-icon.phone {
+  background-image: url("/icons/phone-hover.svg");
 }
-.logo img {
-  height: 25px;
-}
-
-.deals {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  align-self: auto;
-  align-content: center;
-  gap: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3rem;
-  width: 100vw;
-  background-color: #BEAE6F;
-  color: #0B1C25;
-  font-weight: 900;
-  font-size: 1em;
+.nav-links a:hover .css-icon.user {
+  background-image: url("/icons/user-hover.svg");
 }
 
 .user-login {
@@ -345,14 +377,6 @@ h1 {
   align-content: center;
   gap: 1em;
   margin: 1rem;
-}
-.user-login i {
-  font-size: 1.25em;
-}
-.user-login a {
-  color: #ffffff;
-  text-decoration: none;
-  letter-spacing: 0.1em;
 }
 
 header {
@@ -370,21 +394,18 @@ header {
 }
 header .hero-index {
   position: relative;
+  top: -1rem;
   z-index: -99999;
   width: 100vw;
   height: auto;
-  opacity: 0.5;
-}
-header h1 {
-  font-size: 19vmin;
-  position: relative;
-  top: -45rem;
+  opacity: 0.4;
 }
 
 .hero-tiles {
   position: absolute;
+  top: 50vh;
+  margin-top: -9rem;
   max-width: 1280px;
-  margin: -12rem 0 0 0;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -397,9 +418,9 @@ header h1 {
   align-content: center;
   gap: 2rem 4rem;
 }
-.hero-tiles img {
+.hero-tiles .css-icon {
   height: 40px;
-  width: auto;
+  width: 40px;
 }
 .hero-tiles .tile {
   display: -webkit-box;
@@ -415,8 +436,11 @@ header h1 {
   gap: 2rem;
   height: 9rem;
   width: 20rem;
-  border: solid 2px #BEAE6F;
+  border: solid 2pt #beae6f;
   font-size: 1.2em;
+}
+.hero-tiles .tile:hover .css-icon.house {
+  background-image: url("/icons/house-hover.svg");
 }
 
 .filter img {

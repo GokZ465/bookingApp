@@ -1,29 +1,3 @@
-.nav {
-    @include flex(row nowrap, space-between, center, auto, center, 0);
-    position: fixed;
-    top: 3rem;
-    left: 0;
-    width: 100%;
-    max-width: 100vw;
-    height: 3.5rem;
-    background-color: transparent;
-    z-index: 9;
-}
-.nav-links {
-    width: 30rem;
-    @include flex(row nowrap, space-between, center, auto, center, 0);
-    a {
-        color: $white;
-        text-decoration: none;
-        letter-spacing: 0.1em;
-    }
-}
-.logo {
-    margin: 1rem;
-    img {
-        height: 25px;
-    }
-}
 .deals {
     @include flex(row nowrap, center, center, auto, center, 0);
     position: fixed;
@@ -36,15 +10,34 @@
     font-weight: 900;
     font-size: 1em;
 }
-.user-login {
-    @include flex(row nowrap, space-between, center, auto, center, 1em);
+.nav {
+    @include flex(row nowrap, space-between, center, auto, center, 0);
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    height: 3.5rem;
+    background-color: transparent;
+    z-index: 9;
+}
+.logo {
     margin: 1rem;
-    i {
-        font-size: 1.25em;
+    img {
+        height: 25px;
     }
+}
+.nav-links {
+    @include flex(row nowrap, space-between, center, auto, center, 1rem);
     a {
         color: $white;
         text-decoration: none;
         letter-spacing: 0.1em;
+       &:hover .css-icon.phone {background-image: url("/icons/phone-hover.svg"); }
+       &:hover .css-icon.user {background-image: url("/icons/user-hover.svg"); }
     }
+}
+.user-login {
+    @include flex(row nowrap, space-between, center, auto, center, 1em);
+    margin: 1rem;
 }

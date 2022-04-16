@@ -12,13 +12,18 @@ const Nav = () => {
                     </Link>
                 </div>
                 <div className='nav-links'>
-                    <Link href='/'>Home</Link>
-                    <Link href='/'>Accommodations</Link>
-                    <Link href='/'>Contact</Link>
-                </div>
-                <div className='user-login'>
-                    <i className="fa-solid fa-circle-user"></i>
-                    <Link href='/'>User login</Link>
+                    <Link passHref href='/contact'>
+                        <a className='user-login'>
+                            <i className='css-icon phone' />
+                            Contact
+                        </a>
+                    </Link>
+                    <Link passHref href='/login'>
+                        <a className='user-login'>
+                            <i className='css-icon user' />
+                            User login
+                        </a>
+                    </Link>
                 </div>
             </nav>
         </>

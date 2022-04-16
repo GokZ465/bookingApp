@@ -1,0 +1,23 @@
+.css-icon {
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+}
+.css-icon.phone {
+    background-image: url("/icons/phone.svg");
+    &:hover {
+        background-image: url("/icons/phone-hover.svg");
+    }
+}
+.css-icon.user {
+    background-image: url("/icons/user.svg");
+    &:hover {
+        background-image: url("/icons/user-hover.svg");
+    }
+}
+.css-icon.house {
+    background-image: url("/icons/house.svg");
+    &:hover {
+        background-image: url("/icons/house-hover.svg");
+    }
+}
