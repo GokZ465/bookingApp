@@ -30,7 +30,8 @@ class MyDocument extends Document {
                     <meta property="og:type" content="website" />
                     <meta property="og:site_name" content="" />
                     {/* browser design */}
-                    <link id="favicon" rel="icon" href="/icons/favicon.svg" />
+                    <link rel="icon" sizes="16x16" href="favicon.svg" />
+                    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico" />
                     <meta name="theme-color" content="#FFFFFF" />
                 </Head>
 

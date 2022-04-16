@@ -18,12 +18,40 @@ export default function Home() {
                 <meta property="og:title" content="Holidaze" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            
+
             <>
-            <header>
-                <img src='holidaze-hero.png' alt=''/>
-                <h1>Bed and Breakfasts</h1>
-            </header>
+                <header>
+                    <img className='hero-index' src='holidaze-hero.png' alt='' />
+                    <div className='hero-tiles'>
+                        <div className='tile'>
+                            <img src='icons/house.svg' alt='' />
+                            <p>Guesthouses</p>
+                        </div>
+                        <div className='tile'>
+                            <img src='icons/house.svg' alt='' />
+                            <p>Guesthouses</p>
+                        </div>
+                        <div className='tile'>
+                            <img src='icons/house.svg' alt='' />
+                            <p>Guesthouses</p>
+                        </div>
+                        <div className='tile'>
+                            <img src='icons/house.svg' alt='' />
+                            <p>Guesthouses</p>
+                        </div>
+                        <div className='tile'>
+                            <img src='icons/house.svg' alt='' />
+                            <p>Guesthouses</p>
+                        </div>
+                        <div className='tile'>
+                            <img src='icons/house.svg' alt='' />
+                            <p>Guesthouses</p>
+                        </div>
+                    </div>
+                </header>
+                <div className='filter'>
+                    <img src='icons/location-dot.svg' alt='' />
+                </div>
                 <RegistrationForm />
                 <div>
                     {data.map((p, i) => (
