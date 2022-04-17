@@ -1,0 +1,17 @@
+.btn-gold {
+    padding: 0.6rem 1.25rem;
+    background-color: transparent;
+    border: solid 1pt $gold;
+    color: $gold;
+    font-size: 11pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        background-color: $gold;
+        color: $black;
+    }
+}

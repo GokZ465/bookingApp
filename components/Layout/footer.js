@@ -4,20 +4,20 @@ import Link from 'next/link'
 const Footer = () => (
     <div className='footer'>
         <div className='footer-col-1'>
-            <Link href='/'>
-                <>
-                    <div className='footer-img'></div>
-                    <h1>Holidaze</h1>
-                </>
+            <Link passHref href='/'>
+                <a>
+                    <img className='logo' src='/logo--white.png' alt='directlink to homepage' />
+                </a>
             </Link>
             <p>The purpose of this website is to promote Bergen as a travel destination.</p>
             <p>© 2021 Holidaze, All rights reserved</p>
             <div className='SoMe'>
-                <a title='Messenger' target='_blank' rel='noreferrer' href='https://www.messenger.com/'><i className='fab fa-facebook-messenger'></i></a>
-                <a title='YouTube' target='_blank' rel='noreferrer' href='https://www.youtube.com/'><i className='fab fa-youtube'></i></a>
-                <a title='Twitter' target='_blank' rel='noreferrer' href='https://twitter.com/'><i className='fab fa-twitter'></i></a>
+                <a title='Messenger' target='_blank' rel='noreferrer' href='https://www.messenger.com/'><i className='fab fa-facebook-messenger' /></a>
+                <a title='YouTube' target='_blank' rel='noreferrer' href='https://www.youtube.com/'><i className='fab fa-youtube' /></a>
+                <a title='Twitter' target='_blank' rel='noreferrer' href='https://twitter.com/'><i className='fab fa-twitter' /></a>
             </div>
         </div>
+
         <div className='footer-col-2'>
             <div>
                 <h6>Contact</h6>

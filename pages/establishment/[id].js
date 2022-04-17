@@ -26,6 +26,7 @@ export default function Person() {
       <header>
         <img className='establishments-hero' src={data.heroURL} alt={data.name} />
         <h1>{data.name}</h1>
+        <p>{data.descriptionLong}</p>
       </header>
     </>
   )

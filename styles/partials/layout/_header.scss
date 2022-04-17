@@ -1,6 +1,6 @@
 header {
     @include flex(column nowrap, center, center, auto, center, 0);
-
+    position: relative;
     img {
         z-index: -99999;
         position: relative;

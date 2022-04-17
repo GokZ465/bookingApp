@@ -6,10 +6,16 @@
 @import 'partials/constants';
 @import 'partials/icons';
 
+@import 'partials/buttons/logo';
+@import 'partials/buttons/gold';
+@import 'partials/buttons/blue';
+
 @import 'partials/layout/footer';
-@import 'partials/buttons/dark-mode-toggle';
 @import 'partials/layout/nav';
 @import 'partials/layout/header';
 
 @import 'partials/components/filter';
 @import 'partials/components/establishments';
+
+@import 'partials/pages/index';
+@import 'partials/pages/login';

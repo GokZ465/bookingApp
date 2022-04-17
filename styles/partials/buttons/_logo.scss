@@ -1,0 +1,12 @@
+.logo {
+    height: 32px;
+    &:hover, &:focus {
+        opacity: 0.5;
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+}
+nav .logo {
+    margin: 0 0.8rem;
+}

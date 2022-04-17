@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import useSWR from 'swr'
 import Establishment from '../components/Establishment'
-import RegistrationForm from './RegistrationForm/index'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
@@ -16,7 +15,7 @@ export default function Home() {
             <Head>
                 <title>Holidaze</title>
                 <meta property="og:title" content="Holidaze" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.svg" />
             </Head>
 
             <>
@@ -49,11 +48,35 @@ export default function Home() {
                         </div>
                     </div>
                 </header>
-                <div id='search' className='filter'>
-                    <img src='icons/location-dot.svg' alt='' />
+
+                <div id='search' className='filter-wrapper'>
+                    <div className='filter'>
+                        <div className='filter-element'>
+                            <img src='icons/location-dot.svg' alt='' />
+                            <span>Text</span>
+                        </div>
+
+                        <div className='filter-element'>
+                            <img src='icons/location-dot.svg' alt='' />
+                            <span>Text</span>
+                        </div>
+
+                        <div className='filter-element'>
+                            <img src='icons/location-dot.svg' alt='' />
+                            <span>Text</span>
+                        </div>
+
+                        <div className='filter-element'>
+                            <img src='icons/location-dot.svg' alt='' />
+                            <span>Text</span>
+                        </div>
+                    </div>
+                    <div className='btn-wrapper'>
+                        <button className='btn-gold'>search</button>
+                    </div>
                 </div>
-                <RegistrationForm />
-                <div>
+
+                <div className='establishments-wrapper'>
                     {data.map((p, i) => (
                         <Establishment key={i} establishment={p} />
                     ))}

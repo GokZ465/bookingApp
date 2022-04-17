@@ -1,8 +1,6 @@
-@import url("https://use.typekit.net/qpq3fvv.css");
 @import url("https://use.typekit.net/onc6ttx.css");
 //font-family: montserrat, sans-serif;
-//font-family: learning-curve, sans-serif;
-//font-family: roboto, sans-serif;
+//ivymode, sans-serif;
 
 body,
 input {
@@ -14,4 +12,11 @@ h1 {
     font-size: clamp(1.8em, 4vw, 4rem);
     font-weight: 500;
     line-height: 1.1em;
+    text-transform: capitalize;
+}
+h5 {
+    font-family: montserrat, sans-serif;
+    font-size: clamp(1.15em, 3vw, 2.5rem);
+    font-weight: 500;
+    text-transform: capitalize;
 }

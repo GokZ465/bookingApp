@@ -3,12 +3,24 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 3rem;
+    height: 48px;
     width: 100vw;
     background-color: $gold;
     color: $dark-blue;
     font-weight: 900;
-    font-size: 1em;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: top 0.3s;
+    text-transform: uppercase;
+    z-index: 9999;
+}
+.deals.--hide {
+    top: -48px;
+    transition: top 0.3s;
+}
+.nav.--hide {
+    top: 0;
+    transition: top 0.3s;
 }
 .nav {
     @include flex(row nowrap, space-between, center, auto, center, 0);
@@ -17,15 +29,9 @@
     left: 0;
     width: 100%;
     max-width: 100vw;
-    height: 3.5rem;
-    background-color: transparent;
-    z-index: 9;
-}
-.logo {
-    margin: 1rem;
-    img {
-        height: 25px;
-    }
+    height: 4rem;
+    z-index: 9999;
+    transition: top 0.3s;
 }
 .nav-links-wrapper {
     @include flex(row nowrap, space-between, center, auto, center, 0.25rem);

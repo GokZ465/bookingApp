@@ -1,30 +1,44 @@
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import useScrollListener from "../constants/ScrollListener"
 
 const Nav = () => {
+    const [navClassList, setNavClassList] = useState([]);
+    const scroll = useScrollListener();
+
+    // update classList of nav on scroll
+    useEffect(() => {
+        const _classList = [];
+        if (scroll.y > 150 && scroll.y - scroll.lastY > 0) _classList.push("--hide");
+        setNavClassList(_classList);
+    }, [scroll.y, scroll.lastY]);
+
+
 
     return (
         <>
-            <div className='deals'>Book now and get 10% off</div>
-            <nav className='nav'>
-                <div className='logo'>
-                    <Link passHref href='/'>
-                        <a>
-                            <img src='logo--white.svg' alt='' />
-                        </a>
-                    </Link>
-                </div>
+            <div className={`deals ${navClassList.join(" ")} `}>
+                Book now and get 10% off 
+                {/*&#128512; &#x1F60E;*/}
+            </div>
+            <nav className={`nav ${navClassList.join(" ")} `}>
+                <Link passHref href='/'>
+                    <a>
+                        <img className='logo' src='/logo--white.png' alt='directlink to homepage' />
+                    </a>
+                </Link>
                 <div className='nav-links-wrapper'>
                     <Link passHref href='#search'>
                         <a className='nav-links'>
                             <i className='css-icon search' />
                         </a>
                     </Link>
-                    <Link passHref href='/'>
+                    <Link passHref href='/Login'>
                         <a className='nav-links'>
                             <i className='css-icon user' />
                         </a>
                     </Link>
-                    <Link passHref href='/login'>
+                    <Link passHref href='/'>
                         <a className='nav-links'>
                             <i className='css-icon house' />
                         </a>

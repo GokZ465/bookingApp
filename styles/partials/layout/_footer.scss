@@ -9,16 +9,17 @@
     @media screen and (max-width: 800px) { padding: 2rem; }
     h6 {
         text-transform: uppercase;
-        margin-bottom: 0.8em;
-        font-size: 1em;
-        font-weight: 600;
+        margin-bottom: 0.5em;
+        font-size: 1.1em;
+        letter-spacing: 0.1em;
         color: $gold;
     }
     a, p {
         color: $white;
         font-family: roboto, sans-serif;
-        font-weight: 200;
-        line-height: 1.3em;
+        line-height: 1.75em;
+        font-size: 1em;
+        text-decoration: none;
     }
     p + p { font-size: 0.7em; }
     .footer-col-3 { 
@@ -30,17 +31,9 @@
         @media screen and (max-width: 800px) { margin: 0; }
         p { margin-bottom: 1.5rem; }
         i {
-            background-color: #59666F;
             padding: 0.5em;
             border-radius: 50%;
             margin-right: 0.9rem;
-        }
-        h1 {
-            font-family: roboto, sans-serif;
-            font-weight: 200;
-            font-size: 0.85em;
-            margin-top: 0.3rem;
-            margin-bottom: 1rem;
         }
     }
     .fa-twitter:hover {

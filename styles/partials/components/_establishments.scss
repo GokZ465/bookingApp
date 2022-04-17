@@ -1,0 +1,68 @@
+.establishments-wrapper {
+    @include flex(column nowrap, center, center, auto, center, 15vmax);
+    max-width: 1280px;
+}
+
+.establishment {
+    @include flex(row nowrap, space-between, stretch, auto, flex-start, 6rem);
+    .col-1,
+    .col-2 {
+        flex: 1;
+    }
+    img {
+        width: 100%;
+        z-index: -1;
+    }
+    .col-2 {
+        @include flex(column nowrap, flex-start, flex-start, auto, flex-start, 0.5rem);
+        padding: 2rem 5rem;
+    }
+    .id {
+        position: absolute;
+        font-size: 10vmax;
+        font-weight: 700;
+        opacity: 0.1;
+        z-index: -9;
+        margin-top: -4.5rem;
+        margin-left: -7rem;
+    }
+    figcaption {
+        @include flex(column nowrap, center, center, auto, center, 0);
+        position: relative;
+        top: -92%;
+        background-color: #707070;
+        height: 2rem;
+        width: 6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 900;
+        color: $dark-blue;
+    }
+}
+.location {
+    @include flex(row nowrap, flex-start, stretch, auto, flex-start, 3em);
+    .txt {
+        color: $gold;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        font-size: 0.75em;
+    }
+    .line {
+        border-bottom: solid 1px $gold;
+        width: 7rem;
+        height: 1rem;
+        position: relative;
+        top: -0.4em;
+    }
+}
+.establishment-name {
+    font-family: ivymode, sans-serif;
+    font-size: clamp(1.8em, 3vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.1em;
+    text-transform: capitalize;
+}
+.establishment-description {
+    width: 20rem;
+}

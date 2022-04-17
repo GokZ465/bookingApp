@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 59 30.5" style="enable-background:new 0 0 59 30.5;" xml:space="preserve">
+	 viewBox="0 0 60.1 33.6" style="enable-background:new 0 0 60.1 33.6;" xml:space="preserve">
 <style type="text/css">
-	.st0{opacity:0.9;fill:#1E313E;}
-	.st1{opacity:0.7;fill:#1E313E;}
-	.st2{opacity:0.4;fill:#1E313E;}
+	.st0{opacity:0.9;fill:#1E313E;enable-background:new    ;}
+	.st1{opacity:0.7;fill:#1E313E;enable-background:new    ;}
+	.st2{opacity:0.4;fill:#1E313E;enable-background:new    ;}
+	.st3{fill:none;}
+	.st4{font-family:'Montserrat-SemiBold';}
+	.st5{font-size:10px;}
 </style>
-<path id="Polygon_1" class="st0" d="M17.5,0L35,30.5H0L17.5,0z"/>
-<path id="Polygon_2" class="st1" d="M32.5,6.4L47,30.5H18L32.5,6.4z"/>
-<path id="Polygon_3" class="st2" d="M47,13.5l12,17H35L47,13.5z"/>
+<path id="Polygon_1_00000134942429043443013480000007575539286605924998_" class="st0" d="M17.5,0L35,19.2H0L17.5,0z"/>
+<path id="Polygon_2_00000014599645182971465550000011665200872248830625_" class="st1" d="M32.5,4L47,19.2H18L32.5,4z"/>
+<path id="Polygon_3_00000161613230084499778970000018218683930460016054_" class="st2" d="M47,8.5l12,10.7H35L47,8.5z"/>
+<rect y="23.5" class="st3" width="59.5" height="7.6"/>
+<text transform="matrix(1 0 0 1 0 30.9199)"><tspan x="0" y="0" class="st4 st5">HOLI</tspan><tspan x="28.4" y="0" class="st4 st5">-</tspan></text>
 </svg>
