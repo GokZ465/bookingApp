@@ -1,21 +1,24 @@
 .establishments-wrapper {
-    @include flex(column nowrap, center, center, auto, center, 15vmax);
+    @include flex(column nowrap, center, center, center, center, 15vmax);
+    width: 100%;
     max-width: 1280px;
 }
 
 .establishment {
     @include flex(row nowrap, space-between, stretch, auto, flex-start, 6rem);
-    .col-1,
+    width: 100%;
+    .col-1 {
+      flex: 1.5;
+      margin-bottom: -2rem; //adjust for figcaption
+    }
     .col-2 {
         flex: 1;
+        @include flex(column nowrap, flex-start, flex-start, auto, flex-start, 1rem);
+        padding: 2rem 0rem 0rem 5rem;
     }
     img {
         width: 100%;
         z-index: -1;
-    }
-    .col-2 {
-        @include flex(column nowrap, flex-start, flex-start, auto, flex-start, 0.5rem);
-        padding: 2rem 5rem;
     }
     .id {
         position: absolute;
@@ -29,7 +32,7 @@
     figcaption {
         @include flex(column nowrap, center, center, auto, center, 0);
         position: relative;
-        top: -92%;
+        top: -93%;
         background-color: #707070;
         height: 2rem;
         width: 6rem;
@@ -37,6 +40,12 @@
         letter-spacing: 0.1em;
         font-weight: 900;
         color: $dark-blue;
+    }
+    &:nth-last-of-type(odd) {
+        transform: scaleX(-1);
+        .col-2 {
+            transform: scaleX(-1);
+        }
     }
 }
 .location {
@@ -58,11 +67,37 @@
 }
 .establishment-name {
     font-family: ivymode, sans-serif;
-    font-size: clamp(1.8em, 3vw, 2.5rem);
+    font-size: clamp(1.8em, 3vw, 3rem);
     font-weight: 500;
     line-height: 1.1em;
     text-transform: capitalize;
 }
 .establishment-description {
-    width: 20rem;
+    margin-bottom: 2rem;
+}
+
+
+
+.stars-five {
+    @include flex(row nowrap, flex-start, stretch, auto, flex-start, 1rem);
+    margin: 1rem 0;
+    div {
+        height: 25px;
+        width: 25px;
+    }
+    .one {
+        background-image: url("/icons/star-solid.svg");
+    }
+    .two {
+        background-image: url("/icons/star-solid.svg");
+    }
+    .three {
+        background-image: url("/icons/star-solid.svg");
+    }
+    .four {
+        background-image: url("/icons/star-solid.svg");
+    }
+    .five {
+        background-image: url("/icons/star.svg");
+    }
 }

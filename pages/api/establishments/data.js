@@ -15,7 +15,7 @@ export const establishments = [
     location: 'Bergen city center',
     long: '',
     lat: '',
-    stars: '5',
+    stars: 'five',
   },{
     id: '02',
     name: 'The Ipsum Inn',
@@ -29,6 +29,7 @@ export const establishments = [
     address: '',
     long: '',
     lat: '',
+    stars: 'five',
   },{
     id: '03',
     name: 'The Dolor Inn',
@@ -41,6 +42,7 @@ export const establishments = [
     address: '',
     long: '',
     lat: '',
+    stars: 'five',
   },{
     id: '04',
     name: 'The Black Box',
@@ -53,5 +55,6 @@ export const establishments = [
     address: '',
     long: '',
     lat: '',
+    stars: 'five',
   }
 ]

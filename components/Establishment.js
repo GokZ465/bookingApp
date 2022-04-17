@@ -14,12 +14,12 @@ export default function Establishment({ establishment }) {
                     <span className='txt' >{establishment.location}</span>
                 </div>
                 <h4 className='establishment-name'>{establishment.name}</h4>
-                <div className={establishment.stars}>
-                    <div className='star-one' />
-                    <div className='star-two' />
-                    <div className='star-three' />
-                    <div className='star-four' />
-                    <div className='star-five' />
+                <div className={`stars stars-${establishment.stars}`}>
+                    <div className='one' />
+                    <div className='two' />
+                    <div className='three' />
+                    <div className='four' />
+                    <div className='five' />
                 </div>
                 <div className='establishment-description'>
                 {establishment.descriptionShort}
