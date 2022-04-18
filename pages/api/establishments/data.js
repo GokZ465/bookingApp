@@ -2,7 +2,7 @@ export const establishments = [
   {
     id: '01',
     name: 'the-lorem-inn',
-    type: 'Hotel',
+    type: 'hotel',
     email: 'lorem@inn.com',
     price: '330',
     maxGuests: '4',
@@ -17,6 +17,7 @@ export const establishments = [
   }, {
     id: '02',
     name: 'the-ipsum-inn',
+    type: '',
     email: 'ipsum@inn.com',
     price: '330',
     maxGuests: '',
@@ -30,6 +31,7 @@ export const establishments = [
   }, {
     id: '03',
     name: 'the-dolor-inn',
+    type: '',
     email: '',
     price: '',
     maxGuests: '',
@@ -42,6 +44,7 @@ export const establishments = [
   }, {
     id: '04',
     name: 'the-black-box',
+    type: '',
     email: '',
     price: '',
     maxGuests: '',
@@ -54,7 +57,7 @@ export const establishments = [
   },  {
     id: '05',
     name: 'name',
-    type: 'Hotel',
+    type: '',
     email: 'lorem@inn.com',
     price: '330',
     maxGuests: '4',
