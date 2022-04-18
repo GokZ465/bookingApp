@@ -4,7 +4,7 @@ export default function Establishment({ establishment }) {
     return (
         <div className='establishment'>
             <figure className='col-1'>
-                <img src={establishment.imgURL} alt={`photo of ${establishment.name}`} />
+                <img src={establishment.imgURL} alt={`photo of ${establishment.name.replaceAll('-', ' ')}`} />
                 <figcaption>{establishment.type}</figcaption>
             </figure>
             <div className='col-2'>
@@ -13,7 +13,7 @@ export default function Establishment({ establishment }) {
                     <span className='line' />
                     <span className='txt' >{establishment.location}</span>
                 </div>
-                <h4 className='establishment-name'>{establishment.name}</h4>
+                <h4 className='establishment-name'>{establishment.name.replaceAll('-', ' ')}</h4>
                 <div className={`stars stars-${establishment.stars}`}>
                     <div className='one' />
                     <div className='two' />

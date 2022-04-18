@@ -1,0 +1,62 @@
+.stars {
+    @include flex(row nowrap, flex-start, stretch, auto, flex-start, 1rem);
+    margin: 1rem 0;
+    div {
+        height: 25px;
+        width: 25px;
+        background-repeat: no-repeat;
+    }
+}
+.stars-one {
+    .one {
+        background-image: url("/icons/star-solid.svg");
+    }
+    .two,
+    .three,
+    .four,
+    .five {
+        background-image: url("/icons/star.svg");
+    }
+}
+.stars-two {
+    .one,
+    .two {
+        background-image: url("/icons/star-solid.svg");
+    }
+    .three,
+    .four,
+    .five {
+        background-image: url("/icons/star.svg");
+    }
+}
+.stars-three {
+    .one,
+    .two,
+    .three {
+        background-image: url("/icons/star-solid.svg");
+    }
+    .four,
+    .five {
+        background-image: url("/icons/star.svg");
+    }
+}
+.stars-four {
+    .one,
+    .two,
+    .three,
+    .four {
+        background-image: url("/icons/star-solid.svg");
+    }
+    .five {
+        background-image: url("/icons/star.svg");
+    }
+}
+.stars-five {
+    .one,
+    .two,
+    .three,
+    .four,
+    .five {
+        background-image: url("/icons/star-solid.svg");
+    }
+}
