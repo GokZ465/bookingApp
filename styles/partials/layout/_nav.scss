@@ -3,19 +3,19 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 48px;
+    height: 42px;
     width: 100vw;
     background-color: $gold;
     color: $dark-blue;
     font-weight: 900;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 1px;
     transition: top 0.3s;
     text-transform: uppercase;
     z-index: 9999;
 }
 .deals.--hide {
-    top: -48px;
+    top: -42px;
     transition: top 0.3s;
 }
 .nav.--hide {
@@ -32,19 +32,15 @@
     height: 4rem;
     z-index: 9999;
     transition: top 0.3s;
-}
-.nav-links-wrapper {
-    @include flex(row nowrap, space-between, center, auto, center, 0.25rem);
-    margin: 0 0.5rem;
-    a {
-        color: $white;
-        text-decoration: none;
-        letter-spacing: 0.1em;
-       &:hover .css-icon.phone {background-image: url("/icons/phone-hover.svg"); }
-       &:hover .css-icon.user {background-image: url("/icons/user-hover.svg"); }
+    .icons-outline {
+        font-size: 1.1em;
     }
 }
-.nav-links {
-    @include flex(row nowrap, space-between, center, auto, center, 0);
-    margin: 0.5rem;
+.nav-links-wrapper {
+    @include flex(row nowrap, space-between, center, auto, center, 2rem);
+    margin: 0 1.25rem;
+    a:hover i, a:focus i {
+        color: 2pt solid color;
+    }
+
 }

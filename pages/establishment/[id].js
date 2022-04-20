@@ -32,7 +32,7 @@ export default function Person() {
     const title = arr.join(" "); //put sentece back together
 
     return (
-        <>
+        <div className='establishment-page'>
             <Head>
                 <title>{title}</title>
             </Head>
@@ -40,21 +40,49 @@ export default function Person() {
             <header className='establishments-hero' >
                 <img src={`/${data.name}-hero.png`} alt={data.name.replaceAll('-', ' ')} />
                 <div className='establishments-hero-txt'>
-                    <h1>{data.name.replaceAll('-', ' ')}</h1>
+                    <span className='h1'>{data.name.replaceAll('-', ' ')}</span>
                     <div className={`stars stars-${data.stars}`}>
-                        <div className='one' />
-                        <div className='two' />
-                        <div className='three' />
-                        <div className='four' />
-                        <div className='five' />
+                        <i className="fa-solid fa-star" />
+                        <i className="fa-solid fa-star" />
+                        <i className="fa-solid fa-star" />
+                        <i className="fa-solid fa-star" />
+                        <i className="fa-solid fa-star" />
                     </div>
                 </div>
             </header>
-
+            <div className='establishment-banner'>
+                <div className='icon-wrapper'>
+                    <i className='fa-solid fa-user' />
+                    <p>Up to {data.maxGuests} Guests</p>
+                </div>
+                <div className='icon-wrapper'>
+                    <i className={data.iconOne} />
+                    <p>{data.txtOne}</p>
+                </div>
+                <div className='icon-wrapper'>
+                    <i className={data.iconTwo} />
+                    <p>{data.txtTwo}</p>
+                </div>
+                <div className='price'>
+                    <i className='fa-solid fa-euro-sign' />
+                    <p>{data.price} per night</p>
+                </div>
+            </div>
             <article className='establishments-detail'>
-                <h1>{data.name.replaceAll('-', ' ')}</h1>
-                <p>{data.descriptionLong}</p>
+                <div className='background'>{data.id}</div>
+                <div className='detail'>
+                    <div className='location'>
+                        <span className='line' />
+                        <span className='txt' >{data.location}</span>
+                    </div>
+                    <h1>{data.name.replaceAll('-', ' ')}</h1>
+                    <p>{data.descriptionLong}</p>
+                    <div className='btn-wrapper'>
+                        <button className='btn-gold'>Book Now</button>
+                        <button className='btn-gold'>Directions</button>
+                    </div>
+                </div>
             </article>
-        </>
+        </div>
     )
 }

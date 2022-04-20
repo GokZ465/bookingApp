@@ -8,7 +8,7 @@ html,
 body {
     scroll-behavior: smooth;
     overflow-y: auto;
-    overflow-x: hidden;
+    //overflow-x: hidden;
 }
 ::-webkit-scrollbar-thumb { background: #bdbdbd; }
 ::-webkit-scrollbar-thumb:hover { background: #bdbdbd86; }

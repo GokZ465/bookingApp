@@ -14,7 +14,11 @@ export default function Establishment({ establishment }) {
                 </div>
                 <h4 className='establishment-name'>{establishment.name.replaceAll('-', ' ')}</h4>
                 <div className={`stars stars-${establishment.stars}`}>
-                    <div className='one' /><div className='two' /><div className='three' /><div className='four' /><div className='five' />
+                    <i className="fa-solid fa-star" />
+                    <i className="fa-solid fa-star" />
+                    <i className="fa-solid fa-star" />
+                    <i className="fa-solid fa-star" />
+                    <i className="fa-solid fa-star" />
                 </div>
                 <div className='establishment-description'>
                     {establishment.descriptionShort}

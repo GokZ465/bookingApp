@@ -23,28 +23,28 @@ export default function Home() {
                     <img className='hero-index' src='holidaze-hero.png' alt='' />
                     <div className='hero-tiles'>
                         <div className='tile'>
-                            <i className='css-icon house' />
-                            <p>Guesthouses</p>
+                            <i className='icons-outline fa-solid fa-hotel' />
+                            <p>Hotel</p>
                         </div>
                         <div className='tile'>
-                            <i className='css-icon house' />
-                            <p>Guesthouses</p>
+                            <i className='icons-outline fa-solid fa-mug-saucer' />
+                            <p>B &#38; B</p>
                         </div>
                         <div className='tile'>
-                            <i className='css-icon house' />
-                            <p>Guesthouses</p>
+                            <i className='icons-outline fa-solid fa-bed' />
+                            <p>Hostel</p>
                         </div>
                         <div className='tile'>
-                            <i className='css-icon house' />
-                            <p>Guesthouses</p>
+                            <i className='icons-outline fa-solid fa-building' />
+                            <p>Appartment</p>
                         </div>
                         <div className='tile'>
-                            <i className='css-icon house' />
-                            <p>Guesthouses</p>
+                            <i className='icons-outline fa-solid fa-tree-city' />
+                            <p>Lodge</p>
                         </div>
                         <div className='tile'>
-                            <i className='css-icon house' />
-                            <p>Guesthouses</p>
+                            <i className='icons-outline fa-solid fa-mountain-city' />
+                            <p>Cabin</p>
                         </div>
                     </div>
                 </header>
@@ -52,23 +52,23 @@ export default function Home() {
                 <div id='search' className='filter-wrapper'>
                     <div className='filter'>
                         <div className='filter-element'>
-                            <img src='icons/location-dot.svg' alt='' />
-                            <span>Text</span>
+                            <i className='icons-outline fa-solid fa-location-dot' />
+                            <span>Location</span>
                         </div>
 
                         <div className='filter-element'>
-                            <img src='icons/location-dot.svg' alt='' />
-                            <span>Text</span>
+                            <i className='icons-solid fa-solid fa-calendar-days' />
+                            <span>Check-in</span>
                         </div>
 
                         <div className='filter-element'>
-                            <img src='icons/location-dot.svg' alt='' />
-                            <span>Text</span>
+                            <i className='icons-solid fa-solid fa-calendar-days' />
+                            <span>Check-out</span>
                         </div>
 
                         <div className='filter-element'>
-                            <img src='icons/location-dot.svg' alt='' />
-                            <span>Text</span>
+                            <i className='icons-outline fa-solid fa-star' />
+                            <span>Rating</span>
                         </div>
                     </div>
                     <div className='btn-wrapper'>

@@ -1,29 +1,14 @@
-.css-icon {
-    height: 20px;
-    width: 20px;
-    background-repeat: no-repeat;
-}
-.css-icon.phone {
-    background-image: url("/icons/phone.svg");
-    &:hover {
-        background-image: url("/icons/phone-hover.svg");
+.icons-outline {
+    font-size: 1.5em;
+    color: transparent;
+    -webkit-text-stroke: 2px $gold;
+    &:hover,
+    &:focus {
+        color: $gold;
+        -webkit-text-stroke: 2px transparent;
     }
 }
-.css-icon.user {
-    background-image: url("/icons/user.svg");
-    &:hover {
-        background-image: url("/icons/user-hover.svg");
-    }
-}
-.css-icon.house {
-    background-image: url("/icons/house.svg");
-    &:hover {
-        background-image: url("/icons/house-hover.svg");
-    }
-}
-.css-icon.search {
-    background-image: url("/icons/search.svg");
-   /* &:hover {
-        background-image: url("/icons/search-hover.svg");
-    }*/
+.icons-solid {
+    font-size: 1.5em;
+    color: $gold;
 }

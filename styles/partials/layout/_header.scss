@@ -19,25 +19,18 @@ header {
     margin-top: -9rem;
     max-width: 1280px;
     @include flex(row wrap, center, center, auto, center, 2rem 4rem);
-    .css-icon {
-        height: 40px;
-        width: 40px;
-    }
     .tile {
         @include flex(row nowrap, center, center, auto, center, 2rem);
-        height: 9rem;
-        width: 20rem;
+        height: 10rem;
+        width: 22rem;
+        padding: 2rem 5rem;
         border: $border;
         font-size: 1.2em;
-        &:hover .css-icon.house {
-            background-image: url("/icons/house-hover.svg");
-        }
-        &:active {
-            background-color: $gold;
-            color: $black;
-            .css-icon {
-                filter: invert(100%) sepia(50);
-            }
-        }
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+    }
+    .fa-solid {
+        font-size: 2em;
     }
 }

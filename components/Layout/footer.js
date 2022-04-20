@@ -20,19 +20,14 @@ const Footer = () => (
 
         <div className='footer-col-2'>
             <div>
-                <h6>Contact</h6>
+                <h6>For Guests</h6>
                 <Link href='/'>Contact Us</Link>
-                <a title='Messenger' href='https://www.messenger.com/'>Messenger</a>
-                <a title='E-mail us' href='mailto:contact@holidaze.com'>E-mail</a>
-                <Link href='/'>Admin Login</Link>
-                <Link href='/'>Admin Register</Link>
             </div>
             <div>
-                <h6>Accommodations</h6>
-                <Link href='/'>Search</Link>
-                <Link href='/'>Hotels</Link>
-                <Link href='/'>Bed and Breakfasts</Link>
-                <Link href='/'>Guesthouses</Link>
+                <h6>For Businesses</h6>
+                <Link href='/'>Login</Link>
+                <Link href='/'>Register</Link>
+                <Link href='/'>Support</Link>
             </div>
             <div>
                 <h6>Follow Us</h6>

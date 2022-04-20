@@ -11,9 +11,6 @@
 }
 .filter {
     @include flex(row nowrap, space-between, stretch, auto, flex-start, 0);
-    img {
-        height: 20pt;
-    }
 }
 .filter-element {
     @include flex(row nowrap, space-between, center, auto, flex-start, 1rem);

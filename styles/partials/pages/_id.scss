@@ -1,0 +1,45 @@
+.establishment-page {
+    @include flex(column nowrap, flex-start, center, auto, flex-start, 1rem);
+}
+.establishment-banner {
+    @include flex(row nowrap, space-between, stretch, auto, flex-start, 0);
+    width: 100%;
+    max-width: 1280px;
+    border-bottom: solid 1px #707070;
+    margin: -10rem 0 5rem 0;
+    i {
+        font-size: 1.25em;
+        color: $gold;
+        height: 20pt;
+    }
+    .icon-wrapper,
+    .price {
+        @include flex(row nowrap, center, center, center, center, 1rem);
+        flex: 1;
+        width: 100%;
+    }
+    .icon-wrapper {
+        @include flex(row nowrap, center center, center, center, 0);
+        border-right: solid 1px #707070;
+        margin: 2.5rem 0;
+    }
+}
+.establishments-detail {
+    @include flex(row nowrap, space-between, stretch, auto, flex-start, 0);
+    margin: 10vh 0;
+    .background {
+        @include flex(column nowrap, flex-start, flex-start, flex-start, flex-start, 0);
+        flex: 1;
+        font-size: 30rem;
+        font-weight: 600;
+        opacity: 0.1;
+        margin-top: -5rem;
+    }
+    .detail {
+        @include flex(column nowrap, flex-start, flex-start, flex-start, flex-start, 2rem);
+        flex: 1.4;
+    }
+    h1 {
+        font-size: clamp(1.8em, 5vw, 5rem);
+    }
+}

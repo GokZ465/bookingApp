@@ -18,7 +18,7 @@ const Nav = () => {
     return (
         <>
             <div className={`deals ${navClassList.join(" ")} `}>
-                Book now and get 10% off 
+                Book now and get 10% off
                 {/*&#128512; &#x1F60E;*/}
             </div>
             <nav className={`nav ${navClassList.join(" ")} `}>
@@ -28,20 +28,11 @@ const Nav = () => {
                     </a>
                 </Link>
                 <div className='nav-links-wrapper'>
-                    <Link passHref href='#search'>
-                        <a className='nav-links'>
-                            <i className='css-icon search' />
-                        </a>
+                    <Link passHref href='./#search'>
+                            <a className='btn-gold'>search</a>
                     </Link>
                     <Link passHref href='/Login'>
-                        <a className='nav-links'>
-                            <i className='css-icon user' />
-                        </a>
-                    </Link>
-                    <Link passHref href='/'>
-                        <a className='nav-links'>
-                            <i className='css-icon house' />
-                        </a>
+                        <i className='icons-outline fa-solid fa-user' />
                     </Link>
                 </div>
             </nav>

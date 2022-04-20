@@ -1,62 +1,30 @@
 .stars {
     @include flex(row nowrap, flex-start, stretch, auto, flex-start, 1rem);
-    margin: 1rem 0;
-    div {
-        height: 25px;
-        width: 25px;
-        background-repeat: no-repeat;
+    margin: 0.5rem 0;
+    i {
+        font-size: 1.5em;
+        color: transparent;
+        -webkit-text-stroke: 2px $gold;
     }
 }
-.stars-one {
-    .one {
-        background-image: url("/icons/star-solid.svg");
-    }
-    .two,
-    .three,
-    .four,
-    .five {
-        background-image: url("/icons/star.svg");
-    }
+.stars-one i:nth-of-type(1) {
+    color: $gold;
 }
-.stars-two {
-    .one,
-    .two {
-        background-image: url("/icons/star-solid.svg");
-    }
-    .three,
-    .four,
-    .five {
-        background-image: url("/icons/star.svg");
-    }
+.stars-two i:nth-of-type(1),
+.stars-two i:nth-of-type(2) {
+    color: $gold;
 }
-.stars-three {
-    .one,
-    .two,
-    .three {
-        background-image: url("/icons/star-solid.svg");
-    }
-    .four,
-    .five {
-        background-image: url("/icons/star.svg");
-    }
+.stars-three i:nth-of-type(1),
+.stars-three i:nth-of-type(2),
+.stars-three i:nth-of-type(3) {
+    color: $gold;
 }
-.stars-four {
-    .one,
-    .two,
-    .three,
-    .four {
-        background-image: url("/icons/star-solid.svg");
-    }
-    .five {
-        background-image: url("/icons/star.svg");
-    }
+.stars-four i:nth-of-type(1),
+.stars-four i:nth-of-type(2),
+.stars-four i:nth-of-type(3),
+.stars-four i:nth-of-type(4) {
+    color: $gold;
 }
-.stars-five {
-    .one,
-    .two,
-    .three,
-    .four,
-    .five {
-        background-image: url("/icons/star-solid.svg");
-    }
+.stars-five i {
+    color: $gold;
 }
