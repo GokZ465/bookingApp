@@ -21,6 +21,7 @@ const Nav = () => {
                 Book now and get 10% off
                 {/*&#128512; &#x1F60E;*/}
             </div>
+
             <nav className={`nav ${navClassList.join(" ")} `}>
                 <Link passHref href='/'>
                     <a>
@@ -29,7 +30,11 @@ const Nav = () => {
                 </Link>
                 <div className='nav-links-wrapper'>
                     <Link passHref href='./#search'>
-                            <a className='btn-gold'>search</a>
+                        <a className='search-icon'>
+                            <span className='circle'/>
+                            <span className='line'/>
+                            <span className='arrow'/>
+                        </a>
                     </Link>
                     <Link passHref href='/Login'>
                         <i className='icons-outline fa-solid fa-user' />

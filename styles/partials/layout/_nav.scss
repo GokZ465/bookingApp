@@ -33,14 +33,11 @@
     z-index: 9999;
     transition: top 0.3s;
     .icons-outline {
-        font-size: 1.1em;
+        font-size: 1.25em;
     }
 }
 .nav-links-wrapper {
-    @include flex(row nowrap, space-between, center, auto, center, 2rem);
+    @include flex(row nowrap, space-between, center, auto, center, 1.5rem);
     margin: 0 1.25rem;
-    a:hover i, a:focus i {
-        color: 2pt solid color;
-    }
-
+    //font-size: 1.5em;
 }
