@@ -19,3 +19,22 @@
     align-content: $align-content;
     gap: $gap;
 }
+@mixin hover-underline($weight: 2px, $color: $gold) {
+    position: relative;
+    &::after {
+        position: absolute;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: $weight;
+        bottom: $weight * -2;
+        transform: scale(0, 1);
+        transition: transform 0.4s;
+        background: $color;
+    }
+    &:hover::after,
+    &:focus::after,
+    &:active::after {
+        transform: scale(1, 1);
+    }
+}

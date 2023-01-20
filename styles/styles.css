@@ -322,48 +322,6 @@ header .hero-index {
   opacity: 0.4;
 }
 
-.hero-tiles {
-  position: absolute;
-  top: 50vh;
-  margin-top: -9rem;
-  max-width: 1280px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  align-self: auto;
-  align-content: center;
-  gap: 2rem 4rem;
-}
-.hero-tiles .tile {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  align-self: auto;
-  align-content: center;
-  gap: 2rem;
-  height: 10rem;
-  width: 22rem;
-  padding: 2rem 5rem;
-  border: solid 2pt #beae6f;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-}
-.hero-tiles .fa-solid {
-  font-size: 2em;
-}
-
 .filter-wrapper {
   display: -webkit-box;
   display: -moz-box;
@@ -579,21 +537,6 @@ header .hero-index {
   text-align: center;
 }
 
-.icons-outline {
-  font-size: 1.5em;
-  color: transparent;
-  -webkit-text-stroke: 2px #beae6f;
-  transition: 0.2s;
-}
-.icons-outline:hover, .icons-outline:focus {
-  color: #beae6f;
-}
-
-.icons-solid {
-  font-size: 1.5em;
-  color: #beae6f;
-}
-
 .search-icon {
   display: -webkit-box;
   display: -moz-box;
@@ -716,6 +659,91 @@ header .hero-index {
   color: #beae6f;
 }
 
+.hero-tile-container {
+  position: absolute;
+  top: 50vh;
+  margin-top: -9rem;
+  max-width: 1280px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: auto;
+  align-content: center;
+  gap: 2rem 4rem;
+}
+.hero-tile-container .tile {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: auto;
+  align-content: center;
+  gap: 2rem;
+  height: 10rem;
+  width: 22rem;
+  padding: 2rem 5rem;
+  border: solid 2pt #beae6f;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.hero-tile-container .tile:hover .icon-fill, .hero-tile-container .tile:focus-within .icon-fill, .hero-tile-container .tile:active .icon-fill {
+  color: #beae6f;
+  animation: fill 0.15s linear 1;
+}
+.hero-tile-container .tile:hover p::after, .hero-tile-container .tile:focus-within p::after, .hero-tile-container .tile:active p::after {
+  transform: scale(1, 1);
+}
+.hero-tile-container .tile p {
+  position: relative;
+}
+.hero-tile-container .tile p::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  transform: scale(0, 1);
+  transition: transform 0.3s;
+  background: #beae6f;
+}
+.hero-tile-container .icon {
+  font-size: 2em;
+  position: absolute;
+}
+.hero-tile-container .icon-container {
+  height: 2em;
+  width: 2em;
+}
+
+.icon-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #beae6f;
+}
+
+.icon-fill {
+  color: transparent;
+}
+
+@keyframes fill {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
 .login-page {
   display: -webkit-box;
   display: -moz-box;

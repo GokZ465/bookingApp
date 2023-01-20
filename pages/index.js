@@ -22,13 +22,13 @@ export default function Home() {
             <>
                 <header>
                     <img className='hero-index' src='holidaze-hero.png' alt='' />
-                    <div className='hero-tiles'>
-                        <HeroTile type='hotel' icon='fa-solid fa-hotel' />
-                        <HeroTile type='B &#38; B' icon='fa-solid fa-mug-saucer' />
-                        <HeroTile type='hostel' icon='fa-solid fa-bed' />
-                        <HeroTile type='apartment' icon='fa-solid fa-building' />
-                        <HeroTile type='Lodge' icon='fa-solid fa-tree-city' />
-                        <HeroTile type='Cabin' icon='fa-solid fa-mountain-city' />
+                    <div className='hero-tile-container'>
+                        <HeroTile type='hotel' icon='fa-hotel' />
+                        <HeroTile type='B &#38; B' icon='fa-mug-saucer' />
+                        <HeroTile type='hostel' icon='fa-bed' />
+                        <HeroTile type='apartment' icon='fa-building' />
+                        <HeroTile type='Lodge' icon='fa-tree-city' />
+                        <HeroTile type='Cabin' icon='fa-mountain-city' />
                     </div>
                 </header>
 

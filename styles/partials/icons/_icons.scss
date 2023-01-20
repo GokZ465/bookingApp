@@ -1,19 +1,6 @@
-.icons-outline {
-    font-size: 1.5em;
-    color: transparent;
-    -webkit-text-stroke: 2px $gold;
-    transition: 0.2s;
-    &:hover,
-    &:focus {
-        color: $gold;
-    }
-}
-.icons-solid {
-    font-size: 1.5em;
-    color: $gold;
-}
 .search-icon {
     @include flex(row nowrap, space-between, center, auto, center, 1.25rem);
+
     .circle {
         position: relative;
         border: 2.5px solid $gold;
@@ -21,6 +8,7 @@
         width: 1rem;
         border-radius: 50%;
     }
+
     .line {
         position: relative;
         width: 2.5px;
@@ -31,6 +19,7 @@
         margin-bottom: -1em;
         margin-left: -1.15rem;
     }
+
     .arrow {
         visibility: hidden;
         position: relative;
@@ -43,21 +32,25 @@
         transition: 0.1s;
         opacity: 0;
     }
+
     &:hover,
     &:focus-within {
         transform: scale(0.7);
         margin-right: -0.5rem;
+
         .circle {
             height: 3rem;
             width: 3rem;
             right: -2.5rem;
         }
+
         .line {
             top: -0.5rem;
             height: 1.25rem;
             transform: rotate(0);
             right: -0.8rem;
         }
+
         .arrow {
             visibility: visible;
             opacity: 1;
@@ -67,13 +60,16 @@
             transform: rotate(45deg);
         }
     }
+
     &:active {
         .circle {
             background-color: $gold;
         }
+
         .line {
             background-color: $dark-blue;
         }
+
         .arrow {
             border-bottom: 2.5px solid $dark-blue;
             border-right: 2.5px solid $dark-blue;

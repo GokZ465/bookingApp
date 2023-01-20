@@ -13,24 +13,3 @@ header {
         opacity: 0.4;
     }
 }
-.hero-tiles {
-    position: absolute;
-    top: 50vh;
-    margin-top: -9rem;
-    max-width: 1280px;
-    @include flex(row wrap, center, center, auto, center, 2rem 4rem);
-    .tile {
-        @include flex(row nowrap, center, center, auto, center, 2rem);
-        height: 10rem;
-        width: 22rem;
-        padding: 2rem 5rem;
-        border: $border;
-        font-size: 1.2em;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-weight: 600;
-    }
-    .fa-solid {
-        font-size: 2em;
-    }
-}

@@ -1,0 +1,77 @@
+.hero-tile-container {
+    position: absolute;
+    top: 50vh;
+    margin-top: -9rem;
+    max-width: 1280px;
+    @include flex(row wrap, center, center, auto, center, 2rem 4rem);
+
+    .tile {
+        @include flex(row nowrap, center, center, auto, center, 2rem);
+        height: 10rem;
+        width: 22rem;
+        padding: 2rem 5rem;
+        border: $border;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+
+        &:hover,
+        &:focus-within,
+        &:active {
+            .icon-fill {
+                color: $gold;
+                animation: fill 0.15s linear 1;
+            }
+
+            p::after {
+                transform: scale(1, 1);
+            }
+        }
+
+        p {
+            position: relative;
+        }
+
+        p::after {
+            position: absolute;
+            left: 0;
+            content: "";
+            width: 100%;
+            height: 2px;
+            bottom: 2px * -2;
+            transform: scale(0, 1);
+            transition: transform 0.3s;
+            background: $gold;
+        }
+    }
+
+    .icon {
+        font-size: 2em;
+        position: absolute;
+    }
+
+    .icon-container {
+        height: 2em;
+        width: 2em;
+    }
+}
+
+.icon-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px $gold;
+}
+
+.icon-fill {
+    color: transparent;
+}
+
+@keyframes fill {
+    0% {
+        clip-path: inset(100% 0 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
