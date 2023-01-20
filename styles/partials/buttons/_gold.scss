@@ -1,7 +1,7 @@
 .btn-gold {
-    padding: 0.6rem 1.25rem;
+    height: 2.5rem;
+    width: 10rem;
     background-color: transparent;
-    border: solid 2px $gold;
     color: $gold;
     font-size: 11pt;
     letter-spacing: 0.15em;
@@ -9,9 +9,25 @@
     font-weight: 500;
     font-style: normal;
     text-decoration: none;
+
+    span {
+        height: 2.5rem;
+        width: 10rem;
+        @include flex(column nowrap, center, center, auto, flex-start, 0);
+        position: absolute;
+        border: solid 2px $gold;
+    }
+
     &:hover,
     &:focus {
-        background-color: $gold;
-        color: $black;
+        span {
+            background-color: transparent;
+            color: $black;
+        }
+
+        .background {
+            background-color: $gold;
+            animation: fill 0.2s linear 1;
+        }
     }
 }
