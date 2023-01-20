@@ -46,8 +46,8 @@ class MasterForm extends React.Component {
         if (currentStep !== 1) {
             return (
                 <button
-                    className="btn-blue "
-                    type="button"
+                    className='btn-blue'
+                    type='button'
                     onClick={this._prev}
                 >
                     Previous
@@ -64,8 +64,8 @@ class MasterForm extends React.Component {
         if (currentStep < 3) {
             return (
                 <button
-                    className="btn-blue"
-                    type="button"
+                    className='btn-blue'
+                    type='button'
                     onClick={this._next}
                 >
                     Next
@@ -76,6 +76,7 @@ class MasterForm extends React.Component {
     }
 
     render() {
+
         return (
             <div className='form-wrapper'>
                 <h1>registration form</h1>
@@ -108,15 +109,16 @@ function Step1(props) {
     if (props.currentStep !== 1) {
         return null
     }
+
     return (
-        <div className="form-group">
-            <label htmlFor="email">Email address</label>
+        <div className='form-group'>
+            <label htmlFor='email'>Email address</label>
             <input
-                className="form-control"
-                id="email"
-                name="email"
-                type="text"
-                placeholder="Enter email"
+                className='form-control'
+                id='email'
+                name='email'
+                type='text'
+                placeholder='Enter email'
                 value={props.email}
                 onChange={props.handleChange}
             />
@@ -128,15 +130,16 @@ function Step2(props) {
     if (props.currentStep !== 2) {
         return null
     }
+
     return (
-        <div className="form-group">
-            <label htmlFor="username">Username</label>
+        <div className='form-group'>
+            <label htmlFor='username'>Username</label>
             <input
-                className="form-control"
-                id="username"
-                name="username"
-                type="text"
-                placeholder="Enter username"
+                className='form-control'
+                id='username'
+                name='username'
+                type='text'
+                placeholder='Enter username'
                 value={props.username}
                 onChange={props.handleChange}
             />
@@ -148,21 +151,22 @@ function Step3(props) {
     if (props.currentStep !== 3) {
         return null
     }
+
     return (
         <>
-            <div className="form-group">
-                <label htmlFor="password">Password</label>
+            <div className='form-group'>
+                <label htmlFor='password'>Password</label>
                 <input
-                    className="form-control"
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Enter password"
+                    className='form-control'
+                    id='password'
+                    name='password'
+                    type='password'
+                    placeholder='Enter password'
                     value={props.password}
                     onChange={props.handleChange}
                 />
             </div>
-            <button className="btn btn-success btn-block">Sign up</button>
+            <button className='btn btn-success btn-block'>Sign up</button>
         </>
     )
 }

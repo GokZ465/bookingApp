@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from 'react'
 
 export default function useScrollListener() {
 
@@ -19,19 +19,19 @@ export default function useScrollListener() {
                     lastY: last.y
                 };
             }
-        );
-    };
+            );
+        };
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
+        handleScroll();
+        window.addEventListener('scroll', handleScroll);
 
-    return () => {
-        window.removeEventListener("scroll", handleScroll);
-    };
-    
-  }, []);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
 
-  return data;
+    }, []);
+
+    return data;
 }
 
 export const ScrollContext = createContext(null);

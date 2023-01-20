@@ -43,6 +43,6 @@ const Footer = () => (
             {/*<Newsletter/>*/}
         </div>
     </div>
-);
+)
 
 export default Footer;

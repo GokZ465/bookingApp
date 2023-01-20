@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
 import Head from 'next/head'
+import Stars from '../../components/Stars'
 
 const fetcher = async (url) => {
     const res = await fetch(url)
@@ -23,13 +24,13 @@ export default function Person() {
     if (!data) return <div>Loading...</div>
 
     const str = data.name.replaceAll('-', ' '); //replace dash with space
-    const arr = str.split(" "); //split sentence into words
+    const arr = str.split(' '); //split sentence into words
 
     for (var i = 0; i < arr.length; i++) { //capitalize first letter of each word
         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
     }
 
-    const title = arr.join(" "); //put sentece back together
+    const title = arr.join(' '); //put sentece back together
 
     return (
         <div className='establishment-page'>
@@ -41,13 +42,7 @@ export default function Person() {
                 <img src={`/${data.name}-hero.png`} alt={data.name.replaceAll('-', ' ')} />
                 <div className='establishments-hero-txt'>
                     <span className='h1'>{data.name.replaceAll('-', ' ')}</span>
-                    <div className={`stars stars-${data.stars}`}>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                    </div>
+                    <Stars rating={data.stars} />
                 </div>
             </header>
             <div className='establishment-banner'>

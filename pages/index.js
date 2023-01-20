@@ -14,8 +14,8 @@ export default function Home() {
         <>
             <Head>
                 <title>Holidaze</title>
-                <meta property="og:title" content="Holidaze" />
-                <link rel="icon" href="/favicon.svg" />
+                <meta property='og:title' content='Holidaze' />
+                <link rel='icon' href='/favicon.svg' />
             </Head>
 
             <>

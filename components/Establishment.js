@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Stars from './Stars'
 
 export default function Establishment({ establishment }) {
     return (
@@ -13,18 +14,12 @@ export default function Establishment({ establishment }) {
                     <span className='txt' >{establishment.location}</span>
                 </div>
                 <h4 className='establishment-name'>{establishment.name.replaceAll('-', ' ')}</h4>
-                <div className={`stars stars-${establishment.stars}`}>
-                    <i className="fa-solid fa-star" />
-                    <i className="fa-solid fa-star" />
-                    <i className="fa-solid fa-star" />
-                    <i className="fa-solid fa-star" />
-                    <i className="fa-solid fa-star" />
-                </div>
+                <Stars rating={establishment.stars} />
                 <div className='establishment-description'>
                     {establishment.descriptionShort}
                 </div>
-                <Link href="/establishment/[id]" as={`/establishment/${establishment.id}`}>
-                    <a className="btn-gold">learn more</a>
+                <Link href='/establishment/[id]' as={`/establishment/${establishment.id}`}>
+                    <a className='btn-gold'>learn more</a>
                 </Link>
             </div>
         </div>

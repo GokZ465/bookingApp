@@ -1,5 +1,5 @@
-import Nav from "./nav";
-import Footer from "./footer";
+import Nav from './nav'
+import Footer from './footer'
 
 const Layout = ({ children }) => {
 
@@ -11,6 +11,7 @@ const Layout = ({ children }) => {
             </main>
             <Footer />
         </>
-    );
+    )
 }
+
 export default Layout;

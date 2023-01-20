@@ -1,23 +1,22 @@
 import '../styles/styles.css'
-import Layout from '../components/Layout/layout';
+import Layout from '../components/Layout/layout'
 import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
 
-  return (
+    return (
+        <>
+            <Head>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+            </Head>
 
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />       
-      </Head>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-
-      <noscript>You need to enable JavaScript to run this app</noscript>
-    </>
-  )
+            <noscript>You need to enable JavaScript to run this app</noscript>
+        </>
+    )
 }
 
 export default MyApp;
