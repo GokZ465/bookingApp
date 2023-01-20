@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import useSWR from 'swr'
 import Establishment from '../components/Establishment'
+import HeroTile from '../components/HeroTile'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
@@ -22,30 +23,12 @@ export default function Home() {
                 <header>
                     <img className='hero-index' src='holidaze-hero.png' alt='' />
                     <div className='hero-tiles'>
-                        <div className='tile'>
-                            <i className='icons-outline fa-solid fa-hotel' />
-                            <p>Hotel</p>
-                        </div>
-                        <div className='tile'>
-                            <i className='icons-outline fa-solid fa-mug-saucer' />
-                            <p>B &#38; B</p>
-                        </div>
-                        <div className='tile'>
-                            <i className='icons-outline fa-solid fa-bed' />
-                            <p>Hostel</p>
-                        </div>
-                        <div className='tile'>
-                            <i className='icons-outline fa-solid fa-building' />
-                            <p>Appartment</p>
-                        </div>
-                        <div className='tile'>
-                            <i className='icons-outline fa-solid fa-tree-city' />
-                            <p>Lodge</p>
-                        </div>
-                        <div className='tile'>
-                            <i className='icons-outline fa-solid fa-mountain-city' />
-                            <p>Cabin</p>
-                        </div>
+                        <HeroTile type='hotel' icon='fa-solid fa-hotel' />
+                        <HeroTile type='B &#38; B' icon='fa-solid fa-mug-saucer' />
+                        <HeroTile type='hostel' icon='fa-solid fa-bed' />
+                        <HeroTile type='apartment' icon='fa-solid fa-building' />
+                        <HeroTile type='Lodge' icon='fa-solid fa-tree-city' />
+                        <HeroTile type='Cabin' icon='fa-solid fa-mountain-city' />
                     </div>
                 </header>
 
