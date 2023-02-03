@@ -20,40 +20,44 @@ export default function Home() {
                 <link rel='icon' href='/favicon.svg' />
             </Head>
 
-            <>
-                <header>
-                    <img className='hero-index' src='holidaze-hero.png' alt='' />
-                    <div className='hero-tile-container'>
-                        <HeroTile type='hotel' icon='fa-hotel' />
-                        <HeroTile type='B &#38; B' icon='fa-mug-saucer' />
-                        <HeroTile type='hostel' icon='fa-bed' />
-                        <HeroTile type='apartment' icon='fa-building' />
-                        <HeroTile type='lodge' icon='fa-tree-city' />
-                        <HeroTile type='cabin' icon='fa-mountain-city' />
-                    </div>
-                </header>
-
-                <div id='search' className='filter-wrapper'>
-                    <div className='filter'>
-                        <SearchFilterItem name='location' icon='fa-location-dot' />
-                        <SearchFilterItem name='check-in' icon='fa-calendar-days' />
-                        <SearchFilterItem name='check-out' icon='fa-calendar-days' />
-                        <SearchFilterItem name='rating' icon='fa-star' />
-                    </div>
-                    <div className='btn-wrapper'>
-                        <button className='btn-gold'>
-                            <span className='background' />
-                            <span>learn more</span>
-                        </button>
-                    </div>
+            <header>
+                <img className='hero-index' src='holidaze-hero.png' alt='' />
+                <div className='hero-tile-container'>
+                    <HeroTile type='hotel' icon='fa-hotel' />
+                    <HeroTile type='B &#38; B' icon='fa-mug-saucer' />
+                    <HeroTile type='hostel' icon='fa-bed' />
+                    <HeroTile type='apartment' icon='fa-building' />
+                    <HeroTile type='lodge' icon='fa-tree-city' />
+                    <HeroTile type='cabin' icon='fa-mountain-city' />
                 </div>
+            </header>
 
-                <div className='establishments-wrapper'>
-                    {data.map((p, i) => (
-                        <Establishment key={i} establishment={p} />
-                    ))}
+            <div id='search' className='search-filter-wrapper'>
+                <div className='search-filter'>
+                    <SearchFilterItem name='location' icon='fa-location-dot' />
+                    <SearchFilterItem name='check-in' icon='fa-calendar-days' />
+                    <SearchFilterItem name='check-out' icon='fa-calendar-days' />
+                    <SearchFilterItem name='rating' icon='fa-star' />
                 </div>
-            </>
+                
+                <div className='btn-wrapper'>
+                    <button className='btn-gold'>
+                        <span className='background' />
+                        <span>search</span>
+                    </button>
+                </div>
+            </div>
+
+            <form className='search-filter-bar'>
+                <input type="text" placeholder="search..." name="search" />
+                <button type="submit"><i className="fa fa-search" /></button>
+            </form>
+
+            <div className='establishments-wrapper'>
+                {data.map((p, i) => (
+                    <Establishment key={i} establishment={p} />
+                ))}
+            </div>
         </>
     )
 }

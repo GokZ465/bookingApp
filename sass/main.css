@@ -328,7 +328,7 @@ nav .logo {
   color: transparent;
 }
 
-.filter-wrapper {
+.search-filter-wrapper {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -344,9 +344,8 @@ nav .logo {
   max-width: 1280px;
   border-bottom: solid 1px #707070;
   margin-top: -10rem;
-  margin-bottom: 5rem;
 }
-.filter-wrapper .btn-wrapper {
+.search-filter-wrapper .btn-wrapper {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -360,7 +359,7 @@ nav .logo {
   gap: 0;
 }
 
-.filter {
+.search-filter {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -374,7 +373,7 @@ nav .logo {
   gap: 0;
 }
 
-.filter-element {
+.search-filter-item {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -390,8 +389,50 @@ nav .logo {
   padding: 0rem 4rem;
   margin: 1.5rem 0;
 }
-.filter-element:first-of-type {
+.search-filter-item:first-of-type {
   padding: 0rem 4rem 0rem 1.5rem;
+}
+
+.search-filter-item-name {
+  text-transform: capitalize;
+}
+
+.search-filter-bar {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-self: auto;
+  align-content: flex-start;
+  gap: 0;
+  width: 100%;
+  max-width: 1280px;
+  padding: 1rem 3rem;
+  margin: 2rem 0 5rem;
+  z-index: 9;
+}
+.search-filter-bar input {
+  width: 100%;
+  height: 3em;
+  padding: 10px;
+  background-color: inherit;
+  border: none;
+  border-bottom: solid 2pt #beae6f;
+}
+.search-filter-bar input:focus, .search-filter-bar input:focus-visible {
+  border-bottom: solid 2px transparent;
+}
+.search-filter-bar button {
+  position: relative;
+  left: -2rem;
+  background-color: inherit;
+  border: none;
+  color: #beae6f;
+  font-size: 1.25em;
 }
 
 .search-icon {
@@ -474,6 +515,11 @@ nav .logo {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+*:focus-visible {
+  outline: solid 2px #beae6f;
+  outline-offset: 2px;
+  transition: outline 0.2s;
 }
 
 html,
@@ -918,8 +964,8 @@ header .hero-index {
   margin: 0.5rem 0;
 }
 .stars i {
-  font-size: 1.5em;
   color: transparent;
+  font-size: 1.5em;
   -webkit-text-stroke: 2px #beae6f;
 }
 
@@ -936,6 +982,13 @@ header .hero-index {
 .stars-five i,
 .fontawesome-gold {
   color: #beae6f;
+  font-size: 1.5em;
+}
+
+.fontawesome-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #beae6f;
+  font-size: 1.5em;
 }
 
 /*# sourceMappingURL=main.css.map */
