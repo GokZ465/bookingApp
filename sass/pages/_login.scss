@@ -1,7 +1,8 @@
 .login-page {
-    @include flex(column nowrap,center, center, auto, flex-start, 0);
+    @include flex(column nowrap, center, center, auto, flex-start, 0);
     min-height: 100vh;
 }
+
 .form-side {
     position: absolute;
     background-color: $dark-blue;
@@ -9,6 +10,7 @@
     height: 60vmin;
     width: 80vmax;
 }
+
 .form-wrapper {
     @include flex(column nowrap, flex-start, flex-start, auto, flex-start, 0);
     position: absolute;

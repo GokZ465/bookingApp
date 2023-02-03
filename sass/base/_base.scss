@@ -10,17 +10,25 @@ body {
     overflow-y: auto;
     //overflow-x: hidden;
 }
-::-webkit-scrollbar-thumb { background: #bdbdbd; }
-::-webkit-scrollbar-thumb:hover { background: #bdbdbd86; }
+
+::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+    &:hover {
+        background: #bdbdbd86;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     background: $white;
 }
+
 body {
     background-color: $dark-blue;
 }
+
 main {
-    @include flex(column nowrap,  flex-start, center, auto, flex-start, 1rem);
+    @include flex(column nowrap, flex-start, center, auto, flex-start, 1rem);
     position: relative;
     height: 100%;
     min-height: 100vh;

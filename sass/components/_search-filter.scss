@@ -5,18 +5,22 @@
     border-bottom: solid 1px #707070;
     margin-top: -10rem;
     margin-bottom: 5rem;
+
     .btn-wrapper {
         @include flex(row nowrap, space-between, center, auto, flex-start, 0);
     }
 }
+
 .filter {
     @include flex(row nowrap, space-between, stretch, auto, flex-start, 0);
 }
+
 .filter-element {
     @include flex(row nowrap, space-between, center, auto, flex-start, 1rem);
     border-right: solid 1px #707070;
     padding: 0rem 4rem;
     margin: 1.5rem 0;
+
     &:first-of-type {
         padding: 0rem 4rem 0rem 1.5rem;
     }

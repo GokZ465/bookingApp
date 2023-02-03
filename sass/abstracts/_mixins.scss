@@ -1,5 +1,4 @@
-@mixin flex(
-    //@include flex(column nowrap, flex-start, stretch, auto, flex-start, 0);
+@mixin flex( //@include flex(column nowrap, flex-start, stretch, auto, flex-start, 0);
     $flow: column nowrap, //row | row-reverse | column | column-reverse ... nowrap | wrap | wrap-reverse
     $justify-content: flex-start, //flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
     $align-items: stretch,
@@ -19,8 +18,10 @@
     align-content: $align-content;
     gap: $gap;
 }
+
 @mixin hover-underline($weight: 2px, $color: $gold) {
     position: relative;
+
     &::after {
         position: absolute;
         left: 0;
@@ -32,6 +33,7 @@
         transition: transform 0.4s;
         background: $color;
     }
+
     &:hover::after,
     &:focus::after,
     &:active::after {

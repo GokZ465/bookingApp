@@ -7,19 +7,22 @@
 .establishment {
     @include flex(row nowrap, space-between, stretch, auto, flex-start, 6rem);
     width: 100%;
+
     .col-1 {
-      flex: 1.5;
-      position: relative;
-      width: 38rem;
-      height: 23rem;
-      overflow: hidden;
-      z-index: 1;
+        flex: 1.5;
+        position: relative;
+        width: 38rem;
+        height: 23rem;
+        overflow: hidden;
+        z-index: 1;
     }
+
     .col-2 {
         flex: 1;
         @include flex(column nowrap, flex-start, flex-start, auto, flex-start, 1rem);
         padding: 2rem 0rem 0rem 5rem;
     }
+
     img {
 
         left: 50%;
@@ -31,6 +34,7 @@
         transform: translate(-50%, -50%);
         max-width: 100%;
     }
+
     .id {
         position: absolute;
         font-size: 10vmax;
@@ -40,15 +44,19 @@
         margin-top: -4.5rem;
         margin-left: -7rem;
     }
+
     &:nth-last-of-type(even) {
         transform: scaleX(-1);
+
         .col-2 {
             transform: scaleX(-1);
         }
     }
 }
+
 .location {
     @include flex(row nowrap, flex-start, stretch, auto, flex-start, 3em);
+
     .txt {
         color: $gold;
         text-transform: uppercase;
@@ -56,6 +64,7 @@
         letter-spacing: 0.25em;
         font-size: 0.75em;
     }
+
     .line {
         border-bottom: solid 1px $gold;
         width: 7rem;
@@ -64,6 +73,7 @@
         top: -0.4em;
     }
 }
+
 .establishment-name {
     font-family: ivymode, sans-serif;
     font-size: clamp(1.8em, 3vw, 3rem);
@@ -71,10 +81,12 @@
     line-height: 1.1em;
     text-transform: capitalize;
 }
+
 .establishment-description {
     margin-bottom: 2rem;
 }
-.establishments-hero-txt{
+
+.establishments-hero-txt {
     @include flex(column nowrap, center, center, auto, center, 1rem);
     position: absolute;
     top: 50vh;
@@ -86,8 +98,10 @@
     width: 40rem;
     border: solid 2pt $gold;
 }
+
 .establishments-detail {
     max-width: 1280px;
+
     h1 {
         text-align: center;
     }
