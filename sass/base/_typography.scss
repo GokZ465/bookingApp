@@ -7,6 +7,7 @@ input {
     font-family: montserrat, sans-serif;
     color: $white;
 }
+
 h1, .h1 {
     font-family: ivymode, sans-serif;
     font-size: clamp(1.8em, 4vw, 4rem);
@@ -14,6 +15,7 @@ h1, .h1 {
     line-height: 1.1em;
     text-transform: capitalize;
 }
+
 h5 {
     font-family: montserrat, sans-serif;
     font-size: clamp(1.15em, 3vw, 2.5rem);

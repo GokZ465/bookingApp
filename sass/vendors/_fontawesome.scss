@@ -1,30 +1,36 @@
 .stars {
     @include flex(row nowrap, flex-start, stretch, auto, flex-start, 1rem);
     margin: 0.5rem 0;
+
     i {
         font-size: 1.5em;
         color: transparent;
         -webkit-text-stroke: 2px $gold;
     }
 }
+
 .stars-one i:nth-of-type(1) {
     color: $gold;
 }
+
 .stars-two i:nth-of-type(1),
 .stars-two i:nth-of-type(2) {
     color: $gold;
 }
+
 .stars-three i:nth-of-type(1),
 .stars-three i:nth-of-type(2),
 .stars-three i:nth-of-type(3) {
     color: $gold;
 }
+
 .stars-four i:nth-of-type(1),
 .stars-four i:nth-of-type(2),
 .stars-four i:nth-of-type(3),
 .stars-four i:nth-of-type(4) {
     color: $gold;
 }
+
 .stars-five i {
     color: $gold;
 }

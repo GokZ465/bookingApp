@@ -1,3 +1,16 @@
+.logo {
+    height: 32px;
+    &:hover, &:focus {
+        opacity: 0.5;
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+}
+nav .logo {
+    margin: 0 0.8rem;
+}
+
 .btn-gold {
     height: 2.5rem;
     width: 10rem;
@@ -30,4 +43,17 @@
             animation: fill 0.2s linear 1;
         }
     }
+}
+
+.btn-blue {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: solid 3px $dark-blue;
+    color: $dark-blue;
+    font-size: 12pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
 }

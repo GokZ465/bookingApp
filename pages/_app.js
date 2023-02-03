@@ -1,4 +1,4 @@
-import '../styles/styles.css'
+import '../sass/main.css'
 import Layout from '../components/Layout/layout'
 import Head from 'next/head'
 
