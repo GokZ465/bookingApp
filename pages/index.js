@@ -2,6 +2,7 @@ import Head from 'next/head'
 import useSWR from 'swr'
 import Establishment from '../components/Establishment'
 import HeroTile from '../components/HeroTile'
+import SearchFilterItem from '../components/SearchFilterItem'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
@@ -27,32 +28,17 @@ export default function Home() {
                         <HeroTile type='B &#38; B' icon='fa-mug-saucer' />
                         <HeroTile type='hostel' icon='fa-bed' />
                         <HeroTile type='apartment' icon='fa-building' />
-                        <HeroTile type='Lodge' icon='fa-tree-city' />
-                        <HeroTile type='Cabin' icon='fa-mountain-city' />
+                        <HeroTile type='lodge' icon='fa-tree-city' />
+                        <HeroTile type='cabin' icon='fa-mountain-city' />
                     </div>
                 </header>
 
                 <div id='search' className='filter-wrapper'>
                     <div className='filter'>
-                        <div className='filter-element'>
-                            <i className='icons-outline fa-solid fa-location-dot' />
-                            <span>Location</span>
-                        </div>
-
-                        <div className='filter-element'>
-                            <i className='icons-solid fa-solid fa-calendar-days' />
-                            <span>Check-in</span>
-                        </div>
-
-                        <div className='filter-element'>
-                            <i className='icons-solid fa-solid fa-calendar-days' />
-                            <span>Check-out</span>
-                        </div>
-
-                        <div className='filter-element'>
-                            <i className='icons-outline fa-solid fa-star' />
-                            <span>Rating</span>
-                        </div>
+                        <SearchFilterItem name='location' icon='fa-location-dot' />
+                        <SearchFilterItem name='check-in' icon='fa-calendar-days' />
+                        <SearchFilterItem name='check-out' icon='fa-calendar-days' />
+                        <SearchFilterItem name='rating' icon='fa-star' />
                     </div>
                     <div className='btn-wrapper'>
                         <button className='btn-gold'>search</button>

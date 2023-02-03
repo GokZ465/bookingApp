@@ -20,7 +20,7 @@ export default function Establishment({ establishment }) {
                 </div>
                 <Link href='/establishment/[id]' as={`/establishment/${establishment.id}`}>
                     <a className='btn-gold'>
-                        <span className='background'></span>
+                        <span className='background' />
                         <span>learn more</span>
                     </a>
                 </Link>
