@@ -16,6 +16,7 @@ nav .logo {
 }
 
 .btn-gold {
+    @include flex(row nowrap, center, center, auto, flex-start, 0);
     height: 2.5rem;
     width: 10rem;
     background-color: transparent;
@@ -26,6 +27,7 @@ nav .logo {
     font-weight: 500;
     font-style: normal;
     text-decoration: none;
+    border: none;
 
     span {
         height: 2.5rem;

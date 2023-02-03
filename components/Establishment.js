@@ -18,7 +18,7 @@ export default function Establishment({ establishment }) {
                 <div className='establishment-description'>
                     {establishment.descriptionShort}
                 </div>
-                <Link href='/establishment/[id]' as={`/establishment/${establishment.id}`}>
+                <Link href='/establishment/[id]' as={`/establishment/${establishment.id}`} passHref>
                     <a className='btn-gold'>
                         <span className='background' />
                         <span>learn more</span>

@@ -21,9 +21,7 @@ const Nav = () => {
 
             <nav className={`nav ${navClassList.join(' ')} `}>
                 <Link passHref href='/'>
-                    <a>
-                        <img className='logo' src='/logo--white.png' alt='directlink to homepage' />
-                    </a>
+                    <img className='logo' src='/logo--white.png' alt='directlink to homepage' />
                 </Link>
                 <div className='nav-links-wrapper'>
                     <Link passHref href='./#search'>
@@ -34,7 +32,7 @@ const Nav = () => {
                         </a>
                     </Link>
                     <Link passHref href='/Login'>
-                        <i className='icons-outline fa-solid fa-user' />
+                        <i className='fa-solid fa-user fontawesome-gold' />
                     </Link>
                 </div>
             </nav>

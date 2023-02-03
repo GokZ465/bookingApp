@@ -41,7 +41,10 @@ export default function Home() {
                         <SearchFilterItem name='rating' icon='fa-star' />
                     </div>
                     <div className='btn-wrapper'>
-                        <button className='btn-gold'>search</button>
+                        <button className='btn-gold'>
+                            <span className='background' />
+                            <span>learn more</span>
+                        </button>
                     </div>
                 </div>
 

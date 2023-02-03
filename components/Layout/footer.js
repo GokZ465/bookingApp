@@ -5,9 +5,7 @@ const Footer = () => (
     <div className='footer'>
         <div className='footer-col-1'>
             <Link passHref href='/'>
-                <a>
-                    <img className='logo' src='/logo--white.png' alt='directlink to homepage' />
-                </a>
+                <img className='logo' src='/logo--white.png' alt='directlink to homepage' />
             </Link>
             <p>The purpose of this website is to promote Bergen as a travel destination.</p>
             <p>© 2021 Holidaze, All rights reserved</p>

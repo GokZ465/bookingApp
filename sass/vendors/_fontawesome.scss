@@ -9,28 +9,17 @@
     }
 }
 
-.stars-one i:nth-of-type(1) {
-    color: $gold;
-}
-
+.stars-one i:nth-of-type(1),
 .stars-two i:nth-of-type(1),
-.stars-two i:nth-of-type(2) {
-    color: $gold;
-}
-
+.stars-two i:nth-of-type(2),
 .stars-three i:nth-of-type(1),
 .stars-three i:nth-of-type(2),
-.stars-three i:nth-of-type(3) {
-    color: $gold;
-}
-
+.stars-three i:nth-of-type(3),
 .stars-four i:nth-of-type(1),
 .stars-four i:nth-of-type(2),
 .stars-four i:nth-of-type(3),
-.stars-four i:nth-of-type(4) {
-    color: $gold;
-}
-
-.stars-five i {
+.stars-four i:nth-of-type(4),
+.stars-five i,
+.fontawesome-gold {
     color: $gold;
 }
