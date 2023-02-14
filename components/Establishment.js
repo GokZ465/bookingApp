@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import GoldBtnLink from './GoldButtons'
 import Stars from './Stars'
 
 export default function Establishment({ establishment }) {
@@ -18,12 +19,9 @@ export default function Establishment({ establishment }) {
                 <div className='establishment-description'>
                     {establishment.descriptionShort}
                 </div>
-                <Link href='/establishment/[id]' as={`/establishment/${establishment.id}`} passHref>
-                    <a className='btn-gold'>
-                        <span className='background' />
-                        <span>learn more</span>
-                    </a>
-                </Link>
+                <GoldBtnLink href='/establishment/[id]' as={`/establishment/${establishment.id}`}>
+                    learn more
+                </GoldBtnLink>
             </div>
         </div>
     )

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import useSWR from 'swr'
+import { GoldBtn } from '../components/GoldButtons'
 import Establishment from '../components/Establishment'
 import HeroTile from '../components/HeroTile'
 import SearchFilterItem from '../components/SearchFilterItem'
@@ -41,10 +42,7 @@ export default function Home() {
                 </div>
                 
                 <div className='btn-wrapper'>
-                    <button className='btn-gold'>
-                        <span className='background' />
-                        <span>search</span>
-                    </button>
+                    <GoldBtn type='submit'>search</GoldBtn>
                 </div>
             </div>
 
