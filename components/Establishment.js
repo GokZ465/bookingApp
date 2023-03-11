@@ -3,6 +3,8 @@ import GoldBtnLink from './GoldButtons'
 import Stars from './Stars'
 
 export default function Establishment({ establishment }) {
+
+    
     return (
         <div className='establishment'>
             <figure className='col-1'>

@@ -3,7 +3,9 @@
     width: 100%;
     max-width: 1280px;
 }
-
+*{
+    margin-top: 200px;
+}
 .establishment {
     @include flex(row nowrap, space-between, stretch, auto, flex-start, 6rem);
     width: 100%;
