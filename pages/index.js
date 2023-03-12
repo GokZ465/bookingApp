@@ -7,11 +7,13 @@ import Establishment from "../components/Establishment";
 import HeroTile from "../components/HeroTile";
 import SearchFilterItem from "../components/SearchFilterItem";
 import { DateRange } from "react-date-range";
-import { useEffect, useState } from "react";
+import { createContext, useState, useContext } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format, formatDistance, formatRelative, subDays } from "date-fns";
 import handler from "./api/establishments";
+import AppContext from "../firebase/AppContext";
+
 import { flights } from "./api/flights/data";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const categories = [
@@ -19,14 +21,16 @@ const categories = [
   { value: "chennai", label: "Chennai" },
   { value: "bangalore", label: "Bangalore" },
   { value: "mumbai", label: "Mumbai" },
+  { value: "delhi", label: "Delhi" },
 ];
+
 function Home(req, res) {
   const [hotelClick, setHotelClick] = useState(false);
   const [airplaneClick, setAirplaneClick] = useState(false);
   const [city, setCity] = useState("chennai");
   const [from, setFrom] = useState("chennai");
   const [to, setTo] = useState("chennai");
-
+  const context = useContext(AppContext);
   const [query, setQuery] = useState("");
   const funcHotelClick = () => {
     if (hotelClick) {
@@ -118,8 +122,8 @@ function Home(req, res) {
         {/* <link rel="icon" href="/favicon.svg" /> */}
       </Head>
 
-      <header>
-        <img className="hero-index" src="holidaze-hero.png" alt="" />
+      <header className="hero-image">
+        <img className="hero-index header-img" src="holidaze-hero.png" alt="" />
         <div className="hero-tile-container">
           <a onClick={() => funcHotelClick()}>
             <HeroTile type="hotel" icon="fa-hotel" />
@@ -127,10 +131,10 @@ function Home(req, res) {
           <a onClick={() => funcPlaneClick()}>
             <HeroTile type="airplane" icon="fa-plane" />
           </a>
-          <HeroTile type="cab" icon="fa-cab" />
-          <HeroTile type="homestays" icon="fa-building" />
+          {/* <HeroTile type="cab" icon="fa-cab" />
+          <HeroTile type="homestays" icon="fa-building" /> */}
           <HeroTile type="train" icon="fa-train" />
-          <HeroTile type="buses" icon="fa-bus" />
+          {/* <HeroTile type="buses" icon="fa-bus" /> */}
         </div>
       </header>
       {hotelClick && (
@@ -140,17 +144,35 @@ function Home(req, res) {
             onSubmit={(e) => {
               // const check = e.target[0].value;
               const check = city.value;
-              console.log(city.value);
+              const dates = [
+                format(date[0].startDate, "MM/dd/yyyy"),
+                format(date[0].endDate, "MM/dd/yyyy"),
+              ];
+              const adult = options.adult;
+              const room = options.room;
+              const child = options.children;
+              console.log(dates);
               e.preventDefault();
+              context.setRoomContext(room);
+              context.setDatesContext(dates);
+              context.setAdultContext(adult);
+              context.setChildContext(child);
+              console.log(context);
               const newData = data.filter(
                 (e) => e.txtOne.toLowerCase() === check.toLowerCase()
               );
 
-              console.log(newData);
+              console.log(dates);
               router.push(
                 {
                   pathname: "/searchresult",
-                  query: { data: JSON.stringify(newData) },
+                  query: {
+                    data: JSON.stringify(newData),
+                    child: child,
+                    adult: adult,
+                    room: room,
+                    dates: dates,
+                  },
                 },
                 "/searchresult"
               );

@@ -2,24 +2,27 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Head from "next/head";
 import Stars from "../../components/Stars";
+import { GoldBtn } from "../../components/GoldButtons";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
-  
+
   if (res.status !== 200) {
     throw new Error(data.message);
   }
   return data;
 };
 
-export default function Person() {
+export default function Person(...props) {
+  const router = useRouter();
   const { query } = useRouter();
+  console.log(query);
+
   const { data, error } = useSWR(
     () => query.id && `/api/establishments/${query.id}`,
     fetcher
   );
-
   if (error) return <div>{error.message}</div>;
   if (!data) return <div>Loading...</div>;
 
@@ -68,7 +71,8 @@ export default function Person() {
         </div>
       </div>
       <article className="establishments-detail">
-        <div className="background">{data.id}</div>
+        <div className="background background-spl">{data.id}</div>
+
         <div className="detail">
           <div className="location">
             <span className="line" />
@@ -77,8 +81,14 @@ export default function Person() {
           <h1>{data.name.replaceAll("-", " ")}</h1>
           <p>{data.descriptionLong}</p>
           <div className="btn-wrapper">
-            <button className="btn-gold">Book Now</button>
-            <button className="btn-gold">Directions</button>
+            <button
+              className="btn-gold btn-spl"
+              onClick={() => router.push("/confirm")}
+              type="submit"
+            >
+              Book
+            </button>
+            <button className="btn-gold btn-spl">Direction</button>
           </div>
         </div>
       </article>

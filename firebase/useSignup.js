@@ -1,14 +1,15 @@
+import { useRouter, withRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import { projectAuth } from "../firebase/config";
-//import useAuthContext from "./useAuthContext";
-// eslint-disable-next-line import/prefer-default-export
+import { projectAuth } from "./config";
+import useAuthContext from "./useAuthContext";
+
 export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
-  // const { dispatch } = useAuthContext();
-
+  const { dispatch } = useAuthContext();
+  const router = useRouter();
   const signup = async (email, password, displayName) => {
     setError(null);
     setIsPending(true);
@@ -22,10 +23,15 @@ export const useSignup = () => {
       console.log(res.user);
       // we are calling a dispatch function names
       // LOGIN but this page is Signup
-      // dispatch({ type: "LOGIN", payload: res.user });
+      dispatch({ type: "LOGIN", payload: res.user });
 
       if (!isCancelled) {
-        throw new Error("could not complete signup");
+        router.push(
+          {
+            pathname: "/",
+          },
+          "/"
+        );
       }
 
       await res.user.updateProfile({ displayName });
@@ -38,11 +44,18 @@ export const useSignup = () => {
       if (!isCancelled) {
         setError(err.message);
         setIsPending(false);
-        console.log(isPending);
       }
+      //   if (!isPending && isCancelled) {
+      //     router.push(
+      //       {
+      //         pathname: "/",
+      //       },
+      //       "/"
+      //     );
+      //   }
     }
   };
-  // eslint-disable-next-line arrow-body-style
+
   useEffect(() => {
     return () => setIsCancelled(true);
   }, []);

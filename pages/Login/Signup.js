@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSignup } from "../../firebase/useSignup";
 //import styles from "./Signup.module.scss";
+import { useRouter, withRouter } from "next/router";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -8,7 +9,7 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-
+  const router = useRouter();
   const { signup, isPending, error } = useSignup();
 
   const handleSubmit = (e) => {
@@ -16,61 +17,77 @@ export default function Signup() {
     const displayName = `${firstName} ${lastName}`;
     // console.log(email, password, displayName);
     signup(email, password, displayName);
+    // router.push(
+    //   {
+    //     pathname: "/",
+    //   },
+    //   "/"
+    // );
   };
 
   return (
-    // className={styles["Signup-form"]}
-    <form onSubmit={handleSubmit}>
-      <h2>Sign Up</h2>
-      <label>
-        <span>First Name</span>
-        <input
-          type="text"
-          onChange={(e) => setFirstName(e.target.value)}
-          value={firstName}
-        />
-      </label>
-      <label>
-        <span>Last Name</span>
-        <input
-          type="text"
-          onChange={(e) => setLastName(e.target.value)}
-          value={lastName}
-        />
-      </label>
-
-      <label>
-        <span>Email</span>
-        <input
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-      </label>
-      <label>
-        <span>Password</span>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-      </label>
-      <label>
-        <span>Confirm Password</span>
-        <input
-          type="password"
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          value={confirmPassword}
-        />
-      </label>
-      {!isPending && <button className="btn">Sign Up</button>}
-      {isPending && (
-        <button className="btn" disabled>
-          Loading
-        </button>
-      )}
-
-      {error && <p>{error}</p>}
-    </form>
+    <div className="holder">
+      <div className="parent">
+        <form onSubmit={handleSubmit} action="" className="Signup-form">
+          <h3 style={{ color: "#BEAE6F" }}>Sign Up</h3>
+          <div>
+            <input
+              onChange={(e) => setFirstName(e.target.value)}
+              type="text"
+              placeholder="First Name *"
+              required
+              value={firstName}
+            />
+            <span className="border"></span>
+          </div>
+          <div>
+            <input
+              onChange={(e) => setLastName(e.target.value)}
+              type="text"
+              placeholder="Last Name *"
+              required
+              value={lastName}
+            />
+            <span className="border"></span>
+          </div>
+          <div>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Email *"
+              value={email}
+              required
+            />
+            <span className="border"></span>
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Password *"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+            <span className="border"></span>
+          </div>
+          <div>
+            <input
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              value={confirmPassword}
+              type="password"
+              placeholder="Confirm Password *"
+              required
+            />
+            <span className="border"></span>
+          </div>
+          <input type="submit" value="LOGIN" className="private-inp" />
+          {/* <p>
+            Have Account?
+            <a href="#">Login Here</a>
+          </p> */}
+        </form>
+        {/* <h4>Or Register With</h4> */}
+      </div>
+    </div>
   );
 }
