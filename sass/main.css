@@ -259,7 +259,7 @@ nav .logo {
   }
   .detail p,
   .detail h1,
-  .line,
+  location .line,
   .btn-spl,
   .txt {
     left: -10vw;
@@ -268,8 +268,14 @@ nav .logo {
   .confirm-body {
     max-width: 80vw;
   }
+  .nav {
+    top: 5rem !important;
+  }
   .button {
     min-width: 20% !important;
+  }
+  .search-icon {
+    display: none;
   }
 }
 
