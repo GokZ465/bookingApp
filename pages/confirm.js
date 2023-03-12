@@ -68,7 +68,7 @@ export default function Confirm() {
                     {context.roomContext}
                     <>&nbsp;</> Room <>&nbsp;</> <>&nbsp;</>
                   </span>
-                  <span className="nobg">$75.00</span>
+                  <span className="nobg">₹ 1750.00</span>
                 </li>
 
                 <li className="margin-20">
@@ -76,14 +76,14 @@ export default function Confirm() {
                     {" "}
                     Taxes and Service Fee<>&nbsp;</> <>&nbsp;</>
                   </span>
-                  <span className="nobg">$115.00</span>
+                  <span className="nobg">₹ 400.00</span>
                 </li>
                 <li className="margin-20">
                   <span className="nobg margin-20">
                     {" "}
                     Discount<>&nbsp;</> <>&nbsp;</>
                   </span>
-                  <span className="nobg">-$30.00</span>
+                  <span className="nobg">-₹ 300.00</span>
                 </li>
                 <li className="margin-40">
                   <span className="nobg margin-20">
@@ -101,7 +101,7 @@ export default function Confirm() {
                 <li className="margin-20">
                   <strong>
                     <span className="nobg">Total</span>
-                    <span className="nobg">$200.00</span>
+                    <span className="nobg">₹ 2000.00</span>
                   </strong>
                 </li>
               </ul>
@@ -119,16 +119,16 @@ export default function Confirm() {
                   {" "}
                   <strong>
                     By checking this box, you agree that your debit/credit card
-                    will be charged $200.00.
+                    will be charged ₹ 2000.00.
                   </strong>
                   <br />
                   <br />
                   You also agree that, unless you are removed from the program
                   before the program end date, your subscription will
                   automatically renew and you authorize us to continue to charge
-                  your debit/credit card $20.00 monthly (until removed from the
-                  program). Once charged, all purchases, including renewals, are
-                  non-refundable.
+                  your debit/credit card ₹ 200.00 monthly (until removed from
+                  the program). Once charged, all purchases, including renewals,
+                  are non-refundable.
                 </label>
               </form>
             </div>

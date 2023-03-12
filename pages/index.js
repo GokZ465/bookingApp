@@ -188,6 +188,7 @@ function Home(req, res) {
                     className="headerSearchInput headerSearchInputTextBox"
                     placeholder="city"
                     options={categories}
+                    required
                   />
                 </div>
                 <div>
@@ -375,10 +376,13 @@ function Home(req, res) {
                 <div>
                   <SearchFilterItem name="FROM" icon="fa-plane-departure" />
                   <Select
-                    onChange={(option) => setFrom(option)}
+                    onChange={(option) => {
+                      setFrom(option);
+                    }}
                     className="headerSearchInput headerSearchInputTextBox"
                     placeholder="..."
                     options={categories}
+                    required
                   />
                 </div>
 
@@ -388,7 +392,8 @@ function Home(req, res) {
                     onChange={(option) => setTo(option)}
                     className="headerSearchInput headerSearchInputTextBox"
                     placeholder="..."
-                    options={categories}
+                    options={categories.filter((e) => e !== from)}
+                    required
                   />
                 </div>
                 <div>

@@ -247,6 +247,32 @@ nav .logo {
   border: solid 2pt #beae6f;
 }
 
+@media screen and (max-width: 800px) {
+  .establishments-hero-txt {
+    top: 20vh;
+  }
+  .establishments-hero {
+    max-height: 50vh;
+  }
+  .establishment-page {
+    max-width: 90vw;
+  }
+  .detail p,
+  .detail h1,
+  .line,
+  .btn-spl,
+  .txt {
+    left: -10vw;
+    position: relative;
+  }
+  .confirm-body {
+    max-width: 80vw;
+  }
+  .button {
+    min-width: 20% !important;
+  }
+}
+
 .establishments-detail {
   max-width: 1280px;
 }
@@ -2045,4 +2071,10 @@ div input:focus + .border {
 :focus::placeholder {
   opacity: 0;
   transition: 0.5s;
+}
+.noticeSign {
+  margin-top: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -70,7 +70,7 @@ export default function Signup() {
             />
             <span className="border"></span>
           </div>
-          <div>
+          {/* <div>
             <input
               onChange={(e) => setConfirmPassword(e.target.value)}
               value={confirmPassword}
@@ -79,12 +79,23 @@ export default function Signup() {
               required
             />
             <span className="border"></span>
-          </div>
-          <input type="submit" value="LOGIN" className="private-inp" />
+          </div> */}
+          {!isPending && (
+            <input type="submit" value="LOGIN" className="private-inp" />
+          )}
+          {isPending && (
+            <input
+              type="submit"
+              value="LOADING..."
+              className="private-inp"
+              disabled
+            />
+          )}
           {/* <p>
             Have Account?
             <a href="#">Login Here</a>
           </p> */}
+          {error && <h4>{error}</h4>}
         </form>
         {/* <h4>Or Register With</h4> */}
       </div>
