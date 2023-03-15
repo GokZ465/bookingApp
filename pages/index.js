@@ -7,6 +7,7 @@ import Establishment from "../components/Establishment";
 import HeroTile from "../components/HeroTile";
 import SearchFilterItem from "../components/SearchFilterItem";
 import { DateRange } from "react-date-range";
+
 import { createContext, useState, useContext } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
@@ -25,6 +26,23 @@ const categories = [
 ];
 
 function Home(req, res) {
+  let dateToday = new Date();
+  let day = dateToday.getDate();
+  let month = dateToday.getMonth();
+  let year = dateToday.getFullYear();
+  let fullDate = `${month}/${day}/${year}`;
+  const compareDates = (d1, d2) => {
+    let date1 = new Date(d1).getTime();
+    let date2 = new Date(d2).getTime();
+
+    if (date1 < date2) {
+      return true;
+    } else if (date1 > date2) {
+      return false;
+    } else {
+      return true;
+    }
+  };
   const [hotelClick, setHotelClick] = useState(false);
   const [airplaneClick, setAirplaneClick] = useState(false);
   const [city, setCity] = useState("chennai");
@@ -78,7 +96,7 @@ function Home(req, res) {
       key: "selection",
     },
   ]);
-
+  const [dateError, setDateError] = useState(null);
   const { data, error } = useSWR("/api/establishments", fetcher);
 
   const res2 = useSWR("/api/cabs", fetcher);
@@ -142,7 +160,12 @@ function Home(req, res) {
           <form
             className="searchFilterBar"
             onSubmit={(e) => {
+              const finalAns = compareDates(
+                format(date[0].startDate, "MM/dd/yyyy"),
+                fullDate
+              );
               // const check = e.target[0].value;
+              console.log("ans le" + finalAns);
               const check = city.value;
               const dates = [
                 format(date[0].startDate, "MM/dd/yyyy"),
@@ -205,7 +228,9 @@ function Home(req, res) {
                       moveRangeOnFirstSelection={false}
                       onChange={(item) => setDate([item.selection])}
                       ranges={date}
+                      minDate={new Date()}
                       className="date"
+                      forceParse={false}
                     />
                   )}
                 </div>
@@ -415,6 +440,8 @@ function Home(req, res) {
                       onChange={(item) => setDeparture([item.selection])}
                       ranges={departure}
                       className="date"
+                      minDate={new Date()}
+                      forceParse={false}
                     />
                   )}
                 </div>
@@ -532,12 +559,12 @@ function Home(req, res) {
               </div>
             </div>
           </form>
-          <form className="search-filter-bar">
+          {/* <form className="search-filter-bar">
             <input type="text" placeholder="search..." name="search" />
             <button type="submit">
               <i className="fa fa-search" />
             </button>
-          </form>
+          </form> */}
         </>
       )}
     </>
