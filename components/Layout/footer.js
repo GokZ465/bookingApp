@@ -8,7 +8,7 @@ const Footer = () => (
         <a href="#" className="fab fab-nav nav-dig__link">
           Social Media
         </a>
-        <a
+        {/* <a
           title="Messenger"
           target="_blank"
           rel="noreferrer"
@@ -32,7 +32,7 @@ const Footer = () => (
           href="https://twitter.com/"
         >
           <i className="fab fab-nab  nav-dig__link fa-twitter" />
-        </a>
+        </a> */}
       </li>
       <li className="nav-dig__item">
         <a href="#" className="nav-dig__link">

@@ -1,55 +1,25 @@
-import { useState } from "react";
-import { useSignup } from "../../firebase/useSignup";
-//import styles from "./Signup.module.scss";
-import { useRouter, withRouter } from "next/router";
-
-export default function Signup() {
+import React, { useState } from "react";
+import useAuthContext from "../../firebase/useAuthContext";
+import { useLogin } from "../../firebase/useLogin";
+export default function LoginF() {
+  const { authIsReady, user } = useAuthContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const router = useRouter();
-  const { signup, isPending, error } = useSignup();
+  const [form, setForm] = useState(false);
 
+  const { isPending, login, error } = useLogin();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const displayName = `${firstName} ${lastName}`;
-    // console.log(email, password, displayName);
-    signup(email, password, displayName);
-    // router.push(
-    //   {
-    //     pathname: "/",
-    //   },
-    //   "/"
-    // );
+    console.log("before login()");
+
+    login(email, password);
   };
 
   return (
-    <div className="holder">
+    <div className="holder shortHolder">
       <div className="parent">
         <form onSubmit={handleSubmit} action="" className="Signup-form">
-          <h3 style={{ color: "#BEAE6F" }}>Sign up</h3>
-          <div>
-            <input
-              onChange={(e) => setFirstName(e.target.value)}
-              type="text"
-              placeholder="First Name *"
-              required
-              value={firstName}
-            />
-            <span className="border"></span>
-          </div>
-          <div>
-            <input
-              onChange={(e) => setLastName(e.target.value)}
-              type="text"
-              placeholder="Last Name *"
-              required
-              value={lastName}
-            />
-            <span className="border"></span>
-          </div>
+          <h3 style={{ color: "#BEAE6F" }}>Log In</h3>
           <div>
             <input
               onChange={(e) => setEmail(e.target.value)}
@@ -83,6 +53,7 @@ export default function Signup() {
           {!isPending && (
             <input type="submit" value="LOGIN" className="private-inp" />
           )}
+          )
           {isPending && (
             <input
               type="submit"
@@ -91,6 +62,7 @@ export default function Signup() {
               disabled
             />
           )}
+          {/* (<h3>{string}</h3>) */}
           {/* <p>
             Have Account?
             <a href="#">Login Here</a>

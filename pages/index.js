@@ -168,10 +168,6 @@ function Home(req, res) {
                   pathname: "/searchresult",
                   query: {
                     data: JSON.stringify(newData),
-                    child: child,
-                    adult: adult,
-                    room: room,
-                    dates: dates,
                   },
                 },
                 "/searchresult"
@@ -329,12 +325,12 @@ function Home(req, res) {
               </div>
             </div>
           </form>
-          <form className="search-filter-bar">
+          {/* <form className="search-filter-bar">
             <input type="text" placeholder="search..." name="search" />
             <button type="submit">
               <i className="fa fa-search" />
             </button>
-          </form>
+          </form> */}
 
           <div className="establishments-wrapper">
             {data.map((p, i) => (
@@ -364,7 +360,11 @@ function Home(req, res) {
               router.push(
                 {
                   pathname: "/searchresult",
-                  query: { data: JSON.stringify(newData) },
+                  query: {
+                    data: JSON.stringify(newData),
+                    airplaneClick: airplaneClick,
+                    hotelClick: hotelClick,
+                  },
                 },
                 "/searchresult"
               );

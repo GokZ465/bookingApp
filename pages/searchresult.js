@@ -6,13 +6,12 @@ const Searchresult = () => {
   const { isReady } = useRouter();
   const router = useRouter();
   const {
-    query: { data, children, room, adult, dates },
+    query: { data, airplaneClick, hotelClick },
   } = router;
   let data2;
   // let data = useRef("");
   useEffect(() => {
     if (router.isReady) {
-      console.log(children);
       //  data = router.query;
       // console.log(JSON.parse(data));
     }
@@ -21,16 +20,17 @@ const Searchresult = () => {
     <div className="searchResultPage">
       <div className="establishments-wrapper">
         {/* {(JSON.parse(data))} */}
-        {/* {console.log(JSON.parse(data))} */}
+        {/* {console.log(
+          "hotelClick" + hotelClick,
+          "airplabneClick" + airplaneClick
+        )} */}
         {isReady &&
           JSON.parse(data).map((p, i) => (
             <Establishment
               key={i}
               establishment={p}
-              dates={dates}
-              room={room}
-              child={children}
-              adult={adult}
+              airplaneClick={airplaneClick}
+              hotelClick={hotelClick}
             />
           ))}
       </div>

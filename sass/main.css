@@ -246,11 +246,26 @@ nav .logo {
   width: 40rem;
   border: solid 2pt #beae6f;
 }
+.establishments-hero {
+  max-height: 85vh;
+}
 
+@media screen and (max-width: 1024px) {
+  .nav {
+    top: 5rem !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .holder {
+    width: 300px !important;
+    height: 550px !important;
+  }
+}
 @media screen and (max-width: 800px) {
   .establishments-hero-txt {
     top: 20vh;
   }
+
   .establishments-hero {
     max-height: 50vh;
   }
@@ -268,9 +283,7 @@ nav .logo {
   .confirm-body {
     max-width: 80vw;
   }
-  .nav {
-    top: 5rem !important;
-  }
+
   .button {
     min-width: 20% !important;
   }
@@ -326,6 +339,7 @@ nav .logo {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
+  cursor: pointer !important;
 }
 .hero-tile-container .tile:hover .icon-fill,
 .hero-tile-container .tile:focus-within .icon-fill,
@@ -1021,6 +1035,7 @@ h5 {
   align-content: center;
   gap: 1.5rem;
   margin: 0 1.25rem;
+  cursor: pointer !important;
 }
 
 header {
@@ -2083,4 +2098,194 @@ div input:focus + .border {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.shortHolder {
+  height: 450px;
+}
+
+.modal {
+  height: 400px;
+  display: absolute;
+  width: 650px;
+  margin: auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.4s, box-shadow 0.3s 0.4s;
+}
+.modal.hidden {
+  box-shadow: none;
+  transition: 0.4s, box-shadow 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal.hidden .form {
+  top: 100%;
+}
+.modal.hidden .invite {
+  top: -100%;
+}
+.modal.hidden .invite .close {
+  height: 0;
+  width: 0;
+  top: 0;
+  right: 0;
+}
+
+.modalForm,
+.invite {
+  background: rgba(71, 71, 71, 0.8);
+  width: 50%;
+  height: 100%;
+  padding: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modalInput {
+  background: rgba(255, 255, 255, 0.15);
+  width: 85%;
+  padding: 8px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+}
+.modalInput:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 500px #7a7a7a inset;
+  -webkit-text-fill-color: #fff;
+}
+
+.modalLabel {
+  font: 500 14px Roboto;
+  color: #beae6f;
+}
+
+.ModalButton {
+  background: linear-gradient(-45deg, #beae6f, #beae6f);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 21px;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+.ModalButton:hover:before {
+  left: 110%;
+  transition: 0.3s;
+}
+.ModalButton:before {
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  height: 100%;
+  width: 65px;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transform: skew(-45deg);
+  transition: 0s;
+}
+
+.invite {
+  background: linear-gradient(-45deg, #beae6f, #c7a32fde);
+  left: 50%;
+}
+
+.Modalh3 {
+  font: 30px Roboto;
+  text-transform: uppercase;
+}
+
+.nope {
+  background: #474747;
+  padding: 10px 15px;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+.nope:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%);
+}
+
+.modalClose {
+  background: #474747;
+  height: 30px;
+  width: 30px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  cursor: pointer;
+  transition: 0.4s 0.3s;
+}
+.modalClose:before,
+.modalClose:after {
+  content: "";
+  background: #fff;
+  height: 80%;
+  width: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modalClose:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.open {
+  background: linear-gradient(-45deg, #f857a6, #ff5858);
+  height: 45px;
+  width: 150px;
+  padding: 10px 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+}
+.open.active {
+  opacity: 1;
+  visibility: visible;
+}
+.open:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modalBody {
+  background: lighten(#474747, 10%)
+    url(https://images.unsplash.com/photo-1452716726610-30ed68426a6b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=177c2914fe84d20069f207e27632acc9)
+    center/cover no-repeat;
+  height: 40vh;
+  overflow: hidden;
+  color: #fff;
+  font-family: Roboto;
+  z-index: 99999;
 }
