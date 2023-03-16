@@ -16,6 +16,7 @@ import handler from "./api/establishments";
 import AppContext from "../firebase/AppContext";
 
 import { flights } from "./api/flights/data";
+import Features from "./_features";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const categories = [
   { value: "goa", label: "Goa" },
@@ -23,6 +24,14 @@ const categories = [
   { value: "bangalore", label: "Bangalore" },
   { value: "mumbai", label: "Mumbai" },
   { value: "delhi", label: "Delhi" },
+];
+const categoriesClass = [
+  { value: "1a", label: "1A - First AC" },
+  { value: "2a", label: "2A - 2 Tier" },
+  { value: "3a", label: "3A - 3 tier AC " },
+  { value: "fc", label: "FC - First Class" },
+  { value: "sl", label: "SL - sleeper" },
+  { value: "cc", label: "CC - ac chair" },
 ];
 
 function Home(req, res) {
@@ -45,6 +54,8 @@ function Home(req, res) {
   };
   const [hotelClick, setHotelClick] = useState(false);
   const [airplaneClick, setAirplaneClick] = useState(false);
+  const [trainClick, setTrainClick] = useState(false);
+
   const [city, setCity] = useState("chennai");
   const [from, setFrom] = useState("chennai");
   const [to, setTo] = useState("chennai");
@@ -56,6 +67,7 @@ function Home(req, res) {
     } else {
       setHotelClick(true);
       setAirplaneClick(false);
+      setTrainClick(false);
     }
   };
   const funcPlaneClick = () => {
@@ -64,6 +76,16 @@ function Home(req, res) {
     } else {
       setAirplaneClick(true);
       setHotelClick(false);
+      setTrainClick(false);
+    }
+  };
+  const funcTrainClick = () => {
+    if (trainClick) {
+      setTrainClick(false);
+    } else {
+      setTrainClick(true);
+      setHotelClick(false);
+      setAirplaneClick(false);
     }
   };
   // useEffect(() => {
@@ -151,7 +173,11 @@ function Home(req, res) {
           </a>
           {/* <HeroTile type="cab" icon="fa-cab" />
           <HeroTile type="homestays" icon="fa-building" /> */}
-          <HeroTile type="train" icon="fa-train" />
+          <a onClick={() => funcTrainClick()}>
+            {" "}
+            <HeroTile type="train" icon="fa-train" />
+          </a>
+
           {/* <HeroTile type="buses" icon="fa-bus" /> */}
         </div>
       </header>
@@ -554,6 +580,127 @@ function Home(req, res) {
                       </div>
                     </div>
                   )}
+                </div>
+              </div>
+              <div className="btn-wrapper">
+                <GoldBtn type="submit">search</GoldBtn>
+              </div>
+            </div>
+          </form>
+          {/* <form className="search-filter-bar">
+            <input type="text" placeholder="search..." name="search" />
+            <button type="submit">
+              <i className="fa fa-search" />
+            </button>
+          </form> */}
+        </>
+      )}
+      {trainClick && (
+        <>
+          <form
+            className="searchFilterBar"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const checkFrom = from.value.toUpperCase();
+              const checkTo = to.value.toUpperCase();
+              // const check = city.value;
+              // console.log("loggingname", from.value + "to" + to.value);
+              // console.log("flightData", flightData);
+
+              // console.log(cab, errorFlight);
+
+              // const newData = flightData.filter(
+              //   (e) => e.txtOne.toLowerCase() === check.toLowerCase()
+              // );
+              //console.log(newData);
+
+              router.push(
+                {
+                  pathname: "/trainSearch",
+                  query: {
+                    checkFrom: checkFrom,
+                    checkTo: checkTo,
+                  },
+                },
+                "/trainSearch"
+              );
+              setQuery(e.target[0].value);
+            }}
+          >
+            <div id="search" className="search-filter-wrapper">
+              <div className="search-filter">
+                <div>
+                  <SearchFilterItem name="FROM" icon="fa-plane-departure" />
+                  <Select
+                    onChange={(option) => {
+                      setFrom(option);
+                    }}
+                    className="headerSearchInput headerSearchInputTextBox"
+                    placeholder="..."
+                    options={categories}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <SearchFilterItem name="To" icon="fa-location-dot" />
+                  <Select
+                    onChange={(option) => setTo(option)}
+                    className="headerSearchInput headerSearchInputTextBox"
+                    placeholder="..."
+                    options={categories.filter((e) => e !== from)}
+                    required
+                  />
+                </div>
+                <div>
+                  <SearchFilterItem name="Departure" icon="fa-calendar-days" />
+                  {/* <input
+                type="number"
+                placeholder="start date"
+                className="headerSearchInput"
+              /> */}
+                  <span
+                    className="headerSearchInput "
+                    onClick={() => setOpenDestination(!openDestination)}
+                  >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
+                  {openDestination && (
+                    <DateRange
+                      editableDateInputs={true}
+                      date={new Date()}
+                      moveRangeOnFirstSelection={true}
+                      onChange={(item) => setDeparture([item.selection])}
+                      ranges={departure}
+                      className="date"
+                      minDate={new Date()}
+                      forceParse={false}
+                    />
+                  )}
+                </div>
+                <div>
+                  <SearchFilterItem name="Return" icon="fa-calendar-days" />
+                  {/* <input
+                type="text"
+                placeholder="leave date"
+                className="headerSearchInput"
+              /> */}
+                  <span
+                    onClick={() => setOpenDestination(!openDestination)}
+                  >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
+                </div>
+                <div>
+                  <SearchFilterItem name="class" icon="fa-star" />
+                  <Select
+                    onChange={(option) => setCity(option)}
+                    className="headerSearchInput headerSearchInputTextBox"
+                    placeholder="Class"
+                    options={categoriesClass}
+                    required
+                  />
+                  {/* <input
+                type="text"
+                placeholder="rate it"
+                className="headerSearchInput"
+              /> */}
                 </div>
               </div>
               <div className="btn-wrapper">

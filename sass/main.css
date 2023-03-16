@@ -2289,3 +2289,73 @@ div input:focus + .border {
   font-family: Roboto;
   z-index: 99999;
 }
+.rower {
+  max-width: 100rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.rower:not(:last-child) {
+  margin-bottom: 8rem;
+}
+.rower::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.rower [class^="col-"] {
+  float: left;
+}
+.rower [class^="col-"]:not(:last-child) {
+  margin-right: 6rem;
+}
+.rower .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.rower .col-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+.rower .col-2-of-3 {
+  width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
+}
+.rower .col-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4);
+}
+.rower .col-2-of-4 {
+  width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+}
+.rower .col-3-of-4 {
+  width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+}
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.579);
+  font-size: 1.5rem;
+  max-width: 70vw;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+.feature-box__icon {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  color: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.feature-box:hover {
+  transform: translateY(-0.5rem) scale(1.01);
+}
+.section-features {
+  background: linear-gradient(to right, #fff, #e0d5aaa0);
+  background-size: cover;
+  color: #192a44;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+.trainh4 {
+  text-align: right;
+}
