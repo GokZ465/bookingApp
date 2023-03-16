@@ -17,7 +17,7 @@ export default function TrainSearch() {
         className="establishment-name"
         style={{ textAlign: "center", marginBottom: "2.5rem" }}
       >
-        Search Results for ${checkFrom}
+        Search Results for {checkFrom}
       </h3>
       <Features
         title={`${checkFrom} - Jn. Irctc Terminal ${
