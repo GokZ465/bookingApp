@@ -9,12 +9,7 @@ export default function TrainSearch() {
   const {
     query: { checkFrom, checkTo },
   } = router;
-  let data2;
-  // let data = useRef("");
-  useEffect(() => {
-    if (router.isReady) {
-    }
-  }, [isReady]);
+
   return (
     <div className="searchResultPage">
       <h3
