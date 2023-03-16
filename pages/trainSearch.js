@@ -19,7 +19,7 @@ export default function TrainSearch() {
     <div className="searchResultPage">
       <h3
         className="establishment-name"
-        style={{ "text-align": "center", "margin-bottom": "2.5rem" }}
+        style={{ textAlign: "center", marginBottom: "2.5rem" }}
       >
         {" "}
         Search Results for Chennai
