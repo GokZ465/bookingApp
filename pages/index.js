@@ -191,6 +191,8 @@ function Home(req, res) {
                   pathname: "/searchresult",
                   query: {
                     data: JSON.stringify(newData),
+                    airplaneClick: airplaneClick,
+                    hotelClick: hotelClick,
                   },
                 },
                 "/searchresult"

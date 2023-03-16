@@ -37,28 +37,7 @@ export default function Establishment({
           {establishment.descriptionShort}
         </div>
 
-        {hotelClick == true ? (
-          <GoldBtnLink
-            href="/establishment/[id]"
-            // onClick={() => {
-            //   router.push(
-            //     {
-            //       pathname: "/establishment/[id]",
-            //       query: {
-            //         child: child,
-            //         adult: adult,
-            //         room: room,
-            //         dates: dates,
-            //       },
-            //     },
-            //     "/establishment/[id]"
-            //   );
-            // }}
-            as={`/establishment/${establishment.id}`}
-          >
-            BOOK
-          </GoldBtnLink>
-        ) : (
+        {airplaneClick === "true" ? (
           <a onClick={() => formChange()}>
             <PlaneBtnLink
               className="planeBtn"
@@ -81,6 +60,27 @@ export default function Establishment({
               BOOK
             </PlaneBtnLink>
           </a>
+        ) : (
+          <GoldBtnLink
+            href="/establishment/[id]"
+            // onClick={() => {
+            //   router.push(
+            //     {
+            //       pathname: "/establishment/[id]",
+            //       query: {
+            //         child: child,
+            //         adult: adult,
+            //         room: room,
+            //         dates: dates,
+            //       },
+            //     },
+            //     "/establishment/[id]"
+            //   );
+            // }}
+            as={`/establishment/${establishment.id}`}
+          >
+            BOOK
+          </GoldBtnLink>
         )}
         {form && (
           <div className="modalBody">
