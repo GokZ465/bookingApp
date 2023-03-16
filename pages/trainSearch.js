@@ -16,7 +16,6 @@ export default function TrainSearch() {
         className="establishment-name"
         style={{ textAlign: "center", marginBottom: "2.5rem" }}
       >
-        {" "}
         Search Results for Chennai
       </h3>
       <Features
