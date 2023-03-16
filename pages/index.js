@@ -400,8 +400,8 @@ function Home(req, res) {
               e.preventDefault();
               const check = from.value + "to" + to.value;
               // const check = city.value;
-              console.log("loggingname", from.value + "to" + to.value);
-              console.log("flightData", flightData);
+              // console.log("loggingname", from.value + "to" + to.value);
+              // console.log("flightData", flightData);
 
               // console.log(cab, errorFlight);
 
