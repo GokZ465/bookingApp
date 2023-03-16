@@ -624,7 +624,7 @@ function Home(req, res) {
                 },
                 "/trainSearch"
               );
-              setQuery(e.target[0].value);
+              
             }}
           >
             <div id="search" className="search-filter-wrapper">

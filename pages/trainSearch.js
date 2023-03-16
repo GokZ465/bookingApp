@@ -19,13 +19,13 @@ export default function TrainSearch() {
         Search Results for Chennai
       </h3>
       <Features
-        title={`${checkFrom} - Jn. Irctc Terminal ${checkFrom.toLowerCase()} Rajdhani Express`}
+        title={`${checkFrom} - Jn. Irctc Terminal ${checkForm && checkFrom.toLowerCase()} Rajdhani Express`}
         desc={"#12310 | Departs on : S M T W T F S "}
         checkTo={checkTo}
         checkFrom={checkFrom}
       />
       <Features2
-        title={`${checkFrom} -Coromandel Express ${checkFrom.toLowerCase()} Terminal `}
+        title={`${checkFrom} -Coromandel Express ${checkForm && checkFrom.toLowerCase()} Terminal `}
         desc={"111 | Departs on : S M T F S "}
         checkTo={checkTo}
         checkFrom={checkFrom}
