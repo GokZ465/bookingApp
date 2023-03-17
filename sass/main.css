@@ -1444,11 +1444,13 @@ header .hero-index {
 } */
 
 .footer-dig {
-  /* background-color: #101d2c; */
-  background: #5066be;
+  background-color: #f7f9fb;
+  /* background: #5066be; */
+  margin-top: 4rem;
 
   grid-column: full-start/full-end;
   padding: 8rem;
+  margin-top: 5rem;
 }
 
 .nav-dig {
@@ -1458,15 +1460,19 @@ header .hero-index {
   grid-gap: 2rem;
   align-items: center;
 }
+.nav-dig a i {
+  color: #beae6f;
+}
 .nav-dig__link:link,
 .nav-dig__link:visited {
   font-size: 1.4rem;
-  color: #fff;
+  color: #beae6f;
   text-decoration: none;
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   text-align: center;
-  padding: 1.5rem;
+  padding: 0.5rem;
+
   display: block;
   transition: all 0.2s;
 }

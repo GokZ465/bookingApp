@@ -5,10 +5,7 @@ const Footer = () => (
   <footer className="footer-dig">
     <ul className="nav-dig">
       <li className="nav-dig__item">
-        <a href="#" className="fab fab-nav nav-dig__link">
-          Social Media
-        </a>
-        {/* <a
+        <a
           title="Messenger"
           target="_blank"
           rel="noreferrer"
@@ -16,6 +13,8 @@ const Footer = () => (
         >
           <i className="fab fab-nav nav-dig__link  fa-facebook-messenger" />
         </a>
+      </li>
+      <li className="nav-dig__item">
         <a
           title="YouTube"
           target="_blank"
@@ -24,7 +23,8 @@ const Footer = () => (
         >
           <i className="fab fab-nab nav-dig__link fa-youtube" />
         </a>
-
+      </li>
+      <li className="nav-dig__item">
         <a
           title="Twitter"
           target="_blank"
@@ -32,24 +32,14 @@ const Footer = () => (
           href="https://twitter.com/"
         >
           <i className="fab fab-nab  nav-dig__link fa-twitter" />
-        </a> */}
-      </li>
-      <li className="nav-dig__item">
-        <a href="#" className="nav-dig__link">
-          PRODUCT OFFERING
         </a>
       </li>
-      <li className="nav-dig__item">
-        <a href="#" className="nav-dig__link">
-          TOP INTERNATIONAL HOTELS
-        </a>
-      </li>
-      <li className="nav-dig__item">
-        <a href="#" className="nav-dig__link">
-          Contact us
-        </a>
-      </li>
-      <li className="nav-dig__item">
+
+      <a href="#" className="nav-dig__link">
+        DEMO WEBSITE
+      </a>
+
+      {/* <li className="nav-dig__item">
         <a href="#" className="nav-dig__link">
           ABOUT THE SITE
         </a>
@@ -58,7 +48,7 @@ const Footer = () => (
         <a href="#" className="nav-dig__link">
           TOP HOTELS IN INDIA
         </a>
-      </li>
+      </li> */}
     </ul>
     {/* <p className="copyright-dig">
       &copy; Copyright 2017 by Jonas Schmedtmann. Feel free to use this project
