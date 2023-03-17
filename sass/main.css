@@ -298,7 +298,11 @@ nav .logo {
 .establishments-detail h1 {
   text-align: center;
 }
-
+.timerBox {
+  min-height: 38px;
+  border-radius: 0.3rem;
+  min-width: 10rem;
+}
 .hero-tile-container {
   /* */
   position: absolute;
@@ -315,7 +319,10 @@ nav .logo {
   align-items: center;
   align-self: auto;
   align-content: center;
-  gap: 2rem 4rem;
+  gap: 2rem 6rem;
+}
+.cab-box__text {
+  font-size: 1.2rem;
 }
 .hero-tile-container .tile {
   display: -webkit-box;
@@ -2332,7 +2339,7 @@ div input:focus + .border {
 
 .feature-box {
   background-color: rgba(255, 255, 255, 0.579);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   max-width: 70vw;
   padding: 1.5rem;
   text-align: center;
@@ -2358,6 +2365,14 @@ div input:focus + .border {
   padding: 2.5rem;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
+  min-width: 70vw;
+  max-width: 82vw;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .trainh4 {
   text-align: right;

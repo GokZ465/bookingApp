@@ -83,7 +83,7 @@ const Searchresult = () => {
                 <br />
                 <br /> Still unsure about this trip? Lock this price!
               </h3>
-              <div className="nope">No thanks, I dont like saving money</div>
+
               <div
                 onClick={() => FormChange()}
                 className="modalClose"

@@ -1,41 +1,38 @@
 import React from "react";
 import FlatCards2 from "./flatcards2";
+import FlatCards3 from "./flatcards3";
 import FlatCards from "./_flatcards";
 
 export default function Features3({ ...props }) {
   return (
     <section className="section-features">
+      {/* {props.title} */}
       <h3>{props.title}</h3>
-      <h4 className="trainh4">Indica, Swift or similar</h4>
-      <pre> Hatchback AC 4 Seats</pre>
+      <h4 className="trainh4">{props.desc} </h4>
+      <pre>{props.desc2}</pre>
       <div className="rower">
-        <FlatCards
+        <FlatCards3
           icon="feature-box__icon "
-          title="3A Tactical"
-          details="AVAILABLE-10 &nbsp; &nbsp; ₹1725&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                  Free Cancellation "
-        />
-        <FlatCards
-          icon="feature-box__icon "
-          title="2A Tactical"
-          details="AVAILABLE-90 &nbsp; &nbsp;
-         ₹2525&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-         Free Cancellation"
-        />
+          title="
+          Flexi Fare"
+          details="Extra km fare: &nbsp; ₹18.0/km &nbsp;
+          "
+          details3="Fuel Type:&nbsp;
 
-        <FlatCards
-          icon="1st Class"
-          title="1st Class"
-          details="AVAILABLE-90&nbsp; &nbsp;
-          ₹3525&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-          Free Cancellation"
+          Diesel&nbsp;"
+          detailsRight="₹40,189"
+          details2="Flexible cancellation policy"
         />
-        <FlatCards
-          icon="1st Class"
-          title="1st Class"
-          details="AVAILABLE-1 &nbsp; &nbsp;
-          ₹2525&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-          Free Cancellation"
+        <FlatCards3
+          icon="feature-box__icon "
+          title="Value + Fare"
+          details="Extra km fare: &nbsp; ₹15.0/km &nbsp;
+          "
+          details3="Fuel Type:&nbsp;
+
+          Diesel&nbsp;"
+          detailsRight="₹34,636"
+          details2="Cancellation Free within 30 mins"
         />
       </div>
     </section>
