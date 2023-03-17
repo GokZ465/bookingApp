@@ -35,6 +35,9 @@ const categoriesClass = [
 ];
 
 function Home(req, res) {
+  <Head>
+    <link rel="stylesheet" href="../sass/icon-font.css" />
+  </Head>;
   let dateToday = new Date();
   let day = dateToday.getDate();
   let month = dateToday.getMonth();
@@ -235,6 +238,7 @@ function Home(req, res) {
                     className="headerSearchInput headerSearchInputTextBox"
                     placeholder="city"
                     options={categories}
+                    isSearchable={false}
                     required
                   />
                 </div>
@@ -436,17 +440,21 @@ function Home(req, res) {
                     placeholder="..."
                     options={categories}
                     required
+                    isSearchable={false}
+                    // onKeyDown={(e) => e.target.blur()}
                   />
                 </div>
 
                 <div>
                   <SearchFilterItem name="To" icon="fa-location-dot" />
                   <Select
+                    readonly="readonly"
                     onChange={(option) => setTo(option)}
                     className="headerSearchInput headerSearchInputTextBox"
                     placeholder="..."
                     options={categories.filter((e) => e !== from)}
                     required
+                    isSearchable={false}
                   />
                 </div>
                 <div>
@@ -624,7 +632,6 @@ function Home(req, res) {
                 },
                 "/trainSearch"
               );
-              
             }}
           >
             <div id="search" className="search-filter-wrapper">
@@ -639,6 +646,7 @@ function Home(req, res) {
                     placeholder="..."
                     options={categories}
                     required
+                    isSearchable={false}
                   />
                 </div>
 
@@ -650,6 +658,7 @@ function Home(req, res) {
                     placeholder="..."
                     options={categories.filter((e) => e !== from)}
                     required
+                    isSearchable={false}
                   />
                 </div>
                 <div>
@@ -695,6 +704,7 @@ function Home(req, res) {
                     placeholder="Class"
                     options={categoriesClass}
                     required
+                    isSearchable={false}
                   />
                   {/* <input
                 type="text"

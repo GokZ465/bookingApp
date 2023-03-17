@@ -2,11 +2,11 @@ import React from "react";
 import { SlCheck } from "react-icons/sl";
 
 const styles = {};
-export default function FlatCards2({ ...props }) {
+export default function FlatCards3({ ...props }) {
   return (
-    <div className="col-1-of-4">
+    <div className="col-1-of-2">
       <div className="feature-box">
-        {/* <SlCheck className={`props.icon`} /> */}
+        <SlCheck className={`props.icon`} />
 
         <h3 className="heading-tertiary u-margin-bottom-small">
           {props.title}

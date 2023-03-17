@@ -1,20 +1,24 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import GoldBtnLink from "./GoldButtons";
 import PlaneBtnLink, { PlaneBtn } from "./PlaneButtons";
 import Stars from "./Stars";
+
+import AppContext from "../firebase/AppContext";
+import FormChange from "./FormChange";
 export default function Establishment({
   establishment,
   hotelClick,
   airplaneClick,
 }) {
   const router = useRouter();
-  const formChange = () => {
-    showForm(!form);
-  };
+
+  const context = useContext(AppContext);
   console.log(airplaneClick, hotelClick);
-  const [form, showForm] = useState(false);
+  const FormChange = () => {
+    context.showForm(!context.form);
+  };
   return (
     <div className="establishment">
       <figure className="col-1">
@@ -38,7 +42,7 @@ export default function Establishment({
         </div>
 
         {airplaneClick === "true" ? (
-          <a onClick={() => formChange()}>
+          <a onClick={() => FormChange()}>
             <PlaneBtnLink
               className="planeBtn"
 
@@ -82,7 +86,7 @@ export default function Establishment({
             BOOK
           </GoldBtnLink>
         )}
-        {form && (
+        {/* {form && (
           <div className="modalBody">
             <div className="modal">
               <div className="modalForm">
@@ -132,7 +136,7 @@ export default function Establishment({
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

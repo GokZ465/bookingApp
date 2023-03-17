@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
   const [childContext, setChildContext] = useState("default");
   const [adultContext, setAdultContext] = useState("default");
   const [datesContext, setDatesContext] = useState("default");
+  const [form, showForm] = useState(false);
 
   return (
     <AppContext.Provider
@@ -22,6 +23,8 @@ function MyApp({ Component, pageProps }) {
         setAdultContext,
         datesContext,
         setDatesContext,
+        form,
+        showForm,
       }}
     >
       <AuthContextProvider>

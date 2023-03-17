@@ -116,7 +116,7 @@ nav .logo {
   align-items: center;
   align-self: center;
   align-content: center;
-  gap: 15vmax;
+  gap: 5vmax;
   width: 100%;
   max-width: 1280px;
 }
@@ -141,7 +141,7 @@ nav .logo {
   width: 38rem;
   height: 23rem;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
 }
 .establishment .col-2 {
   flex: 1;
@@ -2286,11 +2286,11 @@ div input:focus + .border {
   background: lighten(#474747, 10%)
     url(https://images.unsplash.com/photo-1452716726610-30ed68426a6b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=177c2914fe84d20069f207e27632acc9)
     center/cover no-repeat;
-  height: 40vh;
+  height: 0vh;
   overflow: hidden;
   color: #fff;
   font-family: Roboto;
-  z-index: 99999;
+  z-index: 99999 !important;
 }
 .rower {
   max-width: 100rem;
