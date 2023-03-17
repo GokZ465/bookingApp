@@ -1,44 +1,63 @@
 import React, { useContext } from "react";
 import AppContext from "../firebase/AppContext";
-
+import { format } from "date-fns";
 export default function Confirm() {
   const context = useContext(AppContext);
   return (
     <>
       <div className="confirm-body">
         <div className="heading">
-          <h3 className="notop">Order Review</h3>
+          <h3
+            className="notop establishment-name"
+            style={{ textAlign: "center", marginBottom: "2.5rem" }}
+          >
+            Order Review
+          </h3>
 
           <div className="grid-container">
             <div className="label-cell label-cell-left Label-1">
               <label className="base-label">Rooms</label>
             </div>
             <div className="label-cell  Text-1">
-              <p className="order-details">{context.roomContext}</p>
+              <p className="order-details">
+                {context.roomContext !== "default" ? context.roomContext : "1"}
+              </p>
             </div>
             <div className="label-cell label-cell-left Label-2">
               <label className="base-label">Adults</label>
             </div>
             <div className="label-cell Text-2">
-              <p className="order-details">{context.adultContext}</p>
+              <p className="order-details">
+                {context.adultContext !== "default" ? context.adultContext : 1}
+              </p>
             </div>
             <div className="label-cell label-cell-left Label-3">
               <label className="base-label">Children</label>
             </div>
             <div className="label-cell Text-3">
-              <p className="order-details">{context.childContext}</p>
+              <p className="order-details">
+                {context.childContext !== "default" ? context.childContext : 1}
+              </p>
             </div>
             <div className="label-cell label-cell-left Label-4">
               <label className="base-label">Data From</label>
             </div>
             <div className="label-cell Text-4">
-              <p className="order-details">{context.datesContext[0]}</p>
+              <p className="order-details">
+                {context.datesContext[0] !== "d"
+                  ? context.datesContext[0]
+                  : format(Date.now(), "dd / MM / yyyy")}
+              </p>
             </div>
             <div className="label-cell label-cell-left Label-5 bottom-border">
               <label className="base-label">Date End</label>
             </div>
             <div className="label-cell Text-5 bottom-border">
-              <p className="order-details">{context.datesContext[1]}</p>
+              <p className="order-details">
+                {context.datesContext[1] !== "e"
+                  ? context.datesContext[1]
+                  : format(Date.now(), "dd / MM / yyyy")}
+              </p>
             </div>
           </div>
 
