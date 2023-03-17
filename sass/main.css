@@ -1741,7 +1741,7 @@ a:hover {
 
 .header {
   background: #fff;
-  height: 90px;
+  height: 9rem;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -1764,7 +1764,7 @@ a:hover {
 .menu {
   color: #00819b;
   float: right;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 1px;
   padding-top: 34px;
@@ -1840,7 +1840,7 @@ ul.leaders span + span {
   text-transform: uppercase;
   -webkit-transition: display 0.3s ease-out;
   transition: display 0.3s ease-out;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .grid-container {
