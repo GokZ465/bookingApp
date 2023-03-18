@@ -2436,3 +2436,42 @@ input::-webkit-inner-spin-button {
 .fdBtn-b {
   right: -323px;
 }
+@media screen and (max-width: 482px) {
+  .searchFilterBar {
+    margin-top: 25rem !important;
+  }
+  .search-filter {
+    flex-flow: column nowrap !important;
+    justify-content: center;
+    align-items: center;
+    align-self: auto;
+    align-content: flex-start;
+    gap: 2rem;
+  }
+  .headerSearchInput {
+    width: 25rem;
+    font-size: 145%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .headerSearchInputTextBox {
+    width: 25rem;
+  }
+  .fontawesome-outline {
+    font-size: 2.2em;
+  }
+  .search-filter-item {
+    width: 20rem;
+  }
+  .search-filter-item-name {
+    font-size: 145%;
+  }
+  .search-filter div span {
+    font-size: 145%;
+  }
+  .search-filter-wrapper .btn-wrapper {
+    margin-top: 5rem;
+    justify-content: center;
+  }
+}
