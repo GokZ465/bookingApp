@@ -37,6 +37,7 @@ const slides = [
     title: "hotel",
   },
 ];
+
 const containerStyles = {
   width: "100%",
   height: "60vh",
@@ -95,6 +96,9 @@ function Home(req, res) {
   const [to, setTo] = useState("chennai");
   const context = useContext(AppContext);
   const [query, setQuery] = useState("");
+  const funcOpenDateSet = () => {
+    setOpenDate(!openDate);
+  };
   const funcHotelClick = () => {
     if (hotelClick) {
       setHotelClick(false);
@@ -144,8 +148,12 @@ function Home(req, res) {
   }, []);
   const router = useRouter();
   const [openDate, setOpenDate] = useState(false);
+  const [checkBeforeClose, setCheckBeforeClose] = useState(false);
   const [openDestination, setOpenDestination] = useState(false);
-
+  const funcDestinationClick = (item) => {
+    setOpenDestination(!openDestination);
+    setDeparture([item.selection]);
+  };
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -303,16 +311,28 @@ function Home(req, res) {
                     onClick={() => setOpenDate(!openDate)}
                   >{`${format(date[0].startDate, "MM/dd/yyyy")}`}</span>
                   {openDate && (
-                    <DateRange
-                      editableDateInputs={true}
-                      date={new Date()}
-                      moveRangeOnFirstSelection={false}
-                      onChange={(item) => setDate([item.selection])}
-                      ranges={date}
-                      minDate={new Date()}
-                      className="date"
-                      forceParse={false}
-                    />
+                    <span className="dateRangeHelper">
+                      <DateRange
+                        editableDateInputs={true}
+                        date={new Date()}
+                        moveRangeOnFirstSelection={false}
+                        onChange={(item) => setDate([item.selection])}
+                        ranges={date}
+                        minDate={new Date()}
+                        className="date"
+                        forceParse={false}
+                        renderExtraFooter={() => "extra footer"}
+                      />
+
+                      <button
+                        onClick={() => {
+                          setOpenDate(!openDate);
+                        }}
+                        className="btn-gold  fdBtn "
+                      >
+                        close
+                      </button>
+                    </span>
                   )}
                 </div>
                 <div>
@@ -518,16 +538,27 @@ function Home(req, res) {
                     onClick={() => setOpenDestination(!openDestination)}
                   >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
                   {openDestination && (
-                    <DateRange
-                      editableDateInputs={true}
-                      date={new Date()}
-                      moveRangeOnFirstSelection={true}
-                      onChange={(item) => setDeparture([item.selection])}
-                      ranges={departure}
-                      className="date"
-                      minDate={new Date()}
-                      forceParse={false}
-                    />
+                    <span className="dateRangeHelper">
+                      <DateRange
+                        editableDateInputs={true}
+                        date={new Date()}
+                        moveRangeOnFirstSelection={true}
+                        onChange={(item) => setDeparture([item.selection])}
+                        ranges={departure}
+                        className="date"
+                        minDate={new Date()}
+                        onRangeFocusChange={null}
+                        forceParse={false}
+                      />
+                       
+                      <button
+                        type="button"
+                        onClick={() => setOpenDestination(!openDestination)}
+                        className="btn-gold fdBtn fdBtn-b "
+                      >
+                        close
+                      </button>
+                    </span>
                   )}
                 </div>
                 <div>
@@ -538,7 +569,9 @@ function Home(req, res) {
                 className="headerSearchInput"
               /> */}
                   <span
-                    onClick={() => setOpenDestination(!openDestination)}
+                    onClick={() => {
+                      setOpenDestination(!openDestination);
+                    }}
                   >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
                 </div>
                 <div>
@@ -549,7 +582,9 @@ function Home(req, res) {
                 className="headerSearchInput"
               /> */}
                   <span
-                    onClick={() => setOpenOptions(!openOptions)}
+                    onClick={() => {
+                      setOpenOptions(!openOptions);
+                    }}
                     className="headerSearchText headerSearchInput "
                   >{`${options.adult} adult · ${options.children} children · ${options.room} Infant`}</span>
                   {openOptions && (
@@ -712,41 +747,7 @@ function Home(req, res) {
                     isSearchable={false}
                   />
                 </div>
-                <div>
-                  <SearchFilterItem name="Departure" icon="fa-calendar-days" />
-                  {/* <input
-                type="number"
-                placeholder="start date"
-                className="headerSearchInput"
-              /> */}
-                  <span
-                    className="headerSearchInput "
-                    onClick={() => setOpenDestination(!openDestination)}
-                  >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
-                  {openDestination && (
-                    <DateRange
-                      editableDateInputs={true}
-                      date={new Date()}
-                      moveRangeOnFirstSelection={true}
-                      onChange={(item) => setDeparture([item.selection])}
-                      ranges={departure}
-                      className="date"
-                      minDate={new Date()}
-                      forceParse={false}
-                    />
-                  )}
-                </div>
-                <div>
-                  <SearchFilterItem name="Return" icon="fa-calendar-days" />
-                  {/* <input
-                type="text"
-                placeholder="leave date"
-                className="headerSearchInput"
-              /> */}
-                  <span
-                    onClick={() => setOpenDestination(!openDestination)}
-                  >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
-                </div>
+
                 <div>
                   <SearchFilterItem name="class" icon="fa-star" />
                   <Select
@@ -762,6 +763,53 @@ function Home(req, res) {
                 placeholder="rate it"
                 className="headerSearchInput"
               /> */}
+                </div>
+                <div>
+                  <SearchFilterItem name="Departure" icon="fa-calendar-days" />
+                  {/* <input
+                type="number"
+                placeholder="start date"
+                className="headerSearchInput"
+              /> */}
+                  <span
+                    className="headerSearchInput "
+                    onClick={() => setOpenDestination(!openDestination)}
+                  >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
+                  {openDestination && (
+                    <label>
+                       
+                      <span className="dateRangeHelper">
+                        <DateRange
+                          editableDateInputs={true}
+                          date={new Date()}
+                          moveRangeOnFirstSelection={true}
+                          onChange={() => funcDestinationClick(item)}
+                          ranges={departure}
+                          className="date"
+                          minDate={new Date()}
+                          forceParse={false}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setOpenDestination(!openDestination)}
+                          className="btn-gold fdBtn fdBtn "
+                        >
+                          close
+                        </button>
+                      </span>
+                    </label>
+                  )}
+                </div>
+                <div>
+                  <SearchFilterItem name="Return" icon="fa-calendar-days" />
+                  {/* <input
+                type="text"
+                placeholder="leave date"
+                className="headerSearchInput"
+              /> */}
+                  <span
+                    onClick={() => setOpenDestination(!openDestination)}
+                  >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
                 </div>
               </div>
               <div className="btn-wrapper">
@@ -837,41 +885,7 @@ function Home(req, res) {
                     isSearchable={false}
                   />
                 </div>
-                <div>
-                  <SearchFilterItem name="Departure" icon="fa-calendar-days" />
-                  {/* <input
-                type="number"
-                placeholder="start date"
-                className="headerSearchInput"
-              /> */}
-                  <span
-                    className="headerSearchInput "
-                    onClick={() => setOpenDestination(!openDestination)}
-                  >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
-                  {openDestination && (
-                    <DateRange
-                      editableDateInputs={true}
-                      date={new Date()}
-                      moveRangeOnFirstSelection={true}
-                      onChange={(item) => setDeparture([item.selection])}
-                      ranges={departure}
-                      className="date"
-                      minDate={new Date()}
-                      forceParse={false}
-                    />
-                  )}
-                </div>
-                <div>
-                  <SearchFilterItem name="Return" icon="fa-calendar-days" />
-                  {/* <input
-                type="text"
-                placeholder="leave date"
-                className="headerSearchInput"
-              /> */}
-                  <span
-                    onClick={() => setOpenDestination(!openDestination)}
-                  >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
-                </div>
+
                 <div>
                   <SearchFilterItem name="PickUp Time" icon="fa-star" />
                   {/* <Select
@@ -897,7 +911,52 @@ function Home(req, res) {
                 className="headerSearchInput"
               /> */}
                 </div>
+                <div>
+                  <SearchFilterItem name="Departure" icon="fa-calendar-days" />
+                  {/* <input
+                type="number"
+                placeholder="start date"
+                className="headerSearchInput"
+              /> */}
+                  <span
+                    className="headerSearchInput "
+                    onClick={() => setOpenDestination(!openDestination)}
+                  >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
+                  {openDestination && (
+                    <span className="dateRangeHelper">
+                      <DateRange
+                        editableDateInputs={true}
+                        date={new Date()}
+                        moveRangeOnFirstSelection={true}
+                        onChange={(item) => setDeparture([item.selection])}
+                        ranges={departure}
+                        className="date"
+                        minDate={new Date()}
+                        forceParse={false}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setOpenDestination(!openDestination)}
+                        className="btn-gold fdBtn fdBtn "
+                      >
+                        close
+                      </button>
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <SearchFilterItem name="Return" icon="fa-calendar-days" />
+                  {/* <input
+                type="text"
+                placeholder="leave date"
+                className="headerSearchInput"
+              /> */}
+                  <span
+                    onClick={() => setOpenDestination(!openDestination)}
+                  >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
+                </div>
               </div>
+
               <div className="btn-wrapper">
                 <GoldBtn type="submit">search</GoldBtn>
               </div>

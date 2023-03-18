@@ -1,13 +1,25 @@
 import React from "react";
 import { BsFillFuelPumpDieselFill } from "react-icons/bs";
 import { FiMapPin } from "react-icons/fi";
-
+import { useRouter } from "next/router";
 import { TbClockCancel } from "react-icons/tb";
 
 export default function FlatCards3({ ...props }) {
+  const router = useRouter();
+
   return (
     <div className="col-1-of-2">
-      <div className="feature-box">
+      <div
+        className="feature-box"
+        onClick={() =>
+          router.push(
+            {
+              pathname: "/confirm",
+            },
+            "/confirm"
+          )
+        }
+      >
         <i className={`fontawesome-outline fa-solid fa-car`} />
 
         <h3 className="heading-tertiary u-margin-bottom-small">

@@ -2411,3 +2411,28 @@ input::-webkit-inner-spin-button {
 .trainh4 {
   text-align: right;
 }
+.dateRangeHelper {
+  position: relative;
+  width: 332px;
+  height: 347px;
+  z-index: -99999999;
+}
+.fdBtn {
+  background-color: rgb(61, 145, 255);
+  color: #fff;
+  width: 52px;
+  height: 42px;
+  border-top-right-radius: 1.042em;
+  border-bottom-right-radius: 1.042em;
+
+  position: absolute;
+  z-index: 99999999;
+  right: -330px;
+  bottom: -320px;
+  border-top-left-radius: 1.042em;
+  border-bottom-left-radius: 1.042em;
+}
+
+.fdBtn-b {
+  right: -323px;
+}

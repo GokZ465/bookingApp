@@ -3,6 +3,8 @@ import useSWR from "swr";
 import Head from "next/head";
 import Stars from "../../components/Stars";
 import { GoldBtn } from "../../components/GoldButtons";
+import AppContext from "../../firebase/AppContext";
+import { useContext } from "react";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -15,6 +17,7 @@ const fetcher = async (url) => {
 };
 
 export default function Person(...props) {
+  const context = useContext(AppContext);
   const router = useRouter();
   const { query } = useRouter();
   console.log(query);
@@ -33,7 +36,10 @@ export default function Person(...props) {
     //capitalize first letter of each word
     arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
   }
-
+  const handleConfirmClick = () => {
+    context.setNotHotel(false);
+    router.push("/confirm");
+  };
   const title = arr.join(" "); //put sentece back together
 
   return (
@@ -90,7 +96,9 @@ export default function Person(...props) {
             </button> */}{" "}
             <button
               className="btn-gold btn-spl"
-              onClick={() => router.push("/confirm")}
+              onClick={() => {
+                handleConfirmClick();
+              }}
               type="submit"
             >
               Book

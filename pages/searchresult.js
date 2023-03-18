@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Establishment from "../components/Establishment";
-import { useRouter, withRouter } from "next/router";
+import Router, { useRouter, withRouter } from "next/router";
 import AppContext from "../firebase/AppContext";
 
 const Searchresult = () => {
@@ -46,7 +46,7 @@ const Searchresult = () => {
         <div className="modalBody">
           <div className="modal">
             <div className="modalForm">
-              <form>
+              <form action="/confirm">
                 <label
                   className="modalLabel"
                   htmlFor="name"
@@ -72,9 +72,26 @@ const Searchresult = () => {
                   type="number"
                   required="required"
                 />
-                <button className="ModalButton" type="button">
+
+                <button className="ModalButton" type="submit">
                   Book Now
                 </button>
+
+                {/* <button
+                  className="ModalButton"
+                  type="button"
+                  onClick={router.push(
+                    {
+                      pathname: "/confirm",
+                      query: {
+                        isHotel: false,
+                      },
+                    },
+                    "/confirm"
+                  )}
+                >
+                  Book Now
+                </button> */}
               </form>
             </div>
             <div className="invite">

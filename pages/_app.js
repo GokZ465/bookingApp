@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }) {
   const [adultContext, setAdultContext] = useState("default");
   const [datesContext, setDatesContext] = useState("default");
   const [form, showForm] = useState(false);
+  const [notHotel, setNotHotel] = useState(false);
 
   return (
     <AppContext.Provider
@@ -25,6 +26,8 @@ function MyApp({ Component, pageProps }) {
         setDatesContext,
         form,
         showForm,
+        notHotel,
+        setNotHotel,
       }}
     >
       <AuthContextProvider>
