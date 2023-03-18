@@ -182,6 +182,19 @@ export default function Confirm() {
             </div>
           </div>
         )}
+        <div id="payment-methods">
+          <div className="methods">
+            <i className="fas fa-credit-card fa-3x"></i>
+          </div>
+          <div className="methods">
+            <i className="fab fa-paypal fa-3x"></i>
+            <span>Pay</span>
+            <span>Pal</span>
+          </div>
+          <div className="methods">
+            <i className="fab fa-amazon-pay fa-3x"></i>
+          </div>
+        </div>
 
         <div className="margin-40">
           <div className="card">
