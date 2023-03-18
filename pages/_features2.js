@@ -20,7 +20,7 @@ export default function Features2({ ...props }) {
         />
         <FlatCards2
           icon="feature-box__icon "
-          title="3A Tactical"
+          title="3 AC Tactical"
           details="AVAILABLE-43 &nbsp; &nbsp;
          ₹1890&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
          Free Cancellation"

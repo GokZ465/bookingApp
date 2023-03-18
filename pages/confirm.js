@@ -75,8 +75,7 @@ export default function Confirm() {
               </div>
             </div>
 
-            <div className="heading">
-              {/* <div className="inline">
+            {/* <div className="inline">
               <label className="base-label">Name</label>
               <p className="order-details">Josie Wellington</p>
             </div>
@@ -84,13 +83,22 @@ export default function Confirm() {
               <label className="base-label">Email Address</label>
               <p className="order-details">josie.wellington346@gmail.com</p>
             </div> */}
-            </div>
+
             <div>
               {/* <div className="inline">
               <label className="base-label notop">Program End</label>
               <p className="order-details">December 31, 2023</p>
             </div> */}
+              <div className="coupon card margin-40">
+                <h2 className="base-label">Coupon Code</h2>
+                <input className="base-input" id="code"></input>
 
+                <input
+                  type="button"
+                  value="Apply Coupon"
+                  className="button"
+                ></input>
+              </div>
               <div className="inline">
                 <label className="  base-label margin-40 notop">
                   Order Details
@@ -174,6 +182,7 @@ export default function Confirm() {
             </div>
           </div>
         )}
+
         <div className="margin-40">
           <div className="card">
             <div className="three-column">

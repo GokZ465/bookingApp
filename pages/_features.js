@@ -14,28 +14,28 @@ export default function Features({ ...props }) {
       <div className="rower">
         <FlatCards
           icon="feature-box__icon "
-          title="3A Tactical"
+          title="SL "
           details="AVAILABLE-10 &nbsp; &nbsp; ₹1725&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                   Free Cancellation "
         />
         <FlatCards
           icon="feature-box__icon "
-          title="2A Tactical"
+          title="3 AC"
           details="AVAILABLE-90 &nbsp; &nbsp;
          ₹2525&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
          Free Cancellation"
         />
 
         <FlatCards
-          icon="1st Class"
-          title="1st Class"
+          icon="2 AC"
+          title="2 AC"
           details="AVAILABLE-90&nbsp; &nbsp;
           ₹3525&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
           Free Cancellation"
         />
         <FlatCards
-          icon="1st Class"
-          title="1st Class"
+          icon="1st AC"
+          title="1st AC"
           details="AVAILABLE-1 &nbsp; &nbsp;
           ₹2525&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
           Free Cancellation"
