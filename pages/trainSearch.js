@@ -18,7 +18,7 @@ export default function TrainSearch() {
         className="establishment-name"
         style={{ textAlign: "center", marginBottom: "2.5rem" }}
       >
-        Search Results for {checkFrom.toLowerCase()}
+        Search Results for {checkFrom && checkFrom.toLowerCase()}
       </h3>
       {trainClick === "true" ? (
         <>
