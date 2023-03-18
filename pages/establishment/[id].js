@@ -81,6 +81,13 @@ export default function Person(...props) {
           <h1>{data.name.replaceAll("-", " ")}</h1>
           <p>{data.descriptionLong}</p>
           <div className="btn-wrapper">
+            {/* <button
+              className="btn-gold btn-spl btn-wrapper"
+              onClick={() => router.push("/confirm")}
+              type="submit"
+            >
+              <span className="background"></span> <span> Book</span>
+            </button> */}{" "}
             <button
               className="btn-gold btn-spl"
               onClick={() => router.push("/confirm")}

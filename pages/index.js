@@ -8,7 +8,7 @@ import HeroTile from "../components/HeroTile";
 import SearchFilterItem from "../components/SearchFilterItem";
 import { DateRange } from "react-date-range";
 
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format, formatDistance, formatRelative, subDays } from "date-fns";
@@ -17,7 +17,36 @@ import AppContext from "../firebase/AppContext";
 
 import { flights } from "./api/flights/data";
 import Features from "./_features";
+import ImageSlider from "../components/ImageSlider";
 const fetcher = (url) => fetch(url).then((res) => res.json());
+const slides = [
+  {
+    url: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "plane",
+  },
+  // {
+  //   url: "https://images.pexels.com/photos/325200/pexels-photo-325200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //   title: "train",
+  // },
+  {
+    url: "https://images.pexels.com/photos/2169286/pexels-photo-2169286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "train",
+  },
+  {
+    url: "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
+    title: "hotel",
+  },
+];
+const containerStyles = {
+  width: "100%",
+  height: "60vh",
+  margin: "0 auto",
+  display: "block",
+  top: "10rem",
+  objectFit: "cover",
+  marginTop: "15vh",
+  alignItems: "center",
+};
 const categories = [
   { value: "goa", label: "Goa" },
   { value: "chennai", label: "Chennai" },
@@ -59,6 +88,7 @@ function Home(req, res) {
   const [airplaneClick, setAirplaneClick] = useState(false);
   const [trainClick, setTrainClick] = useState(false);
   const [cabClick, setCabClick] = useState(false);
+  const [parentWidth, setParentwidth] = useState(1000);
 
   const [city, setCity] = useState("chennai");
   const [from, setFrom] = useState("chennai");
@@ -105,18 +135,13 @@ function Home(req, res) {
       setAirplaneClick(false);
     }
   };
-  // useEffect(() => {
-  //   console.log(query);
 
-  //   const ans = data.filter(
-  //     (e) => e.txtOne.toLowerCase() === query.toLowerCase()
-  //   );
-  //   console.log(1);
-
-  //   data = ans;
-
-  //   console.log(data);
-  // }, [query]);
+  useEffect(() => {
+    function handleResize() {
+      setParentwidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+  }, []);
   const router = useRouter();
   const [openDate, setOpenDate] = useState(false);
   const [openDestination, setOpenDestination] = useState(false);
@@ -178,9 +203,17 @@ function Home(req, res) {
         {/* <meta property="og:title" content="Holidaze" /> */}
         {/* <link rel="icon" href="/favicon.svg" /> */}
       </Head>
-
+      <div style={containerStyles}>
+        <ImageSlider
+          slides={slides}
+          parentWidth={
+            typeof window !== "undefined" ? window.innerWidth : parentWidth
+          }
+        />
+      </div>
       <header className="hero-image">
         <img className="hero-index header-img" src="holidaze-hero.png" alt="" />
+
         <div className="hero-tile-container">
           <a onClick={() => funcHotelClick()}>
             <HeroTile type="hotel" icon="fa-hotel" />
