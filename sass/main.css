@@ -2436,6 +2436,19 @@ input::-webkit-inner-spin-button {
 .fdBtn-b {
   right: -323px;
 }
+.fdBtn-d {
+  color: rgb(61, 145, 255);
+  background-color: #ffffff8f;
+  width: 78px;
+  height: 19px;
+  font-weight: 800;
+  font-size: 0.86rem;
+  z-index: 99999999;
+  border-top-left-radius: 1.042em;
+  border-top-right-radius: 1.042em;
+  border-bottom-right-radius: 1.042em;
+  border-bottom-left-radius: 1.042em;
+}
 @media screen and (max-width: 482px) {
   .searchFilterBar {
     margin-top: 25rem !important;
