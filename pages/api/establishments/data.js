@@ -8,7 +8,7 @@ export const establishments = [
     iconTwo: "fa-solid fa-newspaper",
     txtTwo: "Panjim , Goa",
     email: "lorem@inn.com",
-    price: "330",
+    price: "3300",
     maxGuests: "4",
     imgURL:
       "https://images.unsplash.com/photo-1529169436040-836f3d93f0f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE0fHxob3RlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
@@ -16,7 +16,7 @@ export const establishments = [
     descriptionLong:
       "Offering the 'Ginger Promise', Ginger Goa is a beautiful property with plenty of recreational options and comfortable facilities enriched by a contemporary ambience.",
     address: "",
-    location: "Bergen city center",
+    location: "Goa city center",
     long: "",
     lat: "",
     stars: "five",
@@ -30,7 +30,7 @@ export const establishments = [
     iconTwo: "",
     txtTwo: "Velachery ,Chennai",
     email: "ipsum@inn.com",
-    price: "330",
+    price: "4300",
     maxGuests: "15",
     imgURL:
       "https://images.unsplash.com/photo-1444201983204-c43cbd584d93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -59,7 +59,7 @@ export const establishments = [
     iconTwo: "",
     txtTwo: "Gandhi Nagar, Bangalore",
     email: "",
-    price: "",
+    price: "1900",
     maxGuests: "20",
     imgURL:
       "https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -81,7 +81,7 @@ export const establishments = [
     iconTwo: "",
     txtTwo: "Goregaon",
     email: "",
-    price: "",
+    price: "4000",
     maxGuests: "17",
     imgURL:
       "https://images.unsplash.com/photo-1644057501622-dfa7dd26dbfb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1081&q=80",
@@ -103,7 +103,7 @@ export const establishments = [
     iconTwo: "",
     txtTwo: "Patel Nagar , Akshardham Temple",
     email: "lorem@inn.com",
-    price: "330",
+    price: "3100",
     maxGuests: "40",
     imgURL:
       "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
@@ -127,7 +127,7 @@ export const establishments = [
     iconTwo: "",
     txtTwo: "Velachery ,Chennai",
     email: "ipsum@inn.com",
-    price: "330",
+    price: "5000",
     maxGuests: "15",
     imgURL:
       "https://images.unsplash.com/photo-1444201983204-c43cbd584d93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",

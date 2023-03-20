@@ -72,13 +72,13 @@ export default function Person(...props) {
           <p>{data.txtTwo}</p>
         </div>
         <div className="price">
-          <i className="fa-solid fa-euro-sign" />
+          <i className="fa-solid fa-indian-rupee-sign" />
           <p>{data.price} per night</p>
         </div>
       </div>
       <article className="establishments-detail">
-        <div className="background background-spl">{data.id}</div>
-
+        {/* <div className="background background-spl">{data.txtOne}</div> */}
+        <div className="background background-spl">{}</div>
         <div className="detail">
           <div className="location">
             <span className="line" />

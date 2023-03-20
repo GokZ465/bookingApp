@@ -28,7 +28,7 @@ export default function Establishment({
         />
       </figure>
       <div className="col-2">
-        <span className="id">{establishment.id}</span>
+        {/* <span className="id">{establishment.id}</span> */}
         <div className="location">
           <span className="line" />
           <span className="txt">{establishment.location}</span>
