@@ -11,7 +11,7 @@ const Searchresult = () => {
   const {
     query: { data, airplaneClick, hotelClick },
   } = router;
-  let data2;
+  let data2 = JSON.parse(data);
 
   // let data = useRef("");
   useEffect(() => {
@@ -26,6 +26,15 @@ const Searchresult = () => {
   return (
     <div className="searchResultPage">
       <div className="establishments-wrapper">
+        {hotelClick === "true" && (
+          <h3
+            className="notop establishment-name"
+            style={{ textAlign: "center", marginBottom: "2.5rem" }}
+          >
+            {console.log()}
+            Hotels in {data2[0].txtOne}
+          </h3>
+        )}
         {/* {(JSON.parse(data))} */}
         {/* {console.log(
           "hotelClick" + hotelClick,

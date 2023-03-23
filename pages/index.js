@@ -8,7 +8,7 @@ import HeroTile from "../components/HeroTile";
 import SearchFilterItem from "../components/SearchFilterItem";
 import { DateRange } from "react-date-range";
 
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext, useEffect, useRef } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format, formatDistance, formatRelative, subDays } from "date-fns";
@@ -24,17 +24,26 @@ const slides = [
     url: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "plane",
   },
-  // {
-  //   url: "https://images.pexels.com/photos/325200/pexels-photo-325200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //   title: "train",
-  // },
   {
-    url: "https://images.pexels.com/photos/2169286/pexels-photo-2169286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://images.pexels.com/photos/325200/pexels-photo-325200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "train",
   },
+
   {
     url: "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
     title: "hotel",
+  },
+  {
+    url: "https://images.pexels.com/photos/796628/pexels-photo-796628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "train2",
+  },
+  {
+    url: "https://images.pexels.com/photos/11937613/pexels-photo-11937613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "plane2",
+  },
+  {
+    url: "https://images.pexels.com/photos/2869215/pexels-photo-2869215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "hotel2",
   },
 ];
 
@@ -99,6 +108,9 @@ function Home(req, res) {
   const funcOpenDateSet = () => {
     setOpenDate(!openDate);
   };
+  const funcHeroClick = () => {
+    scrollTo(0, 1000);
+  };
   const funcHotelClick = () => {
     if (hotelClick) {
       setHotelClick(false);
@@ -108,6 +120,7 @@ function Home(req, res) {
       setTrainClick(false);
       setCabClick(false);
     }
+    funcHeroClick();
   };
   const funcPlaneClick = () => {
     if (airplaneClick) {
@@ -118,6 +131,7 @@ function Home(req, res) {
       setTrainClick(false);
       setCabClick(false);
     }
+    funcHeroClick();
   };
   const funcCabClick = () => {
     if (cabClick) {
@@ -128,6 +142,7 @@ function Home(req, res) {
       setHotelClick(false);
       setTrainClick(false);
     }
+    funcHeroClick();
   };
   const funcTrainClick = () => {
     if (trainClick) {
@@ -138,6 +153,7 @@ function Home(req, res) {
       setCabClick(false);
       setAirplaneClick(false);
     }
+    funcHeroClick();
   };
 
   useEffect(() => {
@@ -176,6 +192,7 @@ function Home(req, res) {
   const { cab, errorCabs } = useSWR("/api/cabs", fetcher);
   const flightData = res2.data;
   const [openOptions, setOpenOptions] = useState(false);
+
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
@@ -241,125 +258,128 @@ function Home(req, res) {
           {/* <HeroTile type="buses" icon="fa-bus" /> */}
         </div>
       </header>
-      {hotelClick && (
-        <>
-          <form
-            className="searchFilterBar"
-            onSubmit={(e) => {
-              const finalAns = compareDates(
-                format(date[0].startDate, "MM/dd/yyyy"),
-                fullDate
-              );
-              // const check = e.target[0].value;
-              console.log("ans le" + finalAns);
-              const check = city.value;
-              const dates = [
-                format(date[0].startDate, "MM/dd/yyyy"),
-                format(date[0].endDate, "MM/dd/yyyy"),
-              ];
-              const adult = options.adult;
-              const room = options.room;
-              const child = options.children;
-              console.log(dates);
-              e.preventDefault();
-              context.setRoomContext(room);
-              context.setDatesContext(dates);
-              context.setAdultContext(adult);
-              context.setChildContext(child);
-              console.log(context);
-              const newData = data.filter(
-                (e) => e.txtOne.toLowerCase() === check.toLowerCase()
-              );
+      <span>
+        {hotelClick && (
+          <>
+            <form
+              className="searchFilterBar"
+              onSubmit={(e) => {
+                const finalAns = compareDates(
+                  format(date[0].startDate, "MM/dd/yyyy"),
+                  fullDate
+                );
+                // const check = e.target[0].value;
+                console.log("ans le" + finalAns);
+                const check = city.value;
+                const dates = [
+                  format(date[0].startDate, "MM/dd/yyyy"),
+                  format(date[0].endDate, "MM/dd/yyyy"),
+                ];
+                const adult = options.adult;
+                const room = options.room;
+                const child = options.children;
+                console.log(dates);
+                e.preventDefault();
+                context.setRoomContext(room);
+                context.setDatesContext(dates);
+                context.setAdultContext(adult);
+                context.setChildContext(child);
+                console.log(context);
+                const newData = data.filter(
+                  (e) => e.txtOne.toLowerCase() === check.toLowerCase()
+                );
 
-              console.log(dates);
-              router.push(
-                {
-                  pathname: "/searchresult",
-                  query: {
-                    data: JSON.stringify(newData),
-                    airplaneClick: airplaneClick,
-                    hotelClick: hotelClick,
+                console.log(dates);
+                router.push(
+                  {
+                    pathname: "/searchresult",
+                    query: {
+                      data: JSON.stringify(newData),
+                      airplaneClick: airplaneClick,
+                      hotelClick: hotelClick,
+                    },
                   },
-                },
-                "/searchresult"
-              );
-              // setQuery(e.target[0].value);
-            }}
-          >
-            <div id="search" className="search-filter-wrapper">
-              <div className="search-filter">
-                <div>
-                  <SearchFilterItem name="location" icon="fa-location-dot" />
-                  <Select
-                    onChange={(option) => setCity(option)}
-                    className="headerSearchInput headerSearchInputTextBox"
-                    placeholder="city"
-                    options={categories}
-                    isSearchable={false}
-                    required
-                  />
-                </div>
-                <div>
-                  <SearchFilterItem name="check-in" icon="fa-calendar-days" />
-                  {/* <input
+                  "/searchresult"
+                );
+                // setQuery(e.target[0].value);
+              }}
+            >
+              <div id="search" className="search-filter-wrapper">
+                <div className="search-filter">
+                  <div>
+                    <SearchFilterItem name="location" icon="fa-location-dot" />
+                    <Select
+                      onChange={(option) => setCity(option)}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="city"
+                      options={categories}
+                      isSearchable={false}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <SearchFilterItem name="check-in" icon="fa-calendar-days" />
+                    {/* <input
                 type="number"
                 placeholder="start date"
                 className="headerSearchInput"
               /> */}
-                  <span
-                    className="headerSearchInput "
-                    onClick={() => setOpenDate(!openDate)}
-                  >{`${format(date[0].startDate, "MM/dd/yyyy")}`}</span>
-                  {openDate && (
-                    <span className="dateRangeHelper">
-                      <DateRange
-                        editableDateInputs={true}
-                        date={new Date()}
-                        moveRangeOnFirstSelection={false}
-                        onChange={(item) => setDate([item.selection])}
-                        ranges={date}
-                        minDate={new Date()}
-                        className="date"
-                        forceParse={false}
-                        renderExtraFooter={() => "extra footer"}
-                      />
+                    <span
+                      className="headerSearchInput "
+                      onClick={() => setOpenDate(!openDate)}
+                    >{`${format(date[0].startDate, "MM/dd/yyyy")}`}</span>
+                    {openDate && (
+                      <span className="dateRangeHelper">
+                        <DateRange
+                          editableDateInputs={true}
+                          date={new Date()}
+                          moveRangeOnFirstSelection={false}
+                          onChange={(item) => setDate([item.selection])}
+                          ranges={date}
+                          minDate={new Date()}
+                          className="date"
+                          forceParse={false}
+                          renderExtraFooter={() => "extra footer"}
+                        />
 
-                      <button
-                        onClick={() => {
-                          setOpenDate(!openDate);
-                        }}
-                        className="btn-gold  fdBtn "
-                      >
-                        close
-                      </button>
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <SearchFilterItem name="check-out" icon="fa-calendar-days" />
-                  {/* <input
+                        <button
+                          onClick={() => {
+                            setOpenDate(!openDate);
+                          }}
+                          className="btn-gold  fdBtn "
+                        >
+                          close
+                        </button>
+                      </span>
+                    )}
+                  </div>
+                  <div>
+                    <SearchFilterItem
+                      name="check-out"
+                      icon="fa-calendar-days"
+                    />
+                    {/* <input
                 type="text"
                 placeholder="leave date"
                 className="headerSearchInput"
               /> */}
-                  <span onClick={() => setOpenDate(!openDate)}>{`${format(
-                    date[0].endDate,
-                    "MM/dd/yyyy"
-                  )}`}</span>
-                </div>
-                <div>
-                  <SearchFilterItem name="rooms & guests" icon="fa-star" />
-                  {/* <input
+                    <span onClick={() => setOpenDate(!openDate)}>{`${format(
+                      date[0].endDate,
+                      "MM/dd/yyyy"
+                    )}`}</span>
+                  </div>
+                  <div>
+                    <SearchFilterItem name="rooms & guests" icon="fa-star" />
+                    {/* <input
                 type="text"
                 placeholder="rate it"
                 className="headerSearchInput"
               /> */}
-                  <span
-                    onClick={() => setOpenOptions(!openOptions)}
-                    className="headerSearchText headerSearchInput "
-                  >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
-                  {openOptions && (
-                    
+                    <span
+                      onClick={() => setOpenOptions(!openOptions)}
+                      className="headerSearchText headerSearchInput "
+                    >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
+                    {openOptions && (
                       <div className="options">
                         <div className="optionItem">
                           <span className="optionText">Adult</span>
@@ -450,356 +470,509 @@ function Home(req, res) {
                           close
                         </button>
                       </div>
-                    
-                  )}
+                    )}
+                  </div>
+                </div>
+
+                <div className="btn-wrapper">
+                  <GoldBtn type="submit">search</GoldBtn>
                 </div>
               </div>
-
-              <div className="btn-wrapper">
-                <GoldBtn type="submit">search</GoldBtn>
-              </div>
-            </div>
-          </form>
-          {/* <form className="search-filter-bar">
+            </form>
+            {/* <form className="search-filter-bar">
             <input type="text" placeholder="search..." name="search" />
             <button type="submit">
               <i className="fa fa-search" />
             </button>
           </form> */}
 
-          <div className="establishments-wrapper">
-            {data.map((p, i) => (
-              <Establishment key={i} establishment={p} />
-            ))}
-          </div>
-        </>
-      )}
-      {airplaneClick && (
-        <>
-          <form
-            className="searchFilterBar"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const check = from.value + "to" + to.value;
-              // const check = city.value;
-              // console.log("loggingname", from.value + "to" + to.value);
-              // console.log("flightData", flightData);
+            <div className="establishments-wrapper">
+              {data.map((p, i) => (
+                <Establishment key={i} establishment={p} />
+              ))}
+            </div>
+          </>
+        )}
+        {airplaneClick && (
+          <>
+            <form
+              className="searchFilterBar"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const check = from.value + "to" + to.value;
+                // const check = city.value;
+                // console.log("loggingname", from.value + "to" + to.value);
+                // console.log("flightData", flightData);
 
-              // console.log(cab, errorFlight);
+                // console.log(cab, errorFlight);
 
-              const newData = flightData.filter(
-                (e) => e.txtOne.toLowerCase() === check.toLowerCase()
-              );
-              console.log(newData);
+                const newData = flightData.filter(
+                  (e) => e.txtOne.toLowerCase() === check.toLowerCase()
+                );
+                console.log(newData);
 
-              router.push(
-                {
-                  pathname: "/searchresult",
-                  query: {
-                    data: JSON.stringify(newData),
-                    airplaneClick: airplaneClick,
-                    hotelClick: hotelClick,
+                router.push(
+                  {
+                    pathname: "/searchresult",
+                    query: {
+                      data: JSON.stringify(newData),
+                      airplaneClick: airplaneClick,
+                      hotelClick: hotelClick,
+                    },
                   },
-                },
-                "/searchresult"
-              );
-              setQuery(e.target[0].value);
-            }}
-          >
-            <div id="search" className="search-filter-wrapper">
-              <div className="search-filter">
-                <div>
-                  <SearchFilterItem name="FROM" icon="fa-plane-departure" />
-                  <Select
-                    onChange={(option) => {
-                      setFrom(option);
-                    }}
-                    className="headerSearchInput headerSearchInputTextBox"
-                    placeholder="..."
-                    options={categories}
-                    required
-                    isSearchable={false}
-                    // onKeyDown={(e) => e.target.blur()}
-                  />
-                </div>
+                  "/searchresult"
+                );
+                setQuery(e.target[0].value);
+              }}
+            >
+              <div id="search" className="search-filter-wrapper">
+                <div className="search-filter">
+                  <div>
+                    <SearchFilterItem name="FROM" icon="fa-plane-departure" />
+                    <Select
+                      onChange={(option) => {
+                        setFrom(option);
+                      }}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="..."
+                      options={categories}
+                      required
+                      isSearchable={false}
+                      // onKeyDown={(e) => e.target.blur()}
+                    />
+                  </div>
 
-                <div>
-                  <SearchFilterItem name="To" icon="fa-location-dot" />
-                  <Select
-                    readonly="readonly"
-                    onChange={(option) => setTo(option)}
-                    className="headerSearchInput headerSearchInputTextBox"
-                    placeholder="..."
-                    options={categories.filter((e) => e !== from)}
-                    required
-                    isSearchable={false}
-                  />
-                </div>
-                <div>
-                  <SearchFilterItem name="Departure" icon="fa-calendar-days" />
-                  {/* <input
+                  <div>
+                    <SearchFilterItem name="To" icon="fa-location-dot" />
+                    <Select
+                      readonly="readonly"
+                      onChange={(option) => setTo(option)}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="..."
+                      options={categories.filter((e) => e !== from)}
+                      required
+                      isSearchable={false}
+                    />
+                  </div>
+                  <div>
+                    <SearchFilterItem
+                      name="Departure"
+                      icon="fa-calendar-days"
+                    />
+                    {/* <input
                 type="number"
                 placeholder="start date"
                 className="headerSearchInput"
               /> */}
-                  <span
-                    className="headerSearchInput "
-                    onClick={() => setOpenDestination(!openDestination)}
-                  >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
-                  {openDestination && (
-                    <span className="dateRangeHelper">
-                      <DateRange
-                        editableDateInputs={true}
-                        date={new Date()}
-                        moveRangeOnFirstSelection={true}
-                        onChange={(item) => setDeparture([item.selection])}
-                        ranges={departure}
-                        className="date"
-                        minDate={new Date()}
-                        onRangeFocusChange={null}
-                        forceParse={false}
-                      />
-                       
-                      <button
-                        type="button"
-                        onClick={() => setOpenDestination(!openDestination)}
-                        className="btn-gold fdBtn fdBtn-b "
-                      >
-                        close
-                      </button>
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <SearchFilterItem name="Return" icon="fa-calendar-days" />
-                  {/* <input
+                    <span
+                      className="headerSearchInput "
+                      onClick={() => setOpenDestination(!openDestination)}
+                    >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
+                    {openDestination && (
+                      <span className="dateRangeHelper">
+                        <DateRange
+                          editableDateInputs={true}
+                          date={new Date()}
+                          moveRangeOnFirstSelection={true}
+                          onChange={(item) => setDeparture([item.selection])}
+                          ranges={departure}
+                          className="date"
+                          minDate={new Date()}
+                          onRangeFocusChange={null}
+                          forceParse={false}
+                        />
+                         
+                        <button
+                          type="button"
+                          onClick={() => setOpenDestination(!openDestination)}
+                          className="btn-gold fdBtn fdBtn-b "
+                        >
+                          close
+                        </button>
+                      </span>
+                    )}
+                  </div>
+                  <div>
+                    <SearchFilterItem name="Return" icon="fa-calendar-days" />
+                    {/* <input
                 type="text"
                 placeholder="leave date"
                 className="headerSearchInput"
               /> */}
-                  <span
-                    onClick={() => {
-                      setOpenDestination(!openDestination);
-                    }}
-                  >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
-                </div>
-                <div>
-                  <SearchFilterItem name="travellers" icon="fa-star" />
-                  {/* <input
+                    <span
+                      onClick={() => {
+                        setOpenDestination(!openDestination);
+                      }}
+                    >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
+                  </div>
+                  <div>
+                    <SearchFilterItem name="travellers" icon="fa-star" />
+                    {/* <input
                 type="text"
                 placeholder="rate it"
                 className="headerSearchInput"
               /> */}
-                  <span
-                    onClick={() => {
-                      setOpenOptions(!openOptions);
-                    }}
-                    className="headerSearchText headerSearchInput "
-                  >{`${options.adult} adult · ${options.children} children · ${options.room} Infant`}</span>
-                  {openOptions && (
-                    <div className="options">
-                      <div className="optionItem">
-                        <span className="optionText">Adult</span>
-                        <div className="optionCounter">
-                          <button
-                            disabled={options.adult <= 1}
-                            className="optionCounterButton"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleOption("adult", "d");
-                            }}
-                          >
-                            -
-                          </button>
-                          <span className="optionCounterNumber">
-                            {options.adult}
-                          </span>
-                          <button
-                            className="optionCounterButton"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleOption("adult", "i");
-                            }}
-                          >
-                            +
-                          </button>
+                    <span
+                      onClick={() => {
+                        setOpenOptions(!openOptions);
+                      }}
+                      className="headerSearchText headerSearchInput "
+                    >{`${options.adult} adult · ${options.children} children · ${options.room} Infant`}</span>
+                    {openOptions && (
+                      <div className="options">
+                        <div className="optionItem">
+                          <span className="optionText">Adult</span>
+                          <div className="optionCounter">
+                            <button
+                              disabled={options.adult <= 1}
+                              className="optionCounterButton"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleOption("adult", "d");
+                              }}
+                            >
+                              -
+                            </button>
+                            <span className="optionCounterNumber">
+                              {options.adult}
+                            </span>
+                            <button
+                              className="optionCounterButton"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleOption("adult", "i");
+                              }}
+                            >
+                              +
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                      <div className="optionItem">
-                        <span className="optionText">Children</span>
-                        <div className="optionCounter">
-                          <button
-                            disabled={options.children <= 0}
-                            className="optionCounterButton"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleOption("children", "d");
-                            }}
-                          >
-                            -
-                          </button>
-                          <span className="optionCounterNumber">
-                            {options.children}
-                          </span>
-                          <button
-                            className="optionCounterButton"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleOption("children", "i");
-                            }}
-                          >
-                            +
-                          </button>
+                        <div className="optionItem">
+                          <span className="optionText">Children</span>
+                          <div className="optionCounter">
+                            <button
+                              disabled={options.children <= 0}
+                              className="optionCounterButton"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleOption("children", "d");
+                              }}
+                            >
+                              -
+                            </button>
+                            <span className="optionCounterNumber">
+                              {options.children}
+                            </span>
+                            <button
+                              className="optionCounterButton"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleOption("children", "i");
+                              }}
+                            >
+                              +
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                      <div className="optionItem">
-                        <span className="optionText">Infant</span>
-                        <div className="optionCounter">
-                          <button
-                            disabled={options.room <= 1}
-                            className="optionCounterButton"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleOption("room", "d");
-                            }}
-                          >
-                            -
-                          </button>
-                          <span className="optionCounterNumber">
-                            {options.room}
-                          </span>
-                          <button
-                            className="optionCounterButton"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleOption("room", "i");
-                            }}
-                          >
-                            +
-                          </button>
+                        <div className="optionItem">
+                          <span className="optionText">Infant</span>
+                          <div className="optionCounter">
+                            <button
+                              disabled={options.room <= 1}
+                              className="optionCounterButton"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleOption("room", "d");
+                              }}
+                            >
+                              -
+                            </button>
+                            <span className="optionCounterNumber">
+                              {options.room}
+                            </span>
+                            <button
+                              className="optionCounterButton"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleOption("room", "i");
+                              }}
+                            >
+                              +
+                            </button>
+                          </div>
                         </div>
+                        <button
+                          type="button"
+                          onClick={() => setOpenOptions(!openOptions)}
+                          className="btn-gold fdBtn-d  "
+                        >
+                          close
+                        </button>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => setOpenOptions(!openOptions)}
-                        className="btn-gold fdBtn-d  "
-                      >
-                        close
-                      </button>
-                    </div>
-                  )}
+                    )}
+                  </div>
+                </div>
+                <div className="btn-wrapper">
+                  <GoldBtn type="submit">search</GoldBtn>
                 </div>
               </div>
-              <div className="btn-wrapper">
-                <GoldBtn type="submit">search</GoldBtn>
-              </div>
-            </div>
-          </form>
-          {/* <form className="search-filter-bar">
+            </form>
+            {/* <form className="search-filter-bar">
             <input type="text" placeholder="search..." name="search" />
             <button type="submit">
               <i className="fa fa-search" />
             </button>
           </form> */}
-        </>
-      )}
-      {trainClick && (
-        <>
-          <form
-            className="searchFilterBar"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const checkFrom = from.value.toUpperCase();
-              const checkTo = to.value.toUpperCase();
-              // const check = city.value;
-              // console.log("loggingname", from.value + "to" + to.value);
-              // console.log("flightData", flightData);
+          </>
+        )}
+        {trainClick && (
+          <>
+            <form
+              className="searchFilterBar"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const checkFrom = from.value.toUpperCase();
+                const checkTo = to.value.toUpperCase();
+                // const check = city.value;
+                // console.log("loggingname", from.value + "to" + to.value);
+                // console.log("flightData", flightData);
 
-              // console.log(cab, errorFlight);
+                // console.log(cab, errorFlight);
 
-              // const newData = flightData.filter(
-              //   (e) => e.txtOne.toLowerCase() === check.toLowerCase()
-              // );
-              //console.log(newData);
+                // const newData = flightData.filter(
+                //   (e) => e.txtOne.toLowerCase() === check.toLowerCase()
+                // );
+                //console.log(newData);
 
-              router.push(
-                {
-                  pathname: "/trainSearch",
-                  query: {
-                    checkFrom: checkFrom,
-                    checkTo: checkTo,
-                    trainClick: trainClick,
-                    cabClick: cabClick,
+                router.push(
+                  {
+                    pathname: "/trainSearch",
+                    query: {
+                      checkFrom: checkFrom,
+                      checkTo: checkTo,
+                      trainClick: trainClick,
+                      cabClick: cabClick,
+                    },
                   },
-                },
-                "/trainSearch"
-              );
-            }}
-          >
-            <div id="search" className="search-filter-wrapper">
-              <div className="search-filter">
-                <div>
-                  <SearchFilterItem name="FROM" icon="fa-plane-departure" />
-                  <Select
-                    onChange={(option) => {
-                      setFrom(option);
-                    }}
-                    className="headerSearchInput headerSearchInputTextBox"
-                    placeholder="..."
-                    options={categories}
-                    required
-                    isSearchable={false}
-                  />
-                </div>
+                  "/trainSearch"
+                );
+              }}
+            >
+              <div id="search" className="search-filter-wrapper">
+                <div className="search-filter">
+                  <div>
+                    <SearchFilterItem name="FROM" icon="fa-plane-departure" />
+                    <Select
+                      onChange={(option) => {
+                        setFrom(option);
+                      }}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="..."
+                      options={categories}
+                      required
+                      isSearchable={false}
+                    />
+                  </div>
 
-                <div>
-                  <SearchFilterItem name="To" icon="fa-location-dot" />
-                  <Select
-                    onChange={(option) => setTo(option)}
-                    className="headerSearchInput headerSearchInputTextBox"
-                    placeholder="..."
-                    options={categories.filter((e) => e !== from)}
-                    required
-                    isSearchable={false}
-                  />
-                </div>
+                  <div>
+                    <SearchFilterItem name="To" icon="fa-location-dot" />
+                    <Select
+                      onChange={(option) => setTo(option)}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="..."
+                      options={categories.filter((e) => e !== from)}
+                      required
+                      isSearchable={false}
+                    />
+                  </div>
 
-                <div>
-                  <SearchFilterItem name="class" icon="fa-star" />
-                  <Select
+                  <div>
+                    {/* <SearchFilterItem name="class" icon="fa-star" />
+                    <Select
+                      onChange={(option) => setCity(option)}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="Class"
+                      options={categoriesClass}
+                      required
+                      isSearchable={false}
+                    /> */}
+                    {/* <input
+                type="text"
+                placeholder="rate it"
+                className="headerSearchInput"
+              /> */}
+                  </div>
+                  <div>
+                    <SearchFilterItem
+                      name="Departure"
+                      icon="fa-calendar-days"
+                    />
+                    {/* <input
+                type="number"
+                placeholder="start date"
+                className="headerSearchInput"
+              /> */}
+                    <span
+                      className="headerSearchInput "
+                      onClick={() => setOpenDestination(!openDestination)}
+                    >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
+                    {openDestination && (
+                      <label>
+                         
+                        <span className="dateRangeHelper">
+                          <DateRange
+                            editableDateInputs={true}
+                            date={new Date()}
+                            moveRangeOnFirstSelection={true}
+                            onChange={(item) => setDeparture([item.selection])}
+                            ranges={departure}
+                            className="date"
+                            minDate={new Date()}
+                            forceParse={false}
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setOpenDestination(!openDestination)}
+                            className="btn-gold fdBtn fdBtn "
+                          >
+                            close
+                          </button>
+                        </span>
+                      </label>
+                    )}
+                  </div>
+                  <div>
+                    <SearchFilterItem name="Return" icon="fa-calendar-days" />
+                    {/* <input
+                type="text"
+                placeholder="leave date"
+                className="headerSearchInput"
+              /> */}
+                    <span
+                      onClick={() => setOpenDestination(!openDestination)}
+                    >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
+                  </div>
+                </div>
+                <div className="btn-wrapper">
+                  <GoldBtn type="submit">search</GoldBtn>
+                </div>
+              </div>
+            </form>
+            {/* <form className="search-filter-bar">
+            <input type="text" placeholder="search..." name="search" />
+            <button type="submit">
+              <i className="fa fa-search" />
+            </button>
+          </form> */}
+          </>
+        )}
+        {cabClick && (
+          <>
+            <form
+              className="searchFilterBar"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const checkFrom = from.value.toUpperCase();
+                const checkTo = to.value.toUpperCase();
+                // const check = city.value;
+                // console.log("loggingname", from.value + "to" + to.value);
+                // console.log("flightData", flightData);
+
+                // console.log(cab, errorFlight);
+
+                // const newData = flightData.filter(
+                //   (e) => e.txtOne.toLowerCase() === check.toLowerCase()
+                // );
+                //console.log(newData);
+
+                router.push(
+                  {
+                    pathname: "/trainSearch",
+                    query: {
+                      checkFrom: checkFrom,
+                      checkTo: checkTo,
+                      trainClick: trainClick,
+                      cabClick: cabClick,
+                    },
+                  },
+                  "/trainSearch"
+                );
+              }}
+            >
+              <div id="search" className="search-filter-wrapper">
+                <div className="search-filter">
+                  <div>
+                    <SearchFilterItem name="FROM" icon="fa-plane-departure" />
+                    <Select
+                      onChange={(option) => {
+                        setFrom(option);
+                      }}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="..."
+                      options={categories}
+                      required
+                      isSearchable={false}
+                    />
+                  </div>
+
+                  <div>
+                    <SearchFilterItem name="To" icon="fa-location-dot" />
+                    <Select
+                      onChange={(option) => setTo(option)}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="..."
+                      options={categories.filter((e) => e !== from)}
+                      required
+                      isSearchable={false}
+                    />
+                  </div>
+
+                  <div>
+                    <SearchFilterItem name="PickUp Time" icon="fa-star" />
+                    {/* <Select
                     onChange={(option) => setCity(option)}
                     className="headerSearchInput headerSearchInputTextBox"
                     placeholder="Class"
                     options={categoriesClass}
                     required
                     isSearchable={false}
-                  />
-                  {/* <input
+                  /> */}
+                    <input
+                      type="time"
+                      id="appt"
+                      name="appt"
+                      // min="09:00"
+                      // max="18:00"
+                      required
+                      className="headerSearchInput headerSearchInputTextBox timerBox"
+                    ></input>
+                    {/* <input
                 type="text"
                 placeholder="rate it"
                 className="headerSearchInput"
               /> */}
-                </div>
-                <div>
-                  <SearchFilterItem name="Departure" icon="fa-calendar-days" />
-                  {/* <input
+                  </div>
+                  <div>
+                    <SearchFilterItem
+                      name="Departure"
+                      icon="fa-calendar-days"
+                    />
+                    {/* <input
                 type="number"
                 placeholder="start date"
                 className="headerSearchInput"
               /> */}
-                  <span
-                    className="headerSearchInput "
-                    onClick={() => setOpenDestination(!openDestination)}
-                  >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
-                  {openDestination && (
-                    <label>
-                       
+                    <span
+                      className="headerSearchInput "
+                      onClick={() => setOpenDestination(!openDestination)}
+                    >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
+                    {openDestination && (
                       <span className="dateRangeHelper">
                         <DateRange
                           editableDateInputs={true}
                           date={new Date()}
                           moveRangeOnFirstSelection={true}
-                          onChange={() => funcDestinationClick(item)}
+                          onChange={(item) => setDeparture([item.selection])}
                           ranges={departure}
                           className="date"
                           minDate={new Date()}
@@ -813,179 +986,35 @@ function Home(req, res) {
                           close
                         </button>
                       </span>
-                    </label>
-                  )}
-                </div>
-                <div>
-                  <SearchFilterItem name="Return" icon="fa-calendar-days" />
-                  {/* <input
+                    )}
+                  </div>
+                  <div>
+                    <SearchFilterItem name="Return" icon="fa-calendar-days" />
+                    {/* <input
                 type="text"
                 placeholder="leave date"
                 className="headerSearchInput"
               /> */}
-                  <span
-                    onClick={() => setOpenDestination(!openDestination)}
-                  >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
+                    <span
+                      onClick={() => setOpenDestination(!openDestination)}
+                    >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
+                  </div>
+                </div>
+
+                <div className="btn-wrapper">
+                  <GoldBtn type="submit">search</GoldBtn>
                 </div>
               </div>
-              <div className="btn-wrapper">
-                <GoldBtn type="submit">search</GoldBtn>
-              </div>
-            </div>
-          </form>
-          {/* <form className="search-filter-bar">
+            </form>
+            {/* <form className="search-filter-bar">
             <input type="text" placeholder="search..." name="search" />
             <button type="submit">
               <i className="fa fa-search" />
             </button>
           </form> */}
-        </>
-      )}
-      {cabClick && (
-        <>
-          <form
-            className="searchFilterBar"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const checkFrom = from.value.toUpperCase();
-              const checkTo = to.value.toUpperCase();
-              // const check = city.value;
-              // console.log("loggingname", from.value + "to" + to.value);
-              // console.log("flightData", flightData);
-
-              // console.log(cab, errorFlight);
-
-              // const newData = flightData.filter(
-              //   (e) => e.txtOne.toLowerCase() === check.toLowerCase()
-              // );
-              //console.log(newData);
-
-              router.push(
-                {
-                  pathname: "/trainSearch",
-                  query: {
-                    checkFrom: checkFrom,
-                    checkTo: checkTo,
-                    trainClick: trainClick,
-                    cabClick: cabClick,
-                  },
-                },
-                "/trainSearch"
-              );
-            }}
-          >
-            <div id="search" className="search-filter-wrapper">
-              <div className="search-filter">
-                <div>
-                  <SearchFilterItem name="FROM" icon="fa-plane-departure" />
-                  <Select
-                    onChange={(option) => {
-                      setFrom(option);
-                    }}
-                    className="headerSearchInput headerSearchInputTextBox"
-                    placeholder="..."
-                    options={categories}
-                    required
-                    isSearchable={false}
-                  />
-                </div>
-
-                <div>
-                  <SearchFilterItem name="To" icon="fa-location-dot" />
-                  <Select
-                    onChange={(option) => setTo(option)}
-                    className="headerSearchInput headerSearchInputTextBox"
-                    placeholder="..."
-                    options={categories.filter((e) => e !== from)}
-                    required
-                    isSearchable={false}
-                  />
-                </div>
-
-                <div>
-                  <SearchFilterItem name="PickUp Time" icon="fa-star" />
-                  {/* <Select
-                    onChange={(option) => setCity(option)}
-                    className="headerSearchInput headerSearchInputTextBox"
-                    placeholder="Class"
-                    options={categoriesClass}
-                    required
-                    isSearchable={false}
-                  /> */}
-                  <input
-                    type="time"
-                    id="appt"
-                    name="appt"
-                    // min="09:00"
-                    // max="18:00"
-                    required
-                    className="headerSearchInput headerSearchInputTextBox timerBox"
-                  ></input>
-                  {/* <input
-                type="text"
-                placeholder="rate it"
-                className="headerSearchInput"
-              /> */}
-                </div>
-                <div>
-                  <SearchFilterItem name="Departure" icon="fa-calendar-days" />
-                  {/* <input
-                type="number"
-                placeholder="start date"
-                className="headerSearchInput"
-              /> */}
-                  <span
-                    className="headerSearchInput "
-                    onClick={() => setOpenDestination(!openDestination)}
-                  >{`${format(departure[0].startDate, "MM/dd/yyyy")}`}</span>
-                  {openDestination && (
-                    <span className="dateRangeHelper">
-                      <DateRange
-                        editableDateInputs={true}
-                        date={new Date()}
-                        moveRangeOnFirstSelection={true}
-                        onChange={(item) => setDeparture([item.selection])}
-                        ranges={departure}
-                        className="date"
-                        minDate={new Date()}
-                        forceParse={false}
-                      />
-                      <button
-                        type="button"
-                        onClick={() => setOpenDestination(!openDestination)}
-                        className="btn-gold fdBtn fdBtn "
-                      >
-                        close
-                      </button>
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <SearchFilterItem name="Return" icon="fa-calendar-days" />
-                  {/* <input
-                type="text"
-                placeholder="leave date"
-                className="headerSearchInput"
-              /> */}
-                  <span
-                    onClick={() => setOpenDestination(!openDestination)}
-                  >{`${format(departure[0].endDate, "MM/dd/yyyy")}`}</span>
-                </div>
-              </div>
-
-              <div className="btn-wrapper">
-                <GoldBtn type="submit">search</GoldBtn>
-              </div>
-            </div>
-          </form>
-          {/* <form className="search-filter-bar">
-            <input type="text" placeholder="search..." name="search" />
-            <button type="submit">
-              <i className="fa fa-search" />
-            </button>
-          </form> */}
-        </>
-      )}
+          </>
+        )}
+      </span>
     </>
   );
 }

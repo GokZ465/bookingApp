@@ -89,16 +89,18 @@ export default function Confirm() {
               <label className="base-label notop">Program End</label>
               <p className="order-details">December 31, 2023</p>
             </div> */}
-              <div className="coupon card margin-40">
-                <h2 className="base-label">Coupon Code</h2>
-                <input className="base-input" id="code"></input>
+              {context.roomContext !== "default" && (
+                <div className="coupon card margin-40">
+                  <h2 className="base-label">Coupon Code</h2>
+                  <input className="base-input" id="code"></input>
 
-                <input
-                  type="button"
-                  value="Apply Coupon"
-                  className="button"
-                ></input>
-              </div>
+                  <input
+                    type="button"
+                    value="Apply Coupon"
+                    className="button"
+                  ></input>
+                </div>
+              )}
               <div className="inline">
                 <label className="  base-label margin-40 notop">
                   Order Details
@@ -195,7 +197,18 @@ export default function Confirm() {
             <i className="fab fa-amazon-pay fa-3x"></i>
           </div>
         </div>
+        {context.roomContext === "default" && (
+          <div className="coupon card margin-40">
+            <h2 className="base-label">Promo Code</h2>
+            <input className="base-input" id="code"></input>
 
+            <input
+              type="button"
+              value="Apply Coupon"
+              className="button"
+            ></input>
+          </div>
+        )}
         <div className="margin-40">
           <div className="card">
             <div className="three-column">
@@ -204,7 +217,7 @@ export default function Confirm() {
                 XXXX-XXXX-XXXX-1234
               </div>
               <div>
-                <label className="base-label">Expiration</label>
+                <label className="base-label">Expiry</label>
                 01/23
               </div>
               <div className="mc">
@@ -247,7 +260,7 @@ export default function Confirm() {
               placeholder=""
               value=""
             />
-            <label className="base-label">CVC</label>
+            <label className="base-label">CVV</label>
             <input
               className="base-input"
               id="_905815077"

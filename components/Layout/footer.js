@@ -36,7 +36,7 @@ const Footer = () => (
       </li>
 
       <a href="#" className="nav-dig__link">
-        DEMO WEBSITE
+        MINI PROJECT
       </a>
 
       {/* <li className="nav-dig__item">

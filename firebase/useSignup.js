@@ -19,10 +19,7 @@ export const useSignup = () => {
         email,
         password
       );
-      console.log(isPending);
-      console.log(res.user);
-      // we are calling a dispatch function names
-      // LOGIN but this page is Signup
+
       dispatch({ type: "LOGIN", payload: res.user });
 
       if (!isCancelled) {

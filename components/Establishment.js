@@ -20,32 +20,54 @@ export default function Establishment({
     context.showForm(!context.form);
   };
   return (
-    <div className="establishment">
-      <figure className="col-1">
-        <img
-          src={establishment.imgURL}
-          alt={`photo of ${establishment.name.replaceAll("-", " ")}`}
-        />
-      </figure>
-      <div className="col-2">
-        {/* <span className="id">{establishment.id}</span> */}
-        <div className="location">
-          <span className="line" />
-          <span className="txt">{establishment.location}</span>
-        </div>
-        <h4 className="establishment-name">
-          {establishment.name.replaceAll("-", " ")}
-        </h4>
-        <Stars rating={establishment.stars} />
-        <div className="establishment-description">
-          {establishment.descriptionShort}
-        </div>
+    <>
+     
+      <div className="establishment">
+        <figure className="col-1">
+          <img
+            src={establishment.imgURL}
+            alt={`photo of ${establishment.name.replaceAll("-", " ")}`}
+          />
+        </figure>
+        <div className="col-2">
+          <div className="location">
+            <span className="line" />
+            <span className="txt">{establishment.location}</span>
+          </div>
+          <h4 className="establishment-name">
+            {establishment.name.replaceAll("-", " ")}
+          </h4>
+          <Stars rating={establishment.stars} />
+          <div className="establishment-description">
+            {establishment.descriptionShort}
+          </div>
 
-        {airplaneClick === "true" ? (
-          <a onClick={() => FormChange()}>
-            <PlaneBtnLink
-              className="planeBtn"
+          {airplaneClick === "true" ? (
+            <a onClick={() => FormChange()}>
+              <PlaneBtnLink
+                className="planeBtn"
 
+                // onClick={() => {
+                //   router.push(
+                //     {
+                //       pathname: "/establishment/[id]",
+                //       query: {
+                //         child: child,
+                //         adult: adult,
+                //         room: room,
+                //         dates: dates,
+                //       },
+                //     },
+                //     "/establishment/[id]"
+                //   );
+                // }}
+              >
+                BOOK
+              </PlaneBtnLink>
+            </a>
+          ) : (
+            <GoldBtnLink
+              href="/establishment/[id]"
               // onClick={() => {
               //   router.push(
               //     {
@@ -60,33 +82,12 @@ export default function Establishment({
               //     "/establishment/[id]"
               //   );
               // }}
+              as={`/establishment/${establishment.id}`}
             >
               BOOK
-            </PlaneBtnLink>
-          </a>
-        ) : (
-          <GoldBtnLink
-            href="/establishment/[id]"
-            // onClick={() => {
-            //   router.push(
-            //     {
-            //       pathname: "/establishment/[id]",
-            //       query: {
-            //         child: child,
-            //         adult: adult,
-            //         room: room,
-            //         dates: dates,
-            //       },
-            //     },
-            //     "/establishment/[id]"
-            //   );
-            // }}
-            as={`/establishment/${establishment.id}`}
-          >
-            BOOK
-          </GoldBtnLink>
-        )}
-        {/* {form && (
+            </GoldBtnLink>
+          )}
+          {/* {form && (
           <div className="modalBody">
             <div className="modal">
               <div className="modalForm">
@@ -137,7 +138,8 @@ export default function Establishment({
             </div>
           </div>
         )} */}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
