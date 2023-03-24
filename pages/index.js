@@ -537,14 +537,20 @@ function Home(req, res) {
                   (e) => e.txtOne.toLowerCase() === check.toLowerCase()
                 );
                 console.log(newData);
-
+                const startDate = format(departure[0].startDate, "MM/dd/yyyy");
+                const endDate = format(departure[0].endDate, "MM/dd/yyyy");
+                console.log(startDate);
                 router.push(
                   {
                     pathname: "/searchresult",
                     query: {
                       data: JSON.stringify(newData),
+                      checkFrom: from.value,
+                      checkTo: to.value,
                       airplaneClick: airplaneClick,
                       hotelClick: hotelClick,
+                      startDate: startDate,
+                      endDate: endDate,
                     },
                   },
                   "/searchresult"

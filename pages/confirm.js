@@ -12,6 +12,10 @@ export default function Confirm() {
   const [cvvNumber, setCvvNumber] = useState("");
   const [cardNumber, setCardNumber] = useState("");
 
+  const funcAlert = () => {
+    alert("your booking is done");
+    window.location.reload();
+  };
   const handleNameChange = (event) => {
     const limit = 3;
 
@@ -290,7 +294,12 @@ export default function Confirm() {
               value={cvvNumber}
               onChange={handleNameChange}
             />
-            <input type="button" value="Pay Now" className="button"></input>
+            <input
+              type="button"
+              value="Pay Now"
+              className="button"
+              onClick={funcAlert}
+            ></input>
           </div>
         </div>
       </div>

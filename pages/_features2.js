@@ -25,6 +25,7 @@ export default function Features2({ ...props }) {
          ₹1890&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
          Free Cancellation"
         />
+      
       </div>
     </section>
   );

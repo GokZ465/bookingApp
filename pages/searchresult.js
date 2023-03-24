@@ -9,10 +9,21 @@ const Searchresult = () => {
   const { isReady } = useRouter();
   const router = useRouter();
   const {
-    query: { data, airplaneClick, hotelClick },
+    query: {
+      data,
+      airplaneClick,
+      hotelClick,
+      checkFrom,
+      checkTo,
+      startDate,
+      endDate,
+    },
   } = router;
-  let data2 = JSON.parse(data);
-
+  let data2 = "";
+  if (data) {
+    data2 = JSON.parse(data);
+    console.log(data2.length);
+  }
   // let data = useRef("");
   useEffect(() => {
     if (router.isReady) {
@@ -25,32 +36,45 @@ const Searchresult = () => {
   };
   return (
     <div className="searchResultPage">
-      <div className="establishments-wrapper">
-        {hotelClick === "true" && (
-          <h3
-            className="notop establishment-name"
-            style={{ textAlign: "center", marginBottom: "2.5rem" }}
-          >
-            {console.log()}
-            Hotels in {data2[0].txtOne}
-          </h3>
-        )}
-        {/* {(JSON.parse(data))} */}
-        {/* {console.log(
+      {data2 !== "" && (
+        <div
+          className={
+            airplaneClick === "true"
+              ? "airplane-wrapper"
+              : "establishments-wrapper"
+          }
+          id={data2.length > 2 ? "airplane-wrapper-grid" : ""}
+        >
+          {hotelClick === "true" && (
+            <h3
+              className="notop establishment-name"
+              style={{ textAlign: "center", marginBottom: "2.5rem" }}
+            >
+              {console.log()}
+              Hotels in {data2[0].txtOne}
+            </h3>
+          )}
+          {/* {(JSON.parse(data))} */}
+          {/* {console.log(
           "hotelClick" + hotelClick,
           "airplabneClick" + airplaneClick
         )} */}
-        {isReady &&
-          data &&
-          JSON.parse(data).map((p, i) => (
-            <Establishment
-              key={i}
-              establishment={p}
-              airplaneClick={airplaneClick}
-              hotelClick={hotelClick}
-            />
-          ))}
-      </div>
+          {isReady &&
+            data &&
+            JSON.parse(data).map((p, i) => (
+              <Establishment
+                key={i}
+                establishment={p}
+                airplaneClick={airplaneClick}
+                hotelClick={hotelClick}
+                checkFrom={checkFrom}
+                checkTo={checkTo}
+                startDate={startDate}
+                endDate={endDate}
+              />
+            ))}
+        </div>
+      )}
       {context.form && airplaneClick === "true" && (
         <div className="modalBody">
           <div className="modal">

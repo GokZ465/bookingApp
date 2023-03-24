@@ -121,6 +121,63 @@ nav .logo {
   max-width: 1280px;
 }
 
+.airplane-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  gap: 1vmax;
+  width: 100%;
+  max-width: 90vw;
+
+  position: relative;
+}
+.airplane-wrapper .section-features {
+  min-width: 40vw;
+  max-width: 52vw;
+  padding: 2.2rem;
+  position: relative;
+}
+.airplane-wrapper .rower {
+  display: flex;
+  flex-flow: column;
+  height: 73rem;
+  width: 80vw;
+  justify-content: center;
+  position: relative;
+
+  margin-top: 1rem;
+}
+
+.airplane-wrapper .rower .col-1-of-2 {
+  padding: 3rem;
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .airplane-wrapper .rower {
+    height: 40vh;
+    width: 50vw;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .airplane-wrapper .rower {
+    height: 80rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .airplane-wrapper .rower {
+    height: 70rem;
+    width: 50vw;
+  }
+}
+
 .establishment {
   display: -webkit-box;
   display: -moz-box;
@@ -2565,4 +2622,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   width: 100%;
   position: absolute;
   background: transparent;
+}
+#airplane-wrapper-grid {
+  display: grid !important;
 }
