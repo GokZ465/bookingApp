@@ -14,12 +14,13 @@ export default function TrainSearch() {
 
   return (
     <div className="searchResultPage">
-      <h3
+      <h5
         className="establishment-name"
         style={{ textAlign: "center", marginBottom: "2.5rem" }}
       >
-        Search Results for {checkFrom && checkFrom.toLowerCase()}
-      </h3>
+        Search Results for {checkFrom && checkFrom.toLowerCase()} to{" "}
+        {checkTo && checkTo.toLowerCase()}
+      </h5>
       {trainClick === "true" ? (
         <>
           <Features

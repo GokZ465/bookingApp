@@ -994,6 +994,8 @@ function Home(req, res) {
                       type="time"
                       id="appt"
                       name="appt"
+                      value="06:00:00"
+                      step="600"
                       // min="09:00"
                       // max="18:00"
                       required

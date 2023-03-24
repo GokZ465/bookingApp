@@ -19,11 +19,20 @@ export default function FlatCards2({ ...props }) {
         }
       >
         {/* <SlCheck className={`props.icon`} /> */}
+        <i className={`fontawesome-outline fa-solid fa-train`} />
 
         <h3 className="heading-tertiary u-margin-bottom-small">
           {props.title}
         </h3>
-        <p className="feature-box__text">{props.details}</p>
+        <p className="feature-box__text">
+          {" "}
+          <i
+            className={`fontawesome-outline fa-solid fa-ticket`}
+            style={{ fontSize: "1rem" }}
+          />
+          &nbsp; &nbsp;
+          {props.details}
+        </p>
       </div>
     </div>
   );

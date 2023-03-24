@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AppContext from "../firebase/AppContext";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
@@ -9,6 +9,21 @@ export default function Confirm() {
 
   console.log("notHotel");
   console.log(context.notHotel);
+  const [cvvNumber, setCvvNumber] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+
+  const handleNameChange = (event) => {
+    const limit = 3;
+
+    // 👇️ only take first N characters
+    setCvvNumber(event.target.value.slice(0, limit));
+  };
+  const handleNumber = (event) => {
+    const limit = 16;
+
+    // 👇️ only take first N characters
+    setCardNumber(event.target.value.slice(0, limit));
+  };
 
   return (
     <>
@@ -186,7 +201,10 @@ export default function Confirm() {
         )}
         <div id="payment-methods">
           <div className="methods">
-            <i className="fas fa-credit-card fa-3x"></i>
+            <i className="fas fa-credit-card fa-3x"></i> <br></br>
+            <br></br>
+            <span style={{ color: "#fa19" }}>Credit</span>&nbsp;
+            <span>Card</span>
           </div>
           <div className="methods">
             <i className="fab fa-paypal fa-3x"></i>
@@ -195,6 +213,8 @@ export default function Confirm() {
           </div>
           <div className="methods">
             <i className="fab fa-amazon-pay fa-3x"></i>
+            <span style={{ color: "orange" }}>Amazon</span>
+            <span>Pay</span>
           </div>
         </div>
         {context.roomContext === "default" && (
@@ -240,34 +260,35 @@ export default function Confirm() {
               type="text"
               name="client_id"
               placeholder=""
-              value=""
             />
             <label className="base-label">Card Number</label>
             <input
               className="base-input input-cc-icon"
               id="_905815077"
-              type="text"
+              type="number"
               name="client_id"
               placeholder=""
-              value=""
+              value={cardNumber}
+              onChange={handleNumber}
             />
-            <label className="base-label">Expiration</label>
+            <label className="base-label">Expiry</label>
             <input
               className="base-input"
               id="_905815077"
-              type="text"
+              type="date"
               name="client_id"
               placeholder=""
-              value=""
             />
             <label className="base-label">CVV</label>
             <input
               className="base-input"
               id="_905815077"
-              type="text"
+              type="number"
               name="client_id"
               placeholder=""
-              value=""
+              maxLength={3}
+              value={cvvNumber}
+              onChange={handleNameChange}
             />
             <input type="button" value="Pay Now" className="button"></input>
           </div>
