@@ -99,10 +99,10 @@ function Home(req, res) {
   const [trainClick, setTrainClick] = useState(false);
   const [cabClick, setCabClick] = useState(false);
   const [parentWidth, setParentwidth] = useState(1000);
-  const [errorForm, setErrorForm] = useState(null);
+  const [errorForm, setErrorForm] = useState("please select a city");
   const [city, setCity] = useState("");
-  const [from, setFrom] = useState("chennai");
-  const [to, setTo] = useState("chennai");
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
   const context = useContext(AppContext);
   const [query, setQuery] = useState("");
   const funcOpenDateSet = () => {
@@ -513,6 +513,19 @@ function Home(req, res) {
               className="searchFilterBar"
               onSubmit={(e) => {
                 e.preventDefault();
+
+                if (
+                  from.value == "" ||
+                  from.value == undefined ||
+                  to.value == "" ||
+                  to.value == undefined
+                ) {
+                  setErrorForm("please select a city");
+                  alert(errorForm);
+                  setFrom("");
+                  setTo("");
+                  return;
+                }
                 const check = from.value + "to" + to.value;
                 // const check = city.value;
                 // console.log("loggingname", from.value + "to" + to.value);
@@ -745,6 +758,20 @@ function Home(req, res) {
               className="searchFilterBar"
               onSubmit={(e) => {
                 e.preventDefault();
+
+                if (
+                  from.value == "" ||
+                  from.value == undefined ||
+                  to.value == "" ||
+                  to.value == undefined
+                ) {
+                  setErrorForm("please select a city");
+                  alert(errorForm);
+                  setFrom("");
+                  setTo("");
+                  return;
+                }
+
                 const checkFrom = from.value.toUpperCase();
                 const checkTo = to.value.toUpperCase();
                 // const check = city.value;
@@ -886,6 +913,18 @@ function Home(req, res) {
               className="searchFilterBar"
               onSubmit={(e) => {
                 e.preventDefault();
+                if (
+                  from.value == "" ||
+                  from.value == undefined ||
+                  to.value == "" ||
+                  to.value == undefined
+                ) {
+                  setErrorForm("please select a city");
+                  alert(errorForm);
+                  setFrom("");
+                  setTo("");
+                  return;
+                }
                 const checkFrom = from.value.toUpperCase();
                 const checkTo = to.value.toUpperCase();
                 // const check = city.value;
