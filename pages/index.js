@@ -99,8 +99,8 @@ function Home(req, res) {
   const [trainClick, setTrainClick] = useState(false);
   const [cabClick, setCabClick] = useState(false);
   const [parentWidth, setParentwidth] = useState(1000);
-
-  const [city, setCity] = useState("chennai");
+  const [errorForm, setErrorForm] = useState(null);
+  const [city, setCity] = useState("");
   const [from, setFrom] = useState("chennai");
   const [to, setTo] = useState("chennai");
   const context = useContext(AppContext);
@@ -264,6 +264,16 @@ function Home(req, res) {
             <form
               className="searchFilterBar"
               onSubmit={(e) => {
+                console.log(errorForm);
+                console.log(city);
+                e.preventDefault();
+                if (city == "") {
+                  setErrorForm("please select a city");
+                  console.log(errorForm);
+                  alert(errorForm);
+
+                  return;
+                }
                 const finalAns = compareDates(
                   format(date[0].startDate, "MM/dd/yyyy"),
                   fullDate
@@ -301,6 +311,7 @@ function Home(req, res) {
                   },
                   "/searchresult"
                 );
+                setCity("");
                 // setQuery(e.target[0].value);
               }}
             >
@@ -309,7 +320,9 @@ function Home(req, res) {
                   <div>
                     <SearchFilterItem name="location" icon="fa-location-dot" />
                     <Select
-                      onChange={(option) => setCity(option)}
+                      onChange={(option) => {
+                        setCity(option);
+                      }}
                       className="headerSearchInput headerSearchInputTextBox"
                       placeholder="city"
                       options={categories}
@@ -317,6 +330,7 @@ function Home(req, res) {
                       required
                     />
                   </div>
+
                   <div>
                     <SearchFilterItem name="check-in" icon="fa-calendar-days" />
                     {/* <input
