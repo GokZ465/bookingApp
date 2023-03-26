@@ -94,16 +94,19 @@ export default function Person(...props) {
             >
               <span className="background"></span> <span> Book</span>
             </button> */}{" "}
-            <button
-              className="btn-gold btn-spl"
+            <a
+              className="btn-spl btn-gold"
               onClick={() => {
                 handleConfirmClick();
               }}
               type="submit"
             >
               Book
-            </button>
-            <button className="btn-gold btn-spl">Direction</button>
+            </a>
+            <h3 style={{ paddingTop: "0.5rem" }}>
+              {" "}
+              38, Netaji Subhash street , {data.txtTwo}
+            </h3>
           </div>
         </div>
       </article>
