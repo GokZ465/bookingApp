@@ -86,7 +86,7 @@ export default function Confirm() {
                 </p>
               </div>
               <div className="label-cell label-cell-left Label-4">
-                <label className="base-label">Data From</label>
+                <label className="base-label">From Date </label>
               </div>
               <div className="label-cell Text-4">
                 <p className="order-details">
@@ -96,7 +96,7 @@ export default function Confirm() {
                 </p>
               </div>
               <div className="label-cell label-cell-left Label-5 bottom-border">
-                <label className="base-label">Date End</label>
+                <label className="base-label">End Date</label>
               </div>
               <div className="label-cell Text-5 bottom-border">
                 <p className="order-details">
@@ -182,7 +182,7 @@ export default function Confirm() {
                   <li className="margin-20">
                     <strong>
                       <span className="nobg">Total</span>
-                      <span className="nobg">₹ 2000.00</span>
+                      <span className="nobg">₹ 1850.00</span>
                     </strong>
                   </li>
                 </ul>
@@ -292,7 +292,7 @@ export default function Confirm() {
             <input
               className="base-input"
               id="_905815077"
-              type="date"
+              type="text"
               name="client_id"
               placeholder=""
             />
