@@ -1012,7 +1012,7 @@ h5 {
 .footer a,
 .footer p {
   color: #ffffff;
-  font-family: roboto, sans-serif;
+  font-family: ivymode, sans-serif;
   line-height: 1.75em;
   font-size: 1em;
   text-decoration: none;
@@ -1621,7 +1621,7 @@ header .hero-index {
   font-size: 1.4rem;
   color: #0b1c25;
   text-decoration: none;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: ivymode, sans-serif;
   text-transform: uppercase;
   text-align: center;
   padding: 0.5rem;
@@ -1892,9 +1892,8 @@ canvas {
   padding: 0;
 
   color: #242424;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol;
+  font-family: ivymode, sans-serif, Helvetica Neue, Helvetica, Arial, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1.1rem;
 }
 
@@ -2134,7 +2133,7 @@ ul.leaders span + span {
   color: #edeeff;
 }
 .Signup-form {
-  font-family: "Work Sans", sans-serif;
+  font-family: ivymode, sans-serif;
   box-sizing: border-box;
 }
 
@@ -2177,7 +2176,7 @@ ul.leaders span + span {
 .Signup-form > div::before {
   content: "\f007";
   font-weight: 900;
-  font-family: "Font Awesome 5 Free";
+  font-family: ivymode, sans-serif;
   position: absolute;
   color: #777;
   left: -1px;
@@ -2193,7 +2192,7 @@ ul.leaders span + span {
 }
 .Signup-form div input {
   border: none;
-  font-family: "Work Sans", sans-serif;
+  font-family: ivymode, sans-serif;
   font-size: 15px;
   margin-left: 10px;
 }
@@ -2214,7 +2213,7 @@ div input:focus + .border {
 
 .Signup-form .private-inp {
   border: none;
-  font-family: "work sans", sans-serif;
+  font-family: ivymode, sans-serif;
   display: block;
   margin: auto;
   background: #2196f3;

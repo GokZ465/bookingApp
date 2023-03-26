@@ -7,6 +7,8 @@ import Establishment from "../components/Establishment";
 import HeroTile from "../components/HeroTile";
 import SearchFilterItem from "../components/SearchFilterItem";
 import { DateRange } from "react-date-range";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 import { createContext, useState, useContext, useEffect, useRef } from "react";
 import "react-date-range/dist/styles.css";
@@ -270,7 +272,16 @@ function Home(req, res) {
                 if (city == "") {
                   setErrorForm("please select a city");
                   console.log(errorForm);
-                  alert(errorForm);
+                  // alert(errorForm);
+                  toast.error("Please select a city!", {
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                  });
 
                   return;
                 }
@@ -521,7 +532,17 @@ function Home(req, res) {
                   to.value == undefined
                 ) {
                   setErrorForm("please select a city");
-                  alert(errorForm);
+
+                  toast.error("Please select a city!", {
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                  });
+
                   setFrom("");
                   setTo("");
                   return;
@@ -772,7 +793,17 @@ function Home(req, res) {
                   to.value == undefined
                 ) {
                   setErrorForm("please select a city");
-                  alert(errorForm);
+                  // alert(errorForm);
+                  toast.error("Please select a city!", {
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                  });
+
                   setFrom("");
                   setTo("");
                   return;
@@ -926,7 +957,17 @@ function Home(req, res) {
                   to.value == undefined
                 ) {
                   setErrorForm("please select a city");
-                  alert(errorForm);
+                  // alert(errorForm);
+                  toast.error("Please select a city", {
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                  });
+
                   setFrom("");
                   setTo("");
                   return;

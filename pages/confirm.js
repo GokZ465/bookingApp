@@ -2,6 +2,9 @@ import React, { useContext, useState } from "react";
 import AppContext from "../firebase/AppContext";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+
 export default function Confirm() {
   const context = useContext(AppContext);
   const router = useRouter();
@@ -13,7 +16,17 @@ export default function Confirm() {
   const [cardNumber, setCardNumber] = useState("");
 
   const funcAlert = () => {
-    alert("your booking is done");
+    // alert("your booking is done");
+    toast("your booking is done", {
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
     window.location.reload();
   };
   const handleNameChange = (event) => {

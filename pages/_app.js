@@ -5,6 +5,9 @@ import { AuthContextProvider } from "../firebase/AuthContext";
 import AppContext from "../firebase/AppContext";
 import { createContext, useState } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function MyApp({ Component, pageProps }) {
   const [roomContext, setRoomContext] = useState("default");
   const [childContext, setChildContext] = useState("default");
@@ -14,37 +17,40 @@ function MyApp({ Component, pageProps }) {
   const [notHotel, setNotHotel] = useState(false);
 
   return (
-    <AppContext.Provider
-      value={{
-        roomContext,
-        setRoomContext,
-        childContext,
-        setChildContext,
-        adultContext,
-        setAdultContext,
-        datesContext,
-        setDatesContext,
-        form,
-        showForm,
-        notHotel,
-        setNotHotel,
-      }}
-    >
-      <AuthContextProvider>
-        <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-        </Head>
+    <>
+      <AppContext.Provider
+        value={{
+          roomContext,
+          setRoomContext,
+          childContext,
+          setChildContext,
+          adultContext,
+          setAdultContext,
+          datesContext,
+          setDatesContext,
+          form,
+          showForm,
+          notHotel,
+          setNotHotel,
+        }}
+      >
+        <AuthContextProvider>
+          <Head>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+          </Head>
 
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
 
-        <noscript>You need to enable JavaScript to run this app</noscript>
-      </AuthContextProvider>
-    </AppContext.Provider>
+          <noscript>You need to enable JavaScript to run this app</noscript>
+        </AuthContextProvider>
+      </AppContext.Provider>
+      <ToastContainer />
+    </>
   );
 }
 

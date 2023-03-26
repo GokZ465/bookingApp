@@ -20,6 +20,7 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.3.0",
     "react-select": "^5.7.0",
+    "react-toastify": "^4.1.0",
     "sass": "^1.49.7",
     "swr": "^1.2.1"
   },
