@@ -588,9 +588,7 @@ function Home(req, res) {
                   <div>
                     <SearchFilterItem name="Trip" icon="fa-earth" />
                     <Select
-                      onChange={(option) => {
-                        setFrom(option);
-                      }}
+                      onChange={(option) => {}}
                       className="headerSearchInput headerSearchInputTextBox"
                       placeholder="..."
                       options={categories2}
@@ -858,9 +856,7 @@ function Home(req, res) {
                   <div>
                     <SearchFilterItem name="Trip" icon="fa-earth" />
                     <Select
-                      onChange={(option) => {
-                        setFrom(option);
-                      }}
+                      onChange={(option) => {}}
                       className="headerSearchInput headerSearchInputTextBox"
                       placeholder="..."
                       options={categories2}
@@ -1034,9 +1030,7 @@ function Home(req, res) {
                   <div>
                     <SearchFilterItem name="Trip" icon="fa-earth" />
                     <Select
-                      onChange={(option) => {
-                        setFrom(option);
-                      }}
+                      onChange={(option) => {}}
                       className="headerSearchInput headerSearchInputTextBox"
                       placeholder="..."
                       options={categories2}
