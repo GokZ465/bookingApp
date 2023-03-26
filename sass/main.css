@@ -359,6 +359,7 @@ nav .logo {
   min-height: 38px;
   border-radius: 0.3rem;
   min-width: 10rem;
+  cursor: pointer;
 }
 .hero-tile-container {
   /* */
@@ -452,6 +453,10 @@ nav .logo {
   outline: 0;
   text-align: center;
 }
+.headerSearchInput > * > * {
+  cursor: pointer;
+}
+
 .search-filter-wrapper {
   display: -webkit-box;
   display: -moz-box;
