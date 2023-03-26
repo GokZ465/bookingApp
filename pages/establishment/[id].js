@@ -77,7 +77,6 @@ export default function Person(...props) {
         </div>
       </div>
       <article className="establishments-detail">
-        {/* <div className="background background-spl">{data.txtOne}</div> */}
         <div className="background background-spl">{}</div>
         <div className="detail">
           <div className="location">

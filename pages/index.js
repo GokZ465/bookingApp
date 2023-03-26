@@ -66,6 +66,10 @@ const categories = [
   { value: "mumbai", label: "Mumbai" },
   { value: "delhi", label: "Delhi" },
 ];
+const categories2 = [
+  { value: "roundTrip", label: "Round Trip" },
+  { value: "oneway", label: "One Way" },
+];
 const categoriesClass = [
   { value: "1a", label: "1A - First AC" },
   { value: "2a", label: "2A - 2 Tier" },
@@ -582,6 +586,19 @@ function Home(req, res) {
               <div id="search" className="search-filter-wrapper">
                 <div className="search-filter">
                   <div>
+                    <SearchFilterItem name="Trip" icon="fa-earth" />
+                    <Select
+                      onChange={(option) => {
+                        setFrom(option);
+                      }}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="..."
+                      options={categories2}
+                      required
+                      isSearchable={false}
+                    />
+                  </div>
+                  <div>
                     <SearchFilterItem name="FROM" icon="fa-plane-departure" />
                     <Select
                       onChange={(option) => {
@@ -839,6 +856,19 @@ function Home(req, res) {
               <div id="search" className="search-filter-wrapper">
                 <div className="search-filter">
                   <div>
+                    <SearchFilterItem name="Trip" icon="fa-earth" />
+                    <Select
+                      onChange={(option) => {
+                        setFrom(option);
+                      }}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="..."
+                      options={categories2}
+                      required
+                      isSearchable={false}
+                    />
+                  </div>
+                  <div>
                     <SearchFilterItem name="FROM" icon="fa-plane-departure" />
                     <Select
                       onChange={(option) => {
@@ -1001,6 +1031,19 @@ function Home(req, res) {
             >
               <div id="search" className="search-filter-wrapper">
                 <div className="search-filter">
+                  <div>
+                    <SearchFilterItem name="Trip" icon="fa-earth" />
+                    <Select
+                      onChange={(option) => {
+                        setFrom(option);
+                      }}
+                      className="headerSearchInput headerSearchInputTextBox"
+                      placeholder="..."
+                      options={categories2}
+                      required
+                      isSearchable={false}
+                    />
+                  </div>
                   <div>
                     <SearchFilterItem name="FROM" icon="fa-plane-departure" />
                     <Select
