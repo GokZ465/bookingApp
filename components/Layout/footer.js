@@ -37,21 +37,7 @@ const Footer = () => (
                   Contact us
                 </a>
               </li>
-              <li className="footer__item">
-                <a href="#" className="footer__link">
-                  Contact us
-                </a>
-              </li>
-              <li className="footer__item">
-                <a href="#" className="footer__link">
-                  Contact us
-                </a>
-              </li>
-              <li className="footer__item">
-                <a href="#" className="footer__link">
-                  Contact us
-                </a>
-              </li>
+
               <li className="footer__item">
                 <a href="#" className="footer__link">
                   Carrers
