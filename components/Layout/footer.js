@@ -166,8 +166,8 @@ const Footer = () => (
          Flights From US-015"
               >
                 <a
-                  data-cy="anchor-Book 
-         Flights From US-015"
+                  href="#"
+                  className=" footer__link anchor-Book Train Tickets-013"
                 >
                   Book Flights From US
                 </a>
@@ -178,8 +178,8 @@ const Footer = () => (
          -016"
               >
                 <a
-                  data-cy="anchor-Book Flights From U
-         AE-016"
+                  href="#"
+                  className=" footer__link anchor-Book Train Tickets-013"
                 >
                   Book Flights From UAE
                 </a>
