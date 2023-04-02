@@ -1112,7 +1112,7 @@ h5 {
   left: 0;
   height: 42px;
   width: 100vw;
-  background-color: #beae6f;
+  background-color: #fff;
   color: #0b1c25;
   font-weight: 900;
   font-size: 12px;
@@ -1231,7 +1231,7 @@ header .hero-index {
 .stars-four i:nth-of-type(4),
 .stars-five i,
 .fontawesome-gold {
-  color: #beae6f;
+  color: #fff;
   font-size: 1.5em;
 }
 
@@ -2823,4 +2823,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
 }
 .row .col-3-of-4 {
   width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+}
+
+span.name {
+  display: inline-block;
+  margin-right: 10px;
 }

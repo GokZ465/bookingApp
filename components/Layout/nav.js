@@ -31,7 +31,9 @@ const Nav = () => {
           />
         </Link>
         <div className="nav-links-wrapper">
-          {/* <Link passHref href="./#search">
+          {
+            <span class="name">Login</span>
+          /* <Link passHref href="./#search">
             <a className="search-icon">
               <span className="circle" />
               <span className="line" />

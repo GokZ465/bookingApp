@@ -23,7 +23,7 @@ import ImageSlider from "../components/ImageSlider";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const slides = [
   {
-    url: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://i.ibb.co/z7fYpDd/Banner1.png",
     title: "plane",
   },
   {
