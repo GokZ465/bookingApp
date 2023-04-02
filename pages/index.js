@@ -28,7 +28,7 @@ const slides = [
   },
   {
     url: "https://temp-ca.s3.amazonaws.com/cdn-files/ris624008174sst1680449559.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2YDWKLAVUAFT3HFY%2F20230402%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230402T153240Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=9d55a4a865322d7493fafeb21c2c5804950e6a1d0069de6af973fc2eb4d8c32d",
-    title: "train",
+    title: "train3",
   },
 
   {
