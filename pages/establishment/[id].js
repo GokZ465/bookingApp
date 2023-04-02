@@ -64,11 +64,11 @@ export default function Person(...props) {
           <p>Up to {data.maxGuests} Guests</p>
         </div>
         <div className="icon-wrapper">
-          <i className={data.iconOne} />
+          <i className="fa-solid fa-star" />
           <p>{data.txtOne}</p>
         </div>
         <div className="icon-wrapper">
-          <i className={data.iconTwo} />
+          <i className="fa-solid fa-star" />
           <p>{data.txtTwo}</p>
         </div>
         <div className="price">
@@ -77,12 +77,9 @@ export default function Person(...props) {
         </div>
       </div>
       <article className="establishments-detail">
-        <div className="background background-spl">{}</div>
+        
         <div className="detail">
-          <div className="location">
-            <span className="line" />
-            <span className="txt">{data.location}</span>
-          </div>
+          
           <h1>{data.name.replaceAll("-", " ")}</h1>
           <p>{data.descriptionLong}</p>
           <div className="btn-wrapper">

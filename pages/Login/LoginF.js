@@ -19,7 +19,7 @@ export default function LoginF() {
     <div className="holder shortHolder">
       <div className="parent">
         <form onSubmit={handleSubmit} action="" className="Signup-form">
-          <h3 style={{ color: "#BEAE6F" }}>Log In</h3>
+          <h3 style={{ color: "rgb(255 99 46)" }}>Log In</h3>
           <div>
             <input
               onChange={(e) => setEmail(e.target.value)}

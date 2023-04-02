@@ -309,9 +309,8 @@ export default function Confirm() {
             />
             <input
               type="button"
-              value="Pay Now"
+              value="Book Now"
               className="button"
-              onClick={funcAlert}
             ></input>
           </div>
         </div>

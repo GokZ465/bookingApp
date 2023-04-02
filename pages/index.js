@@ -23,7 +23,7 @@ import ImageSlider from "../components/ImageSlider";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const slides = [
   {
-    url: "https://i.ibb.co/z7fYpDd/Banner1.png",
+    url: "C:\wamp64\www\bookingApp\pages\Banner1.png",
     title: "plane",
   },
   {
@@ -53,11 +53,8 @@ const containerStyles = {
   width: "100%",
   height: "60vh",
   margin: "0 auto",
-  display: "block",
-  top: "10rem",
-  objectFit: "cover",
-  marginTop: "15vh",
-  alignItems: "center",
+  display: "inline-block",
+  marginTop: "14vh",
 };
 const categories = [
   { value: "goa", label: "Goa" },
@@ -243,7 +240,7 @@ function Home(req, res) {
         />
       </div>
       <header className="hero-image">
-        <img className="hero-index header-img" src="holidaze-hero.png" alt="" />
+        {/* <img className="hero-index header-img" src="holidaze-hero.png" alt="" /> */}
 
         <div className="hero-tile-container">
           <a onClick={() => funcHotelClick()}>

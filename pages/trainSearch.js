@@ -53,14 +53,14 @@ export default function TrainSearch() {
         <>
           <Features3
             title={"Indica, Swift or similar"}
-            desc={"₹ 34,636 Onwards"}
+            desc={"₹ 4,636 Onwards"}
             desc2={"Hatchback AC 4 Seats"}
             checkTo={checkTo}
             checkFrom={checkFrom}
           />
           <Features3
             title={"Xylo, Ertiga or similar"}
-            desc={"₹ 40,189 Onwards"}
+            desc={"₹ 4,189 Onwards"}
             desc2={"SUV AC 5 Seats"}
             checkTo={checkTo}
             checkFrom={checkFrom}
