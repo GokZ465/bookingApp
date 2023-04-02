@@ -9,7 +9,7 @@ import SearchFilterItem from "../components/SearchFilterItem";
 import { DateRange } from "react-date-range";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-
+import banner1 from "./banner5.png";
 import { createContext, useState, useContext, useEffect, useRef } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
@@ -23,28 +23,32 @@ import ImageSlider from "../components/ImageSlider";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const slides = [
   {
+<<<<<<< HEAD
     url: "C:\wamp64\www\bookingApp\pages\Banner1.png",
+=======
+    url: "https://temp-ca.s3.amazonaws.com/cdn-files/ris213496518sst1680449680.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2YDWKLAVUAFT3HFY%2F20230402%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230402T153442Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=7b58e5d9c450e4dafaddf7e8c0f1a1df8f0f9303867f076dea226a9d06a60a50",
+>>>>>>> f71df50bedb50b580a6d8ba69984d86d088f3c75
     title: "plane",
   },
   {
-    url: "https://images.pexels.com/photos/325200/pexels-photo-325200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "train",
+    url: "https://temp-ca.s3.amazonaws.com/cdn-files/ris624008174sst1680449559.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2YDWKLAVUAFT3HFY%2F20230402%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230402T153240Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=9d55a4a865322d7493fafeb21c2c5804950e6a1d0069de6af973fc2eb4d8c32d",
+    title: "train3",
   },
 
   {
-    url: "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
+    url: "https://temp-ca.s3.amazonaws.com/cdn-files/ris118899340sst1680449608.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2YDWKLAVUAFT3HFY%2F20230402%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230402T153330Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=9b3a7a5b29d6cfcd022bcdd10c9c7049948535e122ed9eea0d480d6d9f21e7b2",
     title: "hotel",
   },
   {
-    url: "https://images.pexels.com/photos/796628/pexels-photo-796628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://temp-ca.s3.amazonaws.com/cdn-files/ris925589048sst1680449323.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2YDWKLAVUAFT3HFY%2F20230402%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230402T152845Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=09208132131b9dcd1b4dd9c3e2c6343816284598a5b82c01174ea5ac7220ad51",
     title: "train2",
   },
   {
-    url: "https://images.pexels.com/photos/11937613/pexels-photo-11937613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://temp-ca.s3.amazonaws.com/cdn-files/ris284228226sst1680449727.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2YDWKLAVUAFT3HFY%2F20230402%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230402T153529Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=b0cbfd5750a5efbfbb980c980bd2d47f0cd6b869521a1c65cf677f047dd8140b",
     title: "plane2",
   },
   {
-    url: "https://images.pexels.com/photos/2869215/pexels-photo-2869215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://temp-ca.s3.amazonaws.com/cdn-files/ris385673307sst1680449509.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2YDWKLAVUAFT3HFY%2F20230402%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230402T153151Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=828175f6b7fe9dabcad941b8938f03f801a14cc03ea8338dba67d4c89720587b",
     title: "hotel2",
   },
 ];
