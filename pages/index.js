@@ -21,30 +21,57 @@ import { flights } from "./api/flights/data";
 import Features from "./_features";
 import ImageSlider from "../components/ImageSlider";
 const fetcher = (url) => fetch(url).then((res) => res.json());
+// const slides = [
+//   {
+//     url: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "plane",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/325200/pexels-photo-325200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "train3",
+//   },
+
+//   {
+//     url: "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
+//     title: "hotel",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/796628/pexels-photo-796628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "train2",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/11937613/pexels-photo-11937613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "plane2",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/2869215/pexels-photo-2869215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "hotel2",
+//   },
+// ];
 const slides = [
   {
-    url: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner1.png",
     title: "plane",
   },
   {
-    url: "https://images.pexels.com/photos/325200/pexels-photo-325200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner2.png",
     title: "train3",
   },
 
   {
-    url: "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner3.png",
     title: "hotel",
   },
   {
-    url: "https://images.pexels.com/photos/796628/pexels-photo-796628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner4.png",
     title: "train2",
   },
   {
-    url: "https://images.pexels.com/photos/11937613/pexels-photo-11937613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner5.png",
     title: "plane2",
   },
   {
-    url: "https://images.pexels.com/photos/2869215/pexels-photo-2869215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner6.png",
     title: "hotel2",
   },
 ];
