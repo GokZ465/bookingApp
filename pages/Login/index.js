@@ -17,7 +17,7 @@ export default function Login() {
       {authIsReady && !user && !form && (
         <>
           <LoginF />
-          <h3 class="leftdoyou">
+          <h3 className="leftdoyou">
             Dont have an account?
             <a onClick={() => func()}> Register now</a>
           </h3>
@@ -26,7 +26,7 @@ export default function Login() {
       {authIsReady && !user && form && (
         <>
           <Signup />
-          <h3 class="leftdoyou">
+          <h3 className="leftdoyou">
             Already have an account?
             <a onClick={() => func()}> Login now</a>
           </h3>
