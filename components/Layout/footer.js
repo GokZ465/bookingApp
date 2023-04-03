@@ -452,6 +452,7 @@ const Footer = () => (
         <a href="#" className="nav-dig__link">
           MINI PROJECT
         </a>
+        <a href="#" class="contactusnum">Contact Us - 9876543208</a>
 
         {/* <li className="nav-dig__item">
         <a href="#" className="nav-dig__link">
