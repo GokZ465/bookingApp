@@ -207,7 +207,7 @@ export default function Confirm() {
                     You also agree that, unless you are removed from the program
                     before the program end date, your subscription will
                     automatically renew and you authorize us to continue to
-                    charge your debit/credit card ₹ 200.00 monthly (until
+                    charge your debit/credit card ₹ 2000.00 monthly (until
                     removed from the program). Once charged, all purchases,
                     including renewals, are non-refundable.
                   </label>
@@ -220,7 +220,7 @@ export default function Confirm() {
           <div className="methods">
             <i className="fas fa-credit-card fa-3x"></i> <br></br>
             <br></br>
-            <span style={{ color: "#fa19" }}>Credit</span>&nbsp;
+            <span style={{ color: "#fa19" }}>Credit / Debit</span>&nbsp;
             <span>Card</span>
           </div>
           <div className="methods">
@@ -230,8 +230,8 @@ export default function Confirm() {
           </div>
           <div className="methods">
             <i className="fab fa-amazon-pay fa-3x"></i>
-            <span style={{ color: "orange" }}>Amazon</span>
-            <span>Pay</span>
+            <span style={{ color: "orange" }}>UPI </span>
+            <span>Options</span>
           </div>
         </div>
         {context.roomContext === "default" && (
@@ -307,11 +307,7 @@ export default function Confirm() {
               value={cvvNumber}
               onChange={handleNameChange}
             />
-            <input
-              type="button"
-              value="Book Now"
-              className="button"
-            ></input>
+            <input type="button" value="Book Now" className="button"></input>
           </div>
         </div>
       </div>

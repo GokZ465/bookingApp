@@ -139,7 +139,7 @@ function Home(req, res) {
     setOpenDate(!openDate);
   };
   const funcHeroClick = () => {
-    scrollTo(0, 1000);
+    scrollTo(0, 500);
   };
   const funcHotelClick = () => {
     if (hotelClick) {
