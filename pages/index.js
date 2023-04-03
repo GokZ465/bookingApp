@@ -710,7 +710,9 @@ function Home(req, res) {
                         setOpenOptions(!openOptions);
                       }}
                       className="headerSearchText headerSearchInput "
-                    >{`${options.adult} adult · ${options.children} children · ${options.room} Infant`}</span>
+                    >{`${options.adult} adult · ${
+                      options.children
+                    } children · ${options.room - 1} Infant`}</span>
                     {openOptions && (
                       <div className="options">
                         <div className="optionItem">
@@ -781,7 +783,7 @@ function Home(req, res) {
                               -
                             </button>
                             <span className="optionCounterNumber">
-                              {options.room}
+                              {options.room - 1}
                             </span>
                             <button
                               className="optionCounterButton"
