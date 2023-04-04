@@ -18,7 +18,9 @@ export default function Confirm() {
   const [cardNumber, setCardNumber] = useState("");
   const FormChange = () => {
     context.showForm(true);
-    router.push("/");
+    setTimeout(function () {
+      router.push("/");
+    }, 1200);
   };
   const funcAlert = () => {
     // alert("your booking is done");
