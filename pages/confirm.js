@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../firebase/AppContext";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
@@ -34,6 +34,9 @@ export default function Confirm() {
 
     window.location.reload();
   };
+  useEffect(() => {
+    context.showForm(false);
+  }, []);
   const handleNameChange = (event) => {
     const limit = 3;
 
