@@ -16,6 +16,7 @@ export default function Confirm() {
   const [cardNumber, setCardNumber] = useState("");
   const FormChange = () => {
     context.showForm(true);
+    router.push("/");
   };
   const funcAlert = () => {
     // alert("your booking is done");
@@ -318,41 +319,43 @@ export default function Confirm() {
           </div>
         </div>
       </div>
-      <div className="modalBody">
-        <div className="modal modalh3">
-          <div className="modalForm newFormBody">
-            <form action="/confirm">
-              <label
-                style={{
-                  textAlign: "center",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                className="modalLabel"
-                htmlFor="name"
-                required="required"
-              >
-                Your booking has been done successfully!
-              </label>
+      (
+      {context.form && (
+        <div className="modalBody">
+          <div className="modal modalh3">
+            <div className="modalForm newFormBody">
+              <form action="/confirm">
+                <label
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  className="modalLabel"
+                  htmlFor="name"
+                  required="required"
+                >
+                  Your booking has been done successfully!
+                </label>
 
-              <label
-                style={{
-                  textAlign: "center",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginTop: "60px",
-                }}
-                className="modalLabel"
-                htmlFor="email"
-                required="required"
-              >
-                Your Booking ID is: {Math.floor(Math.random() * 10044000)}
-              </label>
+                <label
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginTop: "60px",
+                  }}
+                  className="modalLabel"
+                  htmlFor="email"
+                  required="required"
+                >
+                  Your Booking ID is: {Math.floor(Math.random() * 10044000)}
+                </label>
 
-              <label className="modalLabel" htmlFor="pass"></label>
-              {/* <input
+                <label className="modalLabel" htmlFor="pass"></label>
+                {/* <input
                 className="modalInput"
                 id="pass"
                 type="number"
@@ -364,11 +367,11 @@ export default function Confirm() {
                 required="required"
               /> */}
 
-              {/* <button className="ModalButton" type="submit">
+                {/* <button className="ModalButton" type="submit">
                 Book Now
               </button> */}
 
-              {/* <button
+                {/* <button
                   className="ModalButton"
                   type="button"
                   onClick={router.push(
@@ -383,23 +386,25 @@ export default function Confirm() {
                 >
                   Book Now
                 </button> */}
-            </form>
-          </div>
-          <div>
-            {/* <h3 className="modalh3">
+              </form>
+            </div>
+            <div>
+              {/* <h3 className="modalh3">
               <br />
               <br />
               <br />
             </h3> */}
 
-            <div
-              onClick={() => FormChange()}
-              className="modalClose"
-              title="close"
-            ></div>
+              <div
+                onClick={() => FormChange()}
+                className="modalClose"
+                title="close"
+              ></div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
+      )
     </>
   );
 }

@@ -109,24 +109,25 @@ nav .logo {
 }
 
 .airplane-wrapper {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  width: 100%;
+  display: inline-block;
   position: relative;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .airplane-wrapper .section-features {
-  min-width: 40vw;
-  max-width: 52vw;
-  padding: 2.2rem;
+  padding: 20px;
   position: relative;
+  background: linear-gradient(to right, #ffc4b0, #ff632e);
+  box-sizing: border-box;
+  width: 49%;
+  max-width: inherit;
+  float: left;
+  min-width: inherit;
+  margin-right: 2%;
+}
+.airplane-wrapper .section-features:nth-child(2n) {
+  margin-right: 0;
 }
 .airplane-wrapper .rower {
   display: inline-block;
@@ -143,7 +144,7 @@ nav .logo {
 }
 @media screen and (max-width: 1400px) {
   .airplane-wrapper .rower {
-    height: 80rem;
+    height: auto;
   }
 }
 @media screen and (max-width: 600px) {
@@ -2406,7 +2407,7 @@ div input + .border {
 }
 
 .feature-box {
-  background-color: rgba(255, 255, 255, 0.579);
+  background-color: #fff;
   text-align: center;
   border-radius: 16px;
   transition: transform 0.3s;
@@ -2439,9 +2440,11 @@ h3.heading-tertiary.u-margin-bottom-small {
 }
 .section-features pre {
   margin-bottom: 20px;
+  font-family: montserrat, sans-serif;
+  font-size: 14px;
 }
 .section-features {
-  background: linear-gradient(to right, #fff, #e0d5aaa0);
+  background: linear-gradient(to right, #e0d5aaa0, #e0d5aaa0);
   background-size: cover;
   color: #192a44;
   padding: 2.5rem;
@@ -2753,4 +2756,19 @@ span.name {
 .newFormBody {
   width: 100%;
   height: 60%;
+}
+.airplane-wrapper .section-features:nth-child(2n) {
+  margin-right: 0;
+}
+
+.feature-box img {
+  max-width: 100%;
+  width: auto;
+}
+
+a.contactusnum {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 110px;
 }
