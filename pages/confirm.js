@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import AppContext from "../firebase/AppContext";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
+import { SlCheck } from "react-icons/sl";
+
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { FormChange } from "../components/FormChange";
@@ -336,6 +338,13 @@ export default function Confirm() {
                   htmlFor="name"
                   required="required"
                 >
+                  <SlCheck
+                    style={{
+                      fontSize: "5rem",
+                      color: "green",
+                      padding: "1rem",
+                    }}
+                  ></SlCheck>{" "}
                   Your booking has been done successfully!
                 </label>
 
