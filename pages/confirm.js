@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import { useRouter } from "next/router";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-
+import { FormChange } from "../components/FormChange";
 export default function Confirm() {
   const context = useContext(AppContext);
   const router = useRouter();
@@ -14,7 +14,9 @@ export default function Confirm() {
   console.log(context.notHotel);
   const [cvvNumber, setCvvNumber] = useState("");
   const [cardNumber, setCardNumber] = useState("");
-
+  const FormChange = () => {
+    context.showForm(true);
+  };
   const funcAlert = () => {
     // alert("your booking is done");
     toast("your booking is done", {
@@ -307,7 +309,94 @@ export default function Confirm() {
               value={cvvNumber}
               onChange={handleNameChange}
             />
-            <input type="button" value="Book Now" className="button"></input>
+            <input
+              type="button"
+              value="Book Now"
+              className="button"
+              onClick={FormChange}
+            ></input>
+          </div>
+        </div>
+      </div>
+      <div className="modalBody">
+        <div className="modal modalh3">
+          <div className="modalForm newFormBody">
+            <form action="/confirm">
+              <label
+                style={{
+                  textAlign: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                className="modalLabel"
+                htmlFor="name"
+                required="required"
+              >
+                Your booking has been done successfully!
+              </label>
+
+              <label
+                style={{
+                  textAlign: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "60px",
+                }}
+                className="modalLabel"
+                htmlFor="email"
+                required="required"
+              >
+                Your Booking ID is: {Math.floor(Math.random() * 10044000)}
+              </label>
+
+              <label className="modalLabel" htmlFor="pass"></label>
+              {/* <input
+                className="modalInput"
+                id="pass"
+                type="number"
+                value={cardNumber}
+                onChange={handleNumber}
+                onKeyDown={(e) =>
+                  exceptThisSymbols.includes(e.key) && e.preventDefault()
+                }
+                required="required"
+              /> */}
+
+              {/* <button className="ModalButton" type="submit">
+                Book Now
+              </button> */}
+
+              {/* <button
+                  className="ModalButton"
+                  type="button"
+                  onClick={router.push(
+                    {
+                      pathname: "/confirm",
+                      query: {
+                        isHotel: false,
+                      },
+                    },
+                    "/confirm"
+                  )}
+                >
+                  Book Now
+                </button> */}
+            </form>
+          </div>
+          <div>
+            {/* <h3 className="modalh3">
+              <br />
+              <br />
+              <br />
+            </h3> */}
+
+            <div
+              onClick={() => FormChange()}
+              className="modalClose"
+              title="close"
+            ></div>
           </div>
         </div>
       </div>

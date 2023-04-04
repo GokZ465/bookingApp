@@ -130,11 +130,10 @@ nav .logo {
 }
 .airplane-wrapper .rower {
   display: inline-block;
-    width: 100%;
-    position: relative;
-    margin: 20px 0;
+  width: 100%;
+  position: relative;
+  margin: 20px 0;
 }
-
 
 @media screen and (max-width: 1280px) {
   .airplane-wrapper .rower {
@@ -332,8 +331,7 @@ nav .logo {
   font-family: montserrat, sans-serif !important;
   margin-bottom: 20px;
 }
-.btn-spl{
-
+.btn-spl {
 }
 .timerBox {
   min-height: 38px;
@@ -362,10 +360,10 @@ nav .logo {
 }
 .hero-tile-container .tile {
   font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    cursor: pointer !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  cursor: pointer !important;
 }
 .hero-tile-container .tile:hover .icon-fill,
 .hero-tile-container .tile:focus-within .icon-fill,
@@ -400,7 +398,6 @@ nav .logo {
   position: absolute;
   -webkit-text-stroke: 2px #ff632e;
   left: 0;
-
 }
 .hero-tile-container .icon-container {
   height: 2em;
@@ -429,12 +426,12 @@ nav .logo {
 
 .search-filter-wrapper {
   display: inline-block;
-    width: 100%;
-    background: #f3f4f6;
-    border-radius: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-bottom: 40px;
+  width: 100%;
+  background: #f3f4f6;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
 }
 .search-filter div {
   z-index: 9999;
@@ -509,16 +506,16 @@ nav .logo {
 }
 
 .btn-spl {
-    margin-top: 20px;
-    border: solid 2px #FF632C;
-    text-decoration: none;
-    width: 5rem;
-    font-size: 9pt;
-    font-weight: 500;
-    color: #ff632e;
-    height: auto;
-    margin-bottom: 20px;
-    text-align: center;
+  margin-top: 20px;
+  border: solid 2px #ff632c;
+  text-decoration: none;
+  width: 5rem;
+  font-size: 9pt;
+  font-weight: 500;
+  color: #ff632e;
+  height: auto;
+  margin-bottom: 20px;
+  text-align: center;
 }
 .background-spl:hover {
   animation: none;
@@ -581,11 +578,11 @@ nav .logo {
 
 .searchFilterBar {
   display: inline-block;
-    width: 100%;
-    padding: 0 80px;
-    margin-top: 20px;
-    float: left;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 0 80px;
+  margin-top: 20px;
+  float: left;
+  box-sizing: border-box;
 }
 .search-filter-bar {
   /* tried */
@@ -1858,10 +1855,10 @@ a:hover {
 
 .heading {
   margin: 120px auto 0;
-    max-width: 75rem;
-    padding: 2rem;
-    border: 1px solid;
-    border-radius: 8px;
+  max-width: 75rem;
+  padding: 2rem;
+  border: 1px solid;
+  border-radius: 8px;
 }
 
 .margin-40 {
@@ -1937,10 +1934,10 @@ ul.leaders span + span {
 
 .grid-container {
   display: inline-block;
-    background: #f2f4f6;
-    padding: 10px;
-    border-radius: 4px;
-    box-sizing: border-box;
+  background: #f2f4f6;
+  padding: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .label-cell {
@@ -1950,7 +1947,6 @@ ul.leaders span + span {
   width: 50%;
   box-sizing: border-box;
 }
-
 
 .order-details {
   margin-top: 0;
@@ -1998,10 +1994,11 @@ ul.leaders span + span {
 }
 .inline {
   display: inline-block;
-    width: 100%;
-    margin-top: 17px;
+  width: 100%;
+  margin-top: 17px;
 }
-li.margin-20, .margin-40 {
+li.margin-20,
+.margin-40 {
   float: left;
   width: 100%;
   color: #000;
@@ -2119,7 +2116,7 @@ div input + .border {
   font-weight: bold;
   cursor: pointer;
 }
-.leftdoyou{
+.leftdoyou {
   color: rgb(255 99 46);
   display: block;
   margin: 10px auto 40px;
@@ -2176,14 +2173,14 @@ div input + .border {
 
 .modal {
   height: 400px;
-    width: 650px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transition: 0.4s, box-shadow 0.3s 0.4s;
+  width: 650px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.4s, box-shadow 0.3s 0.4s;
 }
 .modal.hidden {
   box-shadow: none;
@@ -2353,14 +2350,14 @@ div input + .border {
 
 .modalBody {
   color: #fff;
-    font-family: Roboto;
-    z-index: 99999 !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(0,0,0,0.5);
+  font-family: Roboto;
+  z-index: 99999 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 .rower:not(:last-child) {
   margin-bottom: 8rem;
@@ -2386,18 +2383,17 @@ div input + .border {
 }
 .rower .col-1-of-4 {
   width: 24%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
-    background-color: #fff;
-    padding: 10px 15px;
-    cursor: pointer;
-    display: inline-block;
-    margin-bottom: 20px;
-    position: relative;
-    box-sizing: border-box;
-    margin-right: 1%;
-    
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 20px;
+  position: relative;
+  box-sizing: border-box;
+  margin-right: 1%;
 }
 .rower .col-1-of-4:last-child {
   margin-right: 0;
@@ -2424,7 +2420,6 @@ div input + .border {
 .rower .col-1-of-2:nth-child(2n) {
   padding-right: 0;
 }
-
 
 h3.heading-tertiary.u-margin-bottom-small {
   float: left;
@@ -2675,7 +2670,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   display: inline-block;
   width: 100%;
 }
-.footrhdng{
+.footrhdng {
   float: left;
   width: 100%;
   font-size: 20px;
@@ -2754,4 +2749,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
 span.name {
   display: inline-block;
   margin-right: 10px;
+}
+.newFormBody {
+  width: 100%;
+  height: 60%;
 }

@@ -21,11 +21,16 @@ export default function Establishment({
   endDate,
 }) {
   const router = useRouter();
-
+  let x = 0;
+  let num = true;
   const context = useContext(AppContext);
   console.log(airplaneClick, hotelClick);
   const FormChange = () => {
     context.showForm(!context.form);
+  };
+  const numChanger = () => {
+    console.log("numChanger" + num);
+    setNum(!num);
   };
   return (
     <>
@@ -51,7 +56,7 @@ export default function Establishment({
             </div>
 
             {airplaneClick === "true" ? (
-              <a onClick={() => FormChange()}>
+              <a onClick={() => nge()}>
                 <PlaneBtnLink
                   className="planeBtn"
 
@@ -152,9 +157,7 @@ export default function Establishment({
       {airplaneClick === "true" && (
         <>
           <Features4
-            //`${checkFrom}  ${
-            //   checkFrom ? checkFrom.toLowerCase() : `mumbai`
-            // } Rajdhani Express`
+            num={!num}
             title={checkFrom}
             img={establishment.imgURL}
             name={establishment.name.replaceAll("-", " ")}
@@ -163,6 +166,7 @@ export default function Establishment({
             checkFrom={checkFrom}
             startDate={startDate}
             endDate={endDate}
+            x={x}
           />
         </>
       )}
