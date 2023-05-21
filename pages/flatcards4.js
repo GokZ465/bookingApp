@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { BsFillFuelPumpDieselFill } from "react-icons/bs";
 import { FiMapPin } from "react-icons/fi";
 import { useRouter } from "next/router";
@@ -11,6 +11,10 @@ export default function FlatCards4({ ...props }) {
   const FormChange = () => {
     context.showForm(!context.form);
   };
+
+  useEffect(() => {
+    context.showForm(false);
+  }, []);
   return (
     <div className="col-1-of-2">
       <div className="feature-box" onClick={FormChange}>

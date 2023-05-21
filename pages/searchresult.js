@@ -5,6 +5,8 @@ import AppContext from "../firebase/AppContext";
 
 const Searchresult = () => {
   const context = useContext(AppContext);
+  const exceptThisSymbols = ["e", "E", "+", "-", "."];
+  const [cardNumber, setCardNumber] = useState("");
 
   const { isReady } = useRouter();
   const router = useRouter();
@@ -24,6 +26,12 @@ const Searchresult = () => {
     data2 = JSON.parse(data);
     console.log(data2.length);
   }
+  const handleNumber = (event) => {
+    const limit = 10;
+
+    setCardNumber(event.target.value.slice(0, limit));
+  };
+
   // let data = useRef("");
   useEffect(() => {
     if (router.isReady) {
@@ -103,6 +111,11 @@ const Searchresult = () => {
                   className="modalInput"
                   id="pass"
                   type="number"
+                  value={cardNumber}
+                  onChange={handleNumber}
+                  onKeyDown={(e) =>
+                    exceptThisSymbols.includes(e.key) && e.preventDefault()
+                  }
                   required="required"
                 />
 

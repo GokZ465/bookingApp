@@ -9,7 +9,7 @@ const Footer = () => (
         <div className="col-1-of-1">
           <div className="footer__navigation">
             <ul className="footer__list">
-              <h4>PRODUCT OFFERING</h4>
+              <h4 className="footrhdng">PRODUCT OFFERING</h4>
               <li className="footer__item">
                 <a href="#" className="footer__link">
                   Flights
@@ -209,7 +209,9 @@ const Footer = () => (
                 </a>
                 &nbsp;
               </li>
-              <h4 style={{ marginTop: "0.5rem" }}>ABOUT THE SITE</h4>
+            </ul>
+            <ul className="footer__list">
+              <h4 className="footrhdng">ABOUT THE SITE</h4>
               <li className="footer__item About Us-10">
                 <a href="#" className=" footer__link anchor-About Us-10">
                   About Us
@@ -293,7 +295,9 @@ const Footer = () => (
                   Advertise with Us
                 </a>
               </li>
-              <h4 style={{ marginTop: "0.5rem" }}>IMPORTANT LINKS</h4>
+            </ul>
+            <ul className="footer__list">
+              <h4 className="footrhdng">IMPORTANT LINKS</h4>
               <li className=" footer__item Customer Support-20">
                 <a href="#" className="footer__link anchor-Customer Support-20">
                   Customer Support
@@ -341,7 +345,9 @@ const Footer = () => (
                   Work From Home
                 </a>
               </li>
-              <h4 style={{ marginTop: "0.5rem" }}>QUICK LINKS</h4>
+            </ul>
+            <ul className="footer__list">
+              <h4 className="footrhdng">QUICK LINKS</h4>
               <li className=" footer__item Customer Support-20">
                 <a href="#" className="footer__link anchor-Customer Support-20">
                   Delhi Singapore Flights
@@ -446,6 +452,7 @@ const Footer = () => (
         <a href="#" className="nav-dig__link">
           MINI PROJECT
         </a>
+        <a href="#" className="contactusnum">Contact Us - 9876543208</a>
 
         {/* <li className="nav-dig__item">
         <a href="#" className="nav-dig__link">

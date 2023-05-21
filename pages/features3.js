@@ -20,7 +20,7 @@ export default function Features3({ ...props }) {
           details3="Fuel Type:&nbsp;
 
           Diesel&nbsp;"
-          detailsRight="₹40,189"
+          detailsRight="₹4,189"
           details2="Flexible cancellation policy"
         />
         <FlatCards3
@@ -31,7 +31,7 @@ export default function Features3({ ...props }) {
           details3="Fuel Type:&nbsp;
 
           Diesel&nbsp;"
-          detailsRight="₹34,636"
+          detailsRight="₹4,636"
           details2="Cancellation Free within 30 mins"
         />
       </div>

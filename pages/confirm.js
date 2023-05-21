@@ -1,10 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../firebase/AppContext";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
+import { SlCheck } from "react-icons/sl";
+
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-
+import { FormChange } from "../components/FormChange";
 export default function Confirm() {
   const context = useContext(AppContext);
   const router = useRouter();
@@ -14,7 +16,12 @@ export default function Confirm() {
   console.log(context.notHotel);
   const [cvvNumber, setCvvNumber] = useState("");
   const [cardNumber, setCardNumber] = useState("");
-
+  const FormChange = () => {
+    context.showForm(true);
+    setTimeout(function () {
+      router.push("/");
+    }, 1200);
+  };
   const funcAlert = () => {
     // alert("your booking is done");
     toast("your booking is done", {
@@ -29,6 +36,9 @@ export default function Confirm() {
 
     window.location.reload();
   };
+  useEffect(() => {
+    context.showForm(false);
+  }, []);
   const handleNameChange = (event) => {
     const limit = 3;
 
@@ -207,7 +217,7 @@ export default function Confirm() {
                     You also agree that, unless you are removed from the program
                     before the program end date, your subscription will
                     automatically renew and you authorize us to continue to
-                    charge your debit/credit card ₹ 200.00 monthly (until
+                    charge your debit/credit card ₹ 2000.00 monthly (until
                     removed from the program). Once charged, all purchases,
                     including renewals, are non-refundable.
                   </label>
@@ -220,7 +230,7 @@ export default function Confirm() {
           <div className="methods">
             <i className="fas fa-credit-card fa-3x"></i> <br></br>
             <br></br>
-            <span style={{ color: "#fa19" }}>Credit</span>&nbsp;
+            <span style={{ color: "#fa19" }}>Credit / Debit</span>&nbsp;
             <span>Card</span>
           </div>
           <div className="methods">
@@ -230,8 +240,8 @@ export default function Confirm() {
           </div>
           <div className="methods">
             <i className="fab fa-amazon-pay fa-3x"></i>
-            <span style={{ color: "orange" }}>Amazon</span>
-            <span>Pay</span>
+            <span style={{ color: "orange" }}>UPI </span>
+            <span>Options</span>
           </div>
         </div>
         {context.roomContext === "default" && (
@@ -309,13 +319,106 @@ export default function Confirm() {
             />
             <input
               type="button"
-              value="Pay Now"
+              value="Book Now"
               className="button"
-              onClick={funcAlert}
+              onClick={FormChange}
             ></input>
           </div>
         </div>
       </div>
+      (
+      {context.form && (
+        <div className="modalBody">
+          <div className="modal modalh3">
+            <div className="modalForm newFormBody">
+              <form action="/confirm">
+                <label
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  className="modalLabel"
+                  htmlFor="name"
+                  required="required"
+                >
+                  <SlCheck
+                    style={{
+                      fontSize: "5rem",
+                      color: "green",
+                      padding: "1rem",
+                    }}
+                  ></SlCheck>{" "}
+                  Your booking has been done successfully!
+                </label>
+
+                <label
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginTop: "60px",
+                  }}
+                  className="modalLabel"
+                  htmlFor="email"
+                  required="required"
+                >
+                  Your Booking ID is: {Math.floor(Math.random() * 10044000)}
+                </label>
+
+                <label className="modalLabel" htmlFor="pass"></label>
+                {/* <input
+                className="modalInput"
+                id="pass"
+                type="number"
+                value={cardNumber}
+                onChange={handleNumber}
+                onKeyDown={(e) =>
+                  exceptThisSymbols.includes(e.key) && e.preventDefault()
+                }
+                required="required"
+              /> */}
+
+                {/* <button className="ModalButton" type="submit">
+                Book Now
+              </button> */}
+
+                {/* <button
+                  className="ModalButton"
+                  type="button"
+                  onClick={router.push(
+                    {
+                      pathname: "/confirm",
+                      query: {
+                        isHotel: false,
+                      },
+                    },
+                    "/confirm"
+                  )}
+                >
+                  Book Now
+                </button> */}
+              </form>
+            </div>
+            <div>
+              {/* <h3 className="modalh3">
+              <br />
+              <br />
+              <br />
+            </h3> */}
+
+              <div
+                onClick={() => FormChange()}
+                className="modalClose"
+                title="close"
+              ></div>
+            </div>
+          </div>
+        </div>
+      )}
+      )
     </>
   );
 }

@@ -31,13 +31,16 @@ const Nav = () => {
           />
         </Link>
         <div className="nav-links-wrapper">
-          {/* <Link passHref href="./#search">
+          {
+            <span className="name">Login</span>
+            /* <Link passHref href="./#search">
             <a className="search-icon">
               <span className="circle" />
               <span className="line" />
               <span className="arrow" />
             </a>
-          </Link> */}
+          </Link> */
+          }
 
           {!user && (
             <Link passHref href="/Login">

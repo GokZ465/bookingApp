@@ -14,13 +14,13 @@ export default function Features2({ ...props }) {
       <div className="rower">
         <FlatCards2
           icon="feature-box__icon "
-          title="SL "
+          title="Sleeper "
           details="AVAILABLE-16 &nbsp; &nbsp; ₹725&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                   Free Cancellation "
         />
         <FlatCards2
           icon="feature-box__icon "
-          title="3 AC Tactical"
+          title="3rd AC"
           details="AVAILABLE-43 &nbsp; &nbsp;
          ₹1890&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
          Free Cancellation"

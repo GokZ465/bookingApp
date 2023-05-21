@@ -9,7 +9,7 @@ import SearchFilterItem from "../components/SearchFilterItem";
 import { DateRange } from "react-date-range";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-
+import banner1 from "./banner5.png";
 import { createContext, useState, useContext, useEffect, useRef } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
@@ -21,30 +21,57 @@ import { flights } from "./api/flights/data";
 import Features from "./_features";
 import ImageSlider from "../components/ImageSlider";
 const fetcher = (url) => fetch(url).then((res) => res.json());
+// const slides = [
+//   {
+//     url: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "plane",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/325200/pexels-photo-325200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "train3",
+//   },
+
+//   {
+//     url: "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
+//     title: "hotel",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/796628/pexels-photo-796628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "train2",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/11937613/pexels-photo-11937613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "plane2",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/2869215/pexels-photo-2869215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     title: "hotel2",
+//   },
+// ];
 const slides = [
   {
-    url: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner1.png",
     title: "plane",
   },
   {
-    url: "https://images.pexels.com/photos/325200/pexels-photo-325200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "train",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner2.png",
+    title: "train3",
   },
 
   {
-    url: "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner3.png",
     title: "hotel",
   },
   {
-    url: "https://images.pexels.com/photos/796628/pexels-photo-796628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner4.png",
     title: "train2",
   },
   {
-    url: "https://images.pexels.com/photos/11937613/pexels-photo-11937613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner5.png",
     title: "plane2",
   },
   {
-    url: "https://images.pexels.com/photos/2869215/pexels-photo-2869215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://picsbucket12.s3.ap-south-1.amazonaws.com/banner6.png",
     title: "hotel2",
   },
 ];
@@ -53,11 +80,8 @@ const containerStyles = {
   width: "100%",
   height: "60vh",
   margin: "0 auto",
-  display: "block",
-  top: "10rem",
-  objectFit: "cover",
-  marginTop: "15vh",
-  alignItems: "center",
+  display: "inline-block",
+  marginTop: "14vh",
 };
 const categories = [
   { value: "goa", label: "Goa" },
@@ -115,7 +139,7 @@ function Home(req, res) {
     setOpenDate(!openDate);
   };
   const funcHeroClick = () => {
-    scrollTo(0, 1000);
+    scrollTo(0, 500);
   };
   const funcHotelClick = () => {
     if (hotelClick) {
@@ -243,7 +267,7 @@ function Home(req, res) {
         />
       </div>
       <header className="hero-image">
-        <img className="hero-index header-img" src="holidaze-hero.png" alt="" />
+        {/* <img className="hero-index header-img" src="holidaze-hero.png" alt="" /> */}
 
         <div className="hero-tile-container">
           <a onClick={() => funcHotelClick()}>
@@ -686,7 +710,9 @@ function Home(req, res) {
                         setOpenOptions(!openOptions);
                       }}
                       className="headerSearchText headerSearchInput "
-                    >{`${options.adult} adult · ${options.children} children · ${options.room} Infant`}</span>
+                    >{`${options.adult} adult · ${
+                      options.children
+                    } children · ${options.room - 1} Infant`}</span>
                     {openOptions && (
                       <div className="options">
                         <div className="optionItem">
@@ -757,7 +783,7 @@ function Home(req, res) {
                               -
                             </button>
                             <span className="optionCounterNumber">
-                              {options.room}
+                              {options.room - 1}
                             </span>
                             <button
                               className="optionCounterButton"
